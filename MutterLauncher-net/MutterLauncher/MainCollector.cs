@@ -29,10 +29,16 @@ namespace MutterLauncher
                 listApp.Add((AppCollector)Activator.CreateInstance(Type.GetType(collector)));
             }
 
+            /*
             foreach (AppCollector app in listApp)
             {
-                app.collect(); ;
+                app.collect();
             }
+            */
+            Parallel.ForEach(listApp, app =>
+            {
+                app.collect();
+            });
 
             lock (syncItem)
             {
@@ -97,7 +103,7 @@ namespace MutterLauncher
             // .forEach(item-> { grepList.add(item); });
 
             IEnumerable<Item> grepQuery;
-            lock (syncStoreItem)
+            lock (syncItem)
             {
                 grepQuery =
                 from item in itemList
