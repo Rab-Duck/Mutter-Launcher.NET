@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("MutterLauncher")]
+[assembly: AssemblyTitle("Mutter Launcher")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MutterLauncher")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("-")]
+[assembly: AssemblyProduct("Mutter Launcher")]
+[assembly: AssemblyCopyright("Copyright (C) Rab-Duck. 2016")]
+[assembly: AssemblyTrademark("-")]
 [assembly: AssemblyCulture("")]
 
 // ComVisible を false に設定すると、その型はこのアセンブリ内で COM コンポーネントから 

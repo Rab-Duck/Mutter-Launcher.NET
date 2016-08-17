@@ -59,5 +59,45 @@ namespace MutterLauncher.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Icon Close {
+            get {
+                object obj = ResourceManager.GetObject("Close", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Icon Ctrpanel {
+            get {
+                object obj = ResourceManager.GetObject("Ctrpanel", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Icon mutter {
+            get {
+                object obj = ResourceManager.GetObject("mutter", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Icon Refresh {
+            get {
+                object obj = ResourceManager.GetObject("Refresh", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

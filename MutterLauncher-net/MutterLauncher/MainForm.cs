@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace MutterLauncher
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -46,71 +46,18 @@ namespace MutterLauncher
             AppCollector ac;
             try
             {
-
-#if false
-                ac = new FileCollector(@"c:\tool", false, ".com;.exe;.bat;.cmd;.vbs;.vbe;.js;.jse;.wsf;.wsh;.msc;.lnk");
-                ac.collect();
-                itemList.AddRange(ac.getItemList());
-                foreach (Item item in itemList)
-                {
-                    Trace.WriteLine(item.getItemName() + ":" + item.getItemPath());
-                }
-
-                ac = new FileCollector(@"c:\tool", false, null);
-                ac.collect();
-                itemList.AddRange(ac.getItemList());
-                foreach (Item item in ac.getItemList())
-                {
-                    Trace.WriteLine(item.getItemName() + ":" + item.getItemPath());
-                }
-
-                ac = new FileCollector(@"c:\tool", true, ".lnk");
-                ac.collect();
-                itemList.AddRange(ac.getItemList());
-                foreach (Item item in ac.getItemList())
-                {
-                    Trace.WriteLine(item.getItemName() + ":" + item.getItemPath());
-                }
-
-                ac = new FileCollector(@"c:\tool");
-                ac.collect();
-                itemList.AddRange(ac.getItemList());
-                foreach (Item item in ac.getItemList())
-                {
-                    Trace.WriteLine(item.getItemName() + ":" + item.getItemPath());
-                }
-
-                ac = new PathFolderCollector();
-                ac.collect();
-                itemList.AddRange(ac.getItemList());
-                foreach (Item item in ac.getItemList())
-                {
-                    Trace.WriteLine(item.getItemName() + ":" + item.getItemPath());
-                }
-                ac = new SHFolderCollector();
-                ac.collect();
-                itemList.AddRange(ac.getItemList());
-                foreach (Item item in ac.getItemList())
-                {
-                    Trace.WriteLine(item.getItemName() + ":" + item.getItemPath());
-                }
-
-#endif
                 mc  = new MainCollector();
-                await Task.Run( () =>
+                await Task.Run(() =>
                 {
                     mc.collect();
                 });
-                itemList.AddRange(mc.grep(""));
-
             }
             catch (Exception ex)
             {
                 System.Console.WriteLine(ex.StackTrace);
             }
-
+            itemList.AddRange(mc.grep(""));
             putFileListView(itemList);
-            
         }
         private void putFileListView(List<Item> itemList)
         {
