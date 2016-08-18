@@ -13,6 +13,7 @@ namespace MutterLauncher
     {
         private static bool bIconCached = true;
         private string path;
+        private string name;
         private int iconIndex = -1;
         private ItemType type;
 
@@ -55,7 +56,20 @@ namespace MutterLauncher
 
         public string getItemName()
         {
-            return Path.GetFileName(path);
+            if(name == null)
+            {
+                SHFILEINFO shFileInfo = new SHFILEINFO();
+                NativeMethods.SHGetFileInfo(path, 0, out shFileInfo, (uint)Marshal.SizeOf(shFileInfo), NativeMethods.SHGFI_DISPLAYNAME);
+                if(shFileInfo.szDisplayName != null && shFileInfo.szDisplayName.Length > 0)
+                {
+                    name = shFileInfo.szDisplayName;
+                }
+                else
+                {
+                    name = Path.GetFileName(path);
+                }
+            }
+            return name;
         }
 
         public string getItemPath()
