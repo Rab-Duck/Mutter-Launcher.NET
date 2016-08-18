@@ -40,8 +40,10 @@ namespace MutterLauncher
         public const int SHGFI_USEFILEATTRIBUTES= 0x00000010;
 		public const int SHGFI_OVERLAYINDEX     = 0x00000040;
 		public const int SHGFI_ICON             = 0x00000100;
-		public const int SHGFI_SYSICONINDEX     = 0x00004000;
-		public const int LVSIL_NORMAL = 0;
+        public const int SHGFI_DISPLAYNAME      = 0x00000200;
+        public const int SHGFI_SYSICONINDEX     = 0x00004000;
+
+        public const int LVSIL_NORMAL = 0;
 		public const int LVSIL_SMALL  = 1;
 		public const int LVIS_OVERLAYMASK = 0x0F00;
 		public const int LVM_SETIMAGELIST = 0x1003;
@@ -60,8 +62,10 @@ namespace MutterLauncher
 		public static extern bool DestroyIcon(IntPtr hIcon);
         [DllImport("shell32.dll")]
         public static extern void SHParseDisplayName([MarshalAs(UnmanagedType.LPWStr)] string name, IntPtr bindingContext, [Out()] out IntPtr pidl, uint sfgaoIn, [Out()] out uint psfgaoOut);
+        [DllImport("user32.dll")]
+        public static extern int GetKeyboardState(byte[] lpKeyState);
         public NativeMethods()
 		{
 		}
-	}
+    }
 }

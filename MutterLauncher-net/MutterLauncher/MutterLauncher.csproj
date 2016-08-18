@@ -119,6 +119,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ToDo.txt" />
     <None Include="Refresh.ico" />
     <None Include="Ctrpanel.ico" />
     <None Include="Close.ico" />

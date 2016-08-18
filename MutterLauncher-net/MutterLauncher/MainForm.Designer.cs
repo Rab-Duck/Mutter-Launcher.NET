@@ -53,10 +53,11 @@
             this.lsvFileList.MultiSelect = false;
             this.lsvFileList.Name = "lsvFileList";
             this.lsvFileList.Size = new System.Drawing.Size(361, 268);
-            this.lsvFileList.TabIndex = 0;
+            this.lsvFileList.TabIndex = 1;
             this.lsvFileList.UseCompatibleStateImageBehavior = false;
             this.lsvFileList.View = System.Windows.Forms.View.Details;
             this.lsvFileList.DoubleClick += new System.EventHandler(this.lsvFileList_DoubleClick);
+            this.lsvFileList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lsvFileList_KeyDown);
             this.lsvFileList.Resize += new System.EventHandler(this.lsvFileList_Resize);
             // 
             // columnHeader1
@@ -69,7 +70,7 @@
             this.btnExec.Location = new System.Drawing.Point(218, 314);
             this.btnExec.Name = "btnExec";
             this.btnExec.Size = new System.Drawing.Size(75, 23);
-            this.btnExec.TabIndex = 1;
+            this.btnExec.TabIndex = 2;
             this.btnExec.Text = "Exec";
             this.btnExec.UseVisualStyleBackColor = true;
             this.btnExec.Click += new System.EventHandler(this.btnExec_Click);
@@ -82,8 +83,9 @@
             this.cmbbxSearcText.Location = new System.Drawing.Point(13, 13);
             this.cmbbxSearcText.Name = "cmbbxSearcText";
             this.cmbbxSearcText.Size = new System.Drawing.Size(360, 20);
-            this.cmbbxSearcText.TabIndex = 2;
+            this.cmbbxSearcText.TabIndex = 0;
             this.cmbbxSearcText.TextUpdate += new System.EventHandler(this.cmbbxSearcText_TextUpdate);
+            this.cmbbxSearcText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbbxSearcText_KeyDown);
             // 
             // btnClose
             // 

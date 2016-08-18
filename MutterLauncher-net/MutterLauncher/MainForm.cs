@@ -92,13 +92,39 @@ namespace MutterLauncher
 
         private void btnExec_Click(object sender, EventArgs e)
         {
+            execSelectedItem();
+
+        }
+
+        private void execSelectedItem()
+        {
             if (lsvFileList.SelectedItems.Count == 1)
             {
                 ListViewItem lvi = (ListViewItem)lsvFileList.Items[lsvFileList.SelectedItems[0].Index];
                 Item item = (Item)lvi.Tag;
-                item.execute("", Keys.None);
-            }
+                try
+                {
+                    Keys modifiers = 0;
+                    byte[] KeyState = new Byte[256];
+                    if(NativeMethods.GetKeyboardState(KeyState) != 0) 
+                    {
+                        if(KeyState[(int)Keys.ShiftKey] >= 0x80)
+                        {
+                            modifiers |= Keys.Shift;
+                        }
+                        if (KeyState[(int)Keys.ControlKey] >= 0x80)
+                        {
+                            modifiers |= Keys.Control;
+                        }
+                    }
 
+                    item.execute("", modifiers);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void cmbbxSearcText_TextUpdate(object sender, EventArgs e)
@@ -113,13 +139,40 @@ namespace MutterLauncher
 
         private void lsvFileList_DoubleClick(object sender, EventArgs e)
         {
-            if (cmbbxSearcText.SelectedIndex >= 0)
-            {
-                ListViewItem lvi = (ListViewItem)cmbbxSearcText.Items[cmbbxSearcText.SelectedIndex];
-                Item item = (Item)lvi.Tag;
-                item.execute("", Keys.None);
-            }
+            execSelectedItem();
+        }
 
+        private void cmbbxSearcText_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                case Keys.Down:
+                case Keys.PageUp:
+                case Keys.PageDown:
+                    NativeMethods.SendMessage(lsvFileList.Handle, 0x0100, (IntPtr)e.KeyCode, IntPtr.Zero);
+                    break;
+
+                case Keys.Enter:
+                    execSelectedItem();
+                    break;
+                     
+                default:
+                    break;
+            }
+        }
+
+        private void lsvFileList_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    execSelectedItem();
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
   
