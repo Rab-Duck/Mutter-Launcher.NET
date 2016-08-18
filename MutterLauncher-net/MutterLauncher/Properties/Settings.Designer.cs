@@ -22,5 +22,53 @@ namespace MutterLauncher.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int MainWinWidth {
+            get {
+                return ((int)(this["MainWinWidth"]));
+            }
+            set {
+                this["MainWinWidth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int MainWinHeight {
+            get {
+                return ((int)(this["MainWinHeight"]));
+            }
+            set {
+                this["MainWinHeight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MainWinPosX {
+            get {
+                return ((int)(this["MainWinPosX"]));
+            }
+            set {
+                this["MainWinPosX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MainWinPosY {
+            get {
+                return ((int)(this["MainWinPosY"]));
+            }
+            set {
+                this["MainWinPosY"] = value;
+            }
+        }
     }
 }

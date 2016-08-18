@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace MutterLauncher
 {
-    public partial class MainForm : Form
+    public partial class frmMainForm : Form
     {
-        public MainForm()
+        public frmMainForm()
         {
             InitializeComponent();
         }
@@ -27,7 +27,17 @@ namespace MutterLauncher
         private async void frmForm_Load(object sender, EventArgs e)
         {
             Trace.WriteLine("form loaded!");
-            
+
+            Properties.Settings.Default.Upgrade();
+            // ToDo: 前バージョンの復元
+            int MainWinHeight = Properties.Settings.Default.MainWinHeight;
+            if(MainWinHeight > 0)
+            {
+                this.Size = new Size(Properties.Settings.Default.MainWinWidth, MainWinHeight);
+                this.Location = new Point(Properties.Settings.Default.MainWinPosX, Properties.Settings.Default.MainWinPosY);
+            }
+
+
             lsvFileList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
             SHFILEINFO shFileInfo = new SHFILEINFO();
@@ -173,6 +183,22 @@ namespace MutterLauncher
                 default:
                     break;
             }
+        }
+
+        private void frmMainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // 実装場所は要検討
+            Properties.Settings.Default.Save();
+        }
+
+        private void frmMainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // 実装場所は要検討
+            Properties.Settings.Default.MainWinWidth = this.Size.Width;
+            Properties.Settings.Default.MainWinHeight = this.Size.Height;
+            Properties.Settings.Default.MainWinPosX = this.Location.X;
+            Properties.Settings.Default.MainWinPosY = this.Location.Y;
+
         }
     }
   

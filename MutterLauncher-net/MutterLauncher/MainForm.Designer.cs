@@ -1,6 +1,6 @@
 ﻿namespace MutterLauncher
 {
-    partial class MainForm
+    partial class frmMainForm
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainForm));
             this.lsvFileList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnExec = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             this.lsvFileList.Location = new System.Drawing.Point(12, 40);
             this.lsvFileList.MultiSelect = false;
             this.lsvFileList.Name = "lsvFileList";
-            this.lsvFileList.Size = new System.Drawing.Size(361, 268);
+            this.lsvFileList.Size = new System.Drawing.Size(360, 281);
             this.lsvFileList.TabIndex = 1;
             this.lsvFileList.UseCompatibleStateImageBehavior = false;
             this.lsvFileList.View = System.Windows.Forms.View.Details;
@@ -67,7 +67,7 @@
             // btnExec
             // 
             this.btnExec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExec.Location = new System.Drawing.Point(218, 314);
+            this.btnExec.Location = new System.Drawing.Point(217, 327);
             this.btnExec.Name = "btnExec";
             this.btnExec.Size = new System.Drawing.Size(75, 23);
             this.btnExec.TabIndex = 2;
@@ -82,7 +82,7 @@
             this.cmbbxSearcText.FormattingEnabled = true;
             this.cmbbxSearcText.Location = new System.Drawing.Point(13, 13);
             this.cmbbxSearcText.Name = "cmbbxSearcText";
-            this.cmbbxSearcText.Size = new System.Drawing.Size(360, 20);
+            this.cmbbxSearcText.Size = new System.Drawing.Size(359, 20);
             this.cmbbxSearcText.TabIndex = 0;
             this.cmbbxSearcText.TextUpdate += new System.EventHandler(this.cmbbxSearcText_TextUpdate);
             this.cmbbxSearcText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbbxSearcText_KeyDown);
@@ -90,7 +90,7 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(298, 314);
+            this.btnClose.Location = new System.Drawing.Point(297, 327);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 3;
@@ -100,7 +100,7 @@
             // btnSetenv
             // 
             this.btnSetenv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSetenv.Location = new System.Drawing.Point(12, 314);
+            this.btnSetenv.Location = new System.Drawing.Point(12, 327);
             this.btnSetenv.Name = "btnSetenv";
             this.btnSetenv.Size = new System.Drawing.Size(45, 23);
             this.btnSetenv.TabIndex = 4;
@@ -110,7 +110,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnUpdate.Location = new System.Drawing.Point(63, 314);
+            this.btnUpdate.Location = new System.Drawing.Point(63, 327);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(51, 23);
             this.btnUpdate.TabIndex = 5;
@@ -120,18 +120,18 @@
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExit.Location = new System.Drawing.Point(120, 314);
+            this.btnExit.Location = new System.Drawing.Point(120, 327);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(51, 23);
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             // 
-            // MainForm
+            // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 349);
+            this.ClientSize = new System.Drawing.Size(384, 362);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSetenv);
@@ -142,8 +142,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "MainForm";
+            this.Name = "frmMainForm";
             this.Text = "Mutter Launcher";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMainForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainForm_FormClosed);
             this.Load += new System.EventHandler(this.frmForm_Load);
             this.ResumeLayout(false);
 
