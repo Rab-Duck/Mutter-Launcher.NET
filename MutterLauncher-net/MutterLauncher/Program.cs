@@ -11,12 +11,15 @@ namespace MutterLauncher
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
+        // reference: https://msdn.microsoft.com/ja-jp/library/754w18dd(v=vs.110).aspx
+        //            http://dobon.net/vb/dotnet/form/hideformwithtrayicon.html#section3
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            MainForm frmMainForm = new MainForm();
+            Application.Run();
         }
     }
 }

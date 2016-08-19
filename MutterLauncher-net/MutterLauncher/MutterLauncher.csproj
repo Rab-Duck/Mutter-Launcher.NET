@@ -51,7 +51,7 @@
     <ApplicationIcon>mutter.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>MutterLauncher.MainApplication</StartupObject>
+    <StartupObject>MutterLauncher.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -70,7 +70,7 @@
     <Compile Include="EnvManager.cs" />
     <Compile Include="FileCollector.cs" />
     <Compile Include="FileItem.cs" />
-    <Compile Include="MainApplication.cs" />
+    <Compile Include="Hotkey.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
