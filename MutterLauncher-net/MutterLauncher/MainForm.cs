@@ -276,6 +276,15 @@ namespace MutterLauncher
             // 実装場所は要検討
             Properties.Settings.Default.Save();
         }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Hide();
+            }
+
+        }
     }
   
 }
