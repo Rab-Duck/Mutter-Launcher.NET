@@ -1,6 +1,6 @@
 ﻿namespace MutterLauncher
 {
-    partial class frmMainForm
+    partial class MainForm
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainForm));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lsvFileList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnExec = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.btnSetenv = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.notifyIconMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // lsvFileList
@@ -96,6 +98,7 @@
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSetenv
             // 
@@ -126,8 +129,16 @@
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // frmMainForm
+            // notifyIconMain
+            // 
+            this.notifyIconMain.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconMain.Icon")));
+            this.notifyIconMain.Text = "Mutter Launcher";
+            this.notifyIconMain.Visible = true;
+            this.notifyIconMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconMain_MouseClick);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,11 +153,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmMainForm";
+            this.Name = "MainForm";
             this.Text = "Mutter Launcher";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMainForm_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainForm_FormClosed);
-            this.Load += new System.EventHandler(this.frmForm_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.VisibleChanged += new System.EventHandler(this.MainForm_VisibleChanged);
             this.ResumeLayout(false);
 
         }
@@ -161,6 +173,7 @@
         private System.Windows.Forms.Button btnSetenv;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.NotifyIcon notifyIconMain;
     }
 }
 

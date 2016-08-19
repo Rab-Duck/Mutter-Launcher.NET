@@ -50,6 +50,9 @@
   <PropertyGroup>
     <ApplicationIcon>mutter.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MutterLauncher.MainApplication</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -67,6 +70,7 @@
     <Compile Include="EnvManager.cs" />
     <Compile Include="FileCollector.cs" />
     <Compile Include="FileItem.cs" />
+    <Compile Include="MainApplication.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -12,14 +12,30 @@ using System.Windows.Forms;
 
 namespace MutterLauncher
 {
-    public partial class frmMainForm : Form
+    public partial class MainForm : Form
     {
-        public frmMainForm()
+        public MainForm()
         {
             InitializeComponent();
 
             // ToDo: 前バージョンの復元
             Properties.Settings.Default.Upgrade();
+
+            mc = new MainCollector();
+            mc.cachedCollect();
+
+            try
+            {
+                collectTask = Task.Run(() =>
+                {
+                    mc.collect();
+                });
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.StackTrace);
+            }
+
         }
 
         private static IntPtr SmallImageListHandle;
@@ -27,8 +43,9 @@ namespace MutterLauncher
         private MainCollector mc;
         List<Item> itemList = new List<Item>();
         private EnvManager envmngr = EnvManager.getInstance();
+        private Task collectTask = null;
 
-        private async void frmForm_Load(object sender, EventArgs e)
+        private async void MainForm_Load(object sender, EventArgs e)
         {
             Trace.WriteLine("form loaded!");
 
@@ -54,24 +71,11 @@ namespace MutterLauncher
             NativeMethods.SendMessage(lsvFileList.Handle, NativeMethods.LVM_SETIMAGELIST,
                 new IntPtr(NativeMethods.LVSIL_NORMAL), LargeImageListHandle);
 
-            mc = new MainCollector();
 
-            btnUpdate.Enabled = false;
-            mc.cachedCollect();
             updateView("");
-            try
-            {
-                Task task = Task.Run(() =>
-                {
-                    mc.collect();
-                });
-                await task;
-            }
-            catch (Exception ex)
-            {
-                System.Console.WriteLine(ex.StackTrace);
-            }
+            btnUpdate.Enabled = false;
 
+            await collectTask;
             updateView(null);
         }
 
@@ -216,13 +220,52 @@ namespace MutterLauncher
             }
         }
 
-        private void frmMainForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // 実装場所は要検討
-            Properties.Settings.Default.Save();
+            Trace.WriteLine("form Closed!");
         }
 
-        private void frmMainForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Trace.WriteLine("form Closing!");
+
+            SavePos();
+
+            // reference: http://stackoverflow.com/questions/2021681/hide-form-instead-of-closing-when-close-button-clicked
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                this.Hide();
+            }
+        }
+
+        private void notifyIconMain_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                this.Visible = !this.Visible;
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void MainForm_VisibleChanged(object sender, EventArgs e)
+        {
+            Trace.WriteLine("form VisibleChanged: " + this.Visible);
+            if (!this.Visible)
+            {
+                SavePos();
+            }
+        }
+        private void SavePos()
         {
             // 実装場所は要検討
             Properties.Settings.Default.MainWinWidth = this.Size.Width;
@@ -230,6 +273,8 @@ namespace MutterLauncher
             Properties.Settings.Default.MainWinPosX = this.Location.X;
             Properties.Settings.Default.MainWinPosY = this.Location.Y;
 
+            // 実装場所は要検討
+            Properties.Settings.Default.Save();
         }
     }
   
