@@ -70,5 +70,17 @@ namespace MutterLauncher.Properties {
                 this["MainWinPosY"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int ListNumMax {
+            get {
+                return ((int)(this["ListNumMax"]));
+            }
+            set {
+                this["ListNumMax"] = value;
+            }
+        }
     }
 }

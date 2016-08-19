@@ -95,8 +95,13 @@ namespace MutterLauncher
         {
             lsvFileList.BeginUpdate();
             lsvFileList.Items.Clear();
+            int i = 0;
             foreach (Item item in itemList)
             {
+                if (i++ >= Properties.Settings.Default.ListNumMax)
+                {
+                    break;
+                }
                 ListViewItem lvi = new ListViewItem(item.getItemName());
 
                 // オブジェクトを 1対1 でリストにひも付け
