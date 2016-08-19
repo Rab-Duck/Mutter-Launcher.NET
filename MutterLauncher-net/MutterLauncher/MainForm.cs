@@ -62,8 +62,10 @@ namespace MutterLauncher
             }
 
 
-            lsvFileList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            // lsvFileList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
 
+            // reference: http://acha-ya.cocolog-nifty.com/blog/2010/11/2-f06c.html
             SHFILEINFO shFileInfo = new SHFILEINFO();
             SmallImageListHandle = NativeMethods.SHGetFileInfo(String.Empty, 0,
                 out shFileInfo, (uint)Marshal.SizeOf(shFileInfo),
@@ -118,6 +120,7 @@ namespace MutterLauncher
                 // オブジェクトを 1対1 でリストにひも付け
                 lvi.Tag = item;
 
+                // reference: http://acha-ya.cocolog-nifty.com/blog/2010/11/2-f06c.html
                 // 最上位8ビットを除いた値をアイコンインデックス値とする
                 int iconIndex = (item.getIconIndex() & 0xFFFFFF);
                 lvi.ImageIndex = iconIndex;
@@ -140,7 +143,7 @@ namespace MutterLauncher
 
         private void lsvFileList_Resize(object sender, EventArgs e)
         {
-            lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width-1;
+            lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
         }
 
         private void btnExec_Click(object sender, EventArgs e)

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lsvFileList = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnExec = new System.Windows.Forms.Button();
             this.cmbbxSearcText = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
@@ -41,6 +40,7 @@
             this.notifyIconMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.txtViewPath = new System.Windows.Forms.TextBox();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lsvFileList
@@ -64,10 +64,6 @@
             this.lsvFileList.DoubleClick += new System.EventHandler(this.lsvFileList_DoubleClick);
             this.lsvFileList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lsvFileList_KeyDown);
             this.lsvFileList.Resize += new System.EventHandler(this.lsvFileList_Resize);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Width = 328;
             // 
             // btnExec
             // 
@@ -189,7 +185,6 @@
         #endregion
 
         private System.Windows.Forms.ListView lsvFileList;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Button btnExec;
         private System.Windows.Forms.ComboBox cmbbxSearcText;
         private System.Windows.Forms.Button btnClose;
@@ -199,6 +194,7 @@
         private System.Windows.Forms.NotifyIcon notifyIconMain;
         private System.Windows.Forms.Timer timerUpdate;
         private System.Windows.Forms.TextBox txtViewPath;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
 

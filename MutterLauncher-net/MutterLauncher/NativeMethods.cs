@@ -1,6 +1,9 @@
 using System;
 using System.Runtime.InteropServices;
 
+//
+// This source based on http://acha-ya.cocolog-nifty.com/blog/2010/11/2-f06c.html
+// 
 namespace MutterLauncher
 {
 	[ StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto) ]
