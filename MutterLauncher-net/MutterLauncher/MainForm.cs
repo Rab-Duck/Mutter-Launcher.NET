@@ -24,6 +24,12 @@ namespace MutterLauncher
             mc = new MainCollector();
             mc.cachedCollect();
 
+            runCollectTask();
+
+        }
+
+        private void runCollectTask()
+        {
             try
             {
                 collectTask = Task.Run(() =>
@@ -35,7 +41,6 @@ namespace MutterLauncher
             {
                 System.Console.WriteLine(ex.StackTrace);
             }
-
         }
 
         private static IntPtr SmallImageListHandle;
@@ -77,6 +82,8 @@ namespace MutterLauncher
 
             await collectTask;
             updateView(null);
+            timerUpdate.Interval = Properties.Settings.Default.updateInterval * 60 * 1000;
+            timerUpdate.Enabled = true;
         }
 
         private void updateView(String searchStr)
@@ -284,6 +291,24 @@ namespace MutterLauncher
                 this.Hide();
             }
 
+        }
+
+        private async void btnUpdate_Click(object sender, EventArgs e)
+        {
+            await updateListItem();
+        }
+        private async Task updateListItem()
+        {
+            btnUpdate.Enabled = false;
+            runCollectTask();
+            await collectTask;
+            updateView(null);
+            btnUpdate.Enabled = true;
+        }
+
+        private async void timerUpdate_Tick(object sender, EventArgs e)
+        {
+            await updateListItem();
         }
     }
   

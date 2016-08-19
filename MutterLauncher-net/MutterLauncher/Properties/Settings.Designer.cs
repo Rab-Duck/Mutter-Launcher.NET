@@ -82,5 +82,17 @@ namespace MutterLauncher.Properties {
                 this["ListNumMax"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int updateInterval {
+            get {
+                return ((int)(this["updateInterval"]));
+            }
+            set {
+                this["updateInterval"] = value;
+            }
+        }
     }
 }
