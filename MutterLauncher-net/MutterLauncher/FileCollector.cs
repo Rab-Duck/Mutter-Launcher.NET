@@ -77,6 +77,7 @@ namespace MutterLauncher
             items = new List<Item>();
 
 
+            // reference: http://www.atmarkit.co.jp/fdotnet/dotnettips/053allfiles/allfiles.html
             Queue q = new Queue();
             q.Enqueue(dirPath);
 
