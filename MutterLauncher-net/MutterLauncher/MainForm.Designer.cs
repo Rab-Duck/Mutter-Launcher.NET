@@ -40,6 +40,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.notifyIconMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
+            this.txtViewPath = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lsvFileList
@@ -55,17 +56,18 @@
             this.lsvFileList.Location = new System.Drawing.Point(12, 40);
             this.lsvFileList.MultiSelect = false;
             this.lsvFileList.Name = "lsvFileList";
-            this.lsvFileList.Size = new System.Drawing.Size(360, 281);
+            this.lsvFileList.Size = new System.Drawing.Size(360, 255);
             this.lsvFileList.TabIndex = 1;
             this.lsvFileList.UseCompatibleStateImageBehavior = false;
             this.lsvFileList.View = System.Windows.Forms.View.Details;
+            this.lsvFileList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lsvFileList_ItemSelectionChanged);
             this.lsvFileList.DoubleClick += new System.EventHandler(this.lsvFileList_DoubleClick);
             this.lsvFileList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lsvFileList_KeyDown);
             this.lsvFileList.Resize += new System.EventHandler(this.lsvFileList_Resize);
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Width = 357;
+            this.columnHeader1.Width = 328;
             // 
             // btnExec
             // 
@@ -73,7 +75,7 @@
             this.btnExec.Location = new System.Drawing.Point(217, 327);
             this.btnExec.Name = "btnExec";
             this.btnExec.Size = new System.Drawing.Size(75, 23);
-            this.btnExec.TabIndex = 2;
+            this.btnExec.TabIndex = 3;
             this.btnExec.Text = "Exec";
             this.btnExec.UseVisualStyleBackColor = true;
             this.btnExec.Click += new System.EventHandler(this.btnExec_Click);
@@ -96,7 +98,7 @@
             this.btnClose.Location = new System.Drawing.Point(297, 327);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 3;
+            this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -107,7 +109,7 @@
             this.btnSetenv.Location = new System.Drawing.Point(12, 327);
             this.btnSetenv.Name = "btnSetenv";
             this.btnSetenv.Size = new System.Drawing.Size(45, 23);
-            this.btnSetenv.TabIndex = 4;
+            this.btnSetenv.TabIndex = 5;
             this.btnSetenv.Text = "Env";
             this.btnSetenv.UseVisualStyleBackColor = true;
             // 
@@ -117,7 +119,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(63, 327);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(51, 23);
-            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -128,7 +130,7 @@
             this.btnExit.Location = new System.Drawing.Point(120, 327);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(51, 23);
-            this.btnExit.TabIndex = 6;
+            this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -145,11 +147,22 @@
             this.timerUpdate.Interval = 360000;
             this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
             // 
+            // txtViewPath
+            // 
+            this.txtViewPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtViewPath.Location = new System.Drawing.Point(13, 301);
+            this.txtViewPath.Name = "txtViewPath";
+            this.txtViewPath.ReadOnly = true;
+            this.txtViewPath.Size = new System.Drawing.Size(359, 19);
+            this.txtViewPath.TabIndex = 2;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 362);
+            this.Controls.Add(this.txtViewPath);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSetenv);
@@ -169,6 +182,7 @@
             this.VisibleChanged += new System.EventHandler(this.MainForm_VisibleChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -184,6 +198,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.NotifyIcon notifyIconMain;
         private System.Windows.Forms.Timer timerUpdate;
+        private System.Windows.Forms.TextBox txtViewPath;
     }
 }
 

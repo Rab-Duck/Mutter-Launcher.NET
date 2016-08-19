@@ -131,7 +131,8 @@ namespace MutterLauncher
                     // NativeMethods.LVM_SETITEMSTATE, lvi.Index, ref lvitem);
             }
             lsvFileList.EndUpdate();
-            if(lsvFileList.Items.Count > 0)
+            txtViewPath.Text = "";
+            if (lsvFileList.Items.Count > 0)
             {
                 lsvFileList.Items[0].Selected = true;
             }
@@ -150,7 +151,7 @@ namespace MutterLauncher
 
         private void execSelectedItem()
         {
-            if (lsvFileList.SelectedItems.Count == 1)
+            if (lsvFileList.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = (ListViewItem)lsvFileList.Items[lsvFileList.SelectedItems[0].Index];
                 Item item = (Item)lvi.Tag;
@@ -309,6 +310,21 @@ namespace MutterLauncher
         private async void timerUpdate_Tick(object sender, EventArgs e)
         {
             await updateListItem();
+        }
+
+        private void lsvFileList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (lsvFileList.SelectedItems.Count > 0)
+            {
+                ListViewItem lvi = (ListViewItem)lsvFileList.Items[lsvFileList.SelectedItems[0].Index];
+                Item item = (Item)lvi.Tag;
+                txtViewPath.Text = item.getItemPath();
+            }
+            else
+            {
+                txtViewPath.Text = "";
+            }
+
         }
     }
   
