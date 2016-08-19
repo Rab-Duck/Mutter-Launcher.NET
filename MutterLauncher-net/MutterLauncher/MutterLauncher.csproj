@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnvManager.cs" />
     <Compile Include="FileCollector.cs" />
     <Compile Include="FileItem.cs" />
     <Compile Include="MainForm.cs">

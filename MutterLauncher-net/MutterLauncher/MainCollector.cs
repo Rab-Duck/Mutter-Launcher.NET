@@ -14,13 +14,20 @@ namespace MutterLauncher
         private Object syncItem = new Object();
         private List<Item> itemList = new List<Item>();
         private List<Item> historyItemList;
+        private EnvManager envmngr = EnvManager.getInstance();
 
         public MainCollector()
         {
         }
 
+        public void cachedCollect()
+        {
+            itemList = envmngr.getItemList();
+        }
+
         public void collect()
         {
+
 
             List<AppCollector> listApp = new List<AppCollector>();
             string[] collectors = { "MutterLauncher.SHFolderCollector", "MutterLauncher.PathFolderCollector"};
@@ -48,21 +55,13 @@ namespace MutterLauncher
                 {
                     itemList.AddRange(app.getItemList());
                 }
+                envmngr.setItemList(itemList);
             }
-            storeItemList();
             historyItemList = null;
 
             listApp = null;
         }
 
-        private void storeItemList()
-        {
-            lock (syncStoreItem)
-            {
-                // todo
-            }
-            return;
-        }
 
         public List<Item> getAllItemList()
         {

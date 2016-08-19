@@ -9,12 +9,13 @@ using System.Windows.Forms;
 
 namespace MutterLauncher
 {
+    [Serializable]
     class FileItem : Item
     {
         private static bool bIconCached = true;
         private string path;
         private string name;
-        private int iconIndex = -1;
+        [NonSerialized] private int iconIndex = -1;
         private ItemType type;
 
         public FileItem(string fullPath)
@@ -109,7 +110,7 @@ namespace MutterLauncher
 
         private void setIconIndex()
         {
-            if (iconIndex == -1)
+            if (iconIndex == -1 || iconIndex == 0) // 0 は serialize 対策
             {
                 // reference: http://acha-ya.cocolog-nifty.com/blog/2010/11/2-f06c.html
                 SHFILEINFO shFileInfo = new SHFILEINFO();

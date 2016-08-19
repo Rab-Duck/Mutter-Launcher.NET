@@ -17,19 +17,21 @@ namespace MutterLauncher
         public frmMainForm()
         {
             InitializeComponent();
+
+            // ToDo: 前バージョンの復元
+            Properties.Settings.Default.Upgrade();
         }
 
         private static IntPtr SmallImageListHandle;
         private static IntPtr LargeImageListHandle;
         private MainCollector mc;
         List<Item> itemList = new List<Item>();
+        private EnvManager envmngr = EnvManager.getInstance();
 
         private async void frmForm_Load(object sender, EventArgs e)
         {
             Trace.WriteLine("form loaded!");
 
-            Properties.Settings.Default.Upgrade();
-            // ToDo: 前バージョンの復元
             int MainWinHeight = Properties.Settings.Default.MainWinHeight;
             if(MainWinHeight > 0)
             {
@@ -52,23 +54,43 @@ namespace MutterLauncher
             NativeMethods.SendMessage(lsvFileList.Handle, NativeMethods.LVM_SETIMAGELIST,
                 new IntPtr(NativeMethods.LVSIL_NORMAL), LargeImageListHandle);
 
-            itemList = new List<Item>();
-            AppCollector ac;
+            mc = new MainCollector();
+
+            btnUpdate.Enabled = false;
+            mc.cachedCollect();
+            updateView("");
             try
             {
-                mc  = new MainCollector();
-                await Task.Run(() =>
+                Task task = Task.Run(() =>
                 {
                     mc.collect();
                 });
+                await task;
             }
             catch (Exception ex)
             {
                 System.Console.WriteLine(ex.StackTrace);
             }
-            itemList.AddRange(mc.grep(""));
-            putFileListView(itemList);
+
+            updateView(null);
         }
+
+        private void updateView(String searchStr)
+        {
+            if (searchStr == null)
+            {
+                searchStr = cmbbxSearcText.Text;
+            }
+            if (mc != null)
+            {
+                // itemList.Clear();
+                // itemList.AddRange(mc.grep(searchStr));
+                putFileListView(mc.grep(searchStr));
+                btnUpdate.Enabled = true;
+            }
+
+        }
+
         private void putFileListView(List<Item> itemList)
         {
             lsvFileList.BeginUpdate();
@@ -77,6 +99,7 @@ namespace MutterLauncher
             {
                 ListViewItem lvi = new ListViewItem(item.getItemName());
 
+                // オブジェクトを 1対1 でリストにひも付け
                 lvi.Tag = item;
 
                 // 最上位8ビットを除いた値をアイコンインデックス値とする
@@ -88,11 +111,14 @@ namespace MutterLauncher
                 lvitem.stateMask = NativeMethods.LVIS_OVERLAYMASK;
                 // 最上位8ビットの値を、8-11ビット目に格納、それ以外のビットは 0 にする
                 lvitem.state = ((item.getIconIndex() >> 16) & 0x0F00);
-                NativeMethods.SendMessage(lsvFileList.Handle,
-                    NativeMethods.LVM_SETITEMSTATE, lvi.Index, ref lvitem);
+                // NativeMethods.SendMessage(lsvFileList.Handle,
+                    // NativeMethods.LVM_SETITEMSTATE, lvi.Index, ref lvitem);
             }
             lsvFileList.EndUpdate();
-
+            if(lsvFileList.Items.Count > 0)
+            {
+                lsvFileList.Items[0].Selected = true;
+            }
         }
 
         private void lsvFileList_Resize(object sender, EventArgs e)
@@ -141,8 +167,8 @@ namespace MutterLauncher
         {
             if (mc != null)
             {
-                itemList = mc.grep(cmbbxSearcText.Text);
-                putFileListView(itemList);
+                // itemList = mc.grep(cmbbxSearcText.Text);
+                putFileListView(mc.grep(cmbbxSearcText.Text));
             }
 
         }
