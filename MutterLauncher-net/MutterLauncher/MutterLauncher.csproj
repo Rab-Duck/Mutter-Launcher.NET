@@ -124,12 +124,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Ctrpanel1.ico" />
     <Content Include="ToDo.txt" />
     <None Include="Refresh.ico" />
     <None Include="Ctrpanel.ico" />
     <None Include="Close.ico" />
     <Content Include="mutter.ico" />
-    <None Include="Resources\IDM_UPDATE.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
