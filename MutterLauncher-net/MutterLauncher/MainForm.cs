@@ -54,6 +54,7 @@ namespace MutterLauncher
         {
             Trace.WriteLine("form loaded!");
 
+            // initial position
             int MainWinHeight = Properties.Settings.Default.MainWinHeight;
             if(MainWinHeight > 0)
             {
@@ -62,6 +63,7 @@ namespace MutterLauncher
             }
 
 
+            // prepare LSV
             // lsvFileList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
 
@@ -79,9 +81,12 @@ namespace MutterLauncher
                 new IntPtr(NativeMethods.LVSIL_NORMAL), LargeImageListHandle);
 
 
+
+            // show cached list
             updateView("");
             btnUpdate.Enabled = false;
 
+            // show collected list
             await collectTask;
             updateView(null);
             timerUpdate.Interval = Properties.Settings.Default.updateInterval * 60 * 1000;
