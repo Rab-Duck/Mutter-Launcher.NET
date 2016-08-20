@@ -49,6 +49,24 @@ namespace MutterLauncher
         List<Item> itemList = new List<Item>();
         private EnvManager envmngr = EnvManager.getInstance();
         private Task collectTask = null;
+        private ImageCallback imgcb;
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x004E)
+            {
+                var notify = (NMHDR)Marshal.PtrToStructure(m.LParam, typeof(NMHDR));
+                if (notify.code == 0 - 100 - 77)
+                {
+                    var dispinfo = (LV_DISPINFO)Marshal.PtrToStructure(m.LParam, typeof(LV_DISPINFO));
+                    dispinfo.item.iImage = 1;
+                    m.Result = (IntPtr)1;
+                    System.Console.WriteLine(dispinfo);
+                    return;
+                }
+            }
+            base.WndProc(ref m);
+        }
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
@@ -80,7 +98,7 @@ namespace MutterLauncher
             NativeMethods.SendMessage(lsvFileList.Handle, NativeMethods.LVM_SETIMAGELIST,
                 new IntPtr(NativeMethods.LVSIL_NORMAL), LargeImageListHandle);
 
-
+            imgcb = new ImageCallback(lsvFileList.Handle);
 
             // show cached list
             updateView("");
@@ -128,7 +146,7 @@ namespace MutterLauncher
                 // reference: http://acha-ya.cocolog-nifty.com/blog/2010/11/2-f06c.html
                 // 最上位8ビットを除いた値をアイコンインデックス値とする
                 int iconIndex = (item.getIconIndex() & 0xFFFFFF);
-                lvi.ImageIndex = iconIndex;
+                lvi.ImageIndex = -1; // iconIndex;
                 
                 lsvFileList.Items.Add(lvi);
                 LVITEM lvitem = new LVITEM();

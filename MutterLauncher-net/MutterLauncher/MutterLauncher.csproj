@@ -71,6 +71,7 @@
     <Compile Include="FileCollector.cs" />
     <Compile Include="FileItem.cs" />
     <Compile Include="Hotkey.cs" />
+    <Compile Include="ImageCallback.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
