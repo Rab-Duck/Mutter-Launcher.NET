@@ -158,13 +158,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 362);
+            this.Controls.Add(this.btnExec);
             this.Controls.Add(this.txtViewPath);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSetenv);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cmbbxSearcText);
-            this.Controls.Add(this.btnExec);
             this.Controls.Add(this.lsvFileList);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;

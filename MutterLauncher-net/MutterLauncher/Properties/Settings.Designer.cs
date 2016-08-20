@@ -94,5 +94,65 @@ namespace MutterLauncher.Properties {
                 this["updateInterval"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HotKeyShift {
+            get {
+                return ((bool)(this["HotKeyShift"]));
+            }
+            set {
+                this["HotKeyShift"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HotKeyCtrl {
+            get {
+                return ((bool)(this["HotKeyCtrl"]));
+            }
+            set {
+                this["HotKeyCtrl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HotKeyAlt {
+            get {
+                return ((bool)(this["HotKeyAlt"]));
+            }
+            set {
+                this["HotKeyAlt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool HotKeyWin {
+            get {
+                return ((bool)(this["HotKeyWin"]));
+            }
+            set {
+                this["HotKeyWin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("67")]
+        public int HotKeyCode {
+            get {
+                return ((int)(this["HotKeyCode"]));
+            }
+            set {
+                this["HotKeyCode"] = value;
+            }
+        }
     }
 }

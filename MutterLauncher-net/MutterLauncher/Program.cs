@@ -21,8 +21,12 @@ namespace MutterLauncher
             MainForm frmMainForm = new MainForm();
 
             Hotkey hk = new Hotkey();
-            hk.KeyCode = Keys.C;
-            hk.Windows = true;
+            hk.KeyCode = (Keys)Properties.Settings.Default.HotKeyCode;
+            hk.Windows = Properties.Settings.Default.HotKeyWin;
+            hk.Alt = Properties.Settings.Default.HotKeyAlt;
+            hk.Control = Properties.Settings.Default.HotKeyCtrl;
+            hk.Shift = Properties.Settings.Default.HotKeyShift;
+
             hk.Pressed += (sender, e) => { frmMainForm.Show(); frmMainForm.Activate(); };
 
             if (!hk.GetCanRegister(frmMainForm))
