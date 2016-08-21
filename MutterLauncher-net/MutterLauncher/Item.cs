@@ -13,7 +13,7 @@ namespace MutterLauncher
         TYPE_HISTORY = 1,
         TYPE_FIX = 10,
     }
-    interface Item
+    public interface Item
     {
         string ToString();
         Item cloneItem();

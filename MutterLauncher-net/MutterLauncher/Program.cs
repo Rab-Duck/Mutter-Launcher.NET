@@ -19,6 +19,9 @@ namespace MutterLauncher
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             MainForm frmMainForm = new MainForm();
+            BackgroundForm frmBackground = new BackgroundForm(frmMainForm);
+            //frmMainForm.Show();
+            frmBackground.Show();
 
             Hotkey hk = new Hotkey();
             hk.KeyCode = (Keys)Properties.Settings.Default.HotKeyCode;
@@ -39,6 +42,9 @@ namespace MutterLauncher
             }
 
             Application.Run();
+
+            frmMainForm.Close();
+            frmBackground.Close();
 
             if (hk.Registered)
             {

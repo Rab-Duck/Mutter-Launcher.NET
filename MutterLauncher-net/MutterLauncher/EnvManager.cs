@@ -65,25 +65,28 @@ namespace MutterLauncher
             IFormatter formatter = new BinaryFormatter();
             Stream stream = null;
             List<Item> itemList = new List<Item>();
-            try
+            lock (lockItemList)
             {
-                stream = new FileStream(itemListFilename, FileMode.Open, FileAccess.Read, FileShare.Read);
-                itemList = (List<Item>)formatter.Deserialize(stream);
-            }
-            catch (FileNotFoundException fnfex)
-            {
-
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e.StackTrace);
-                throw e;
-            }
-            finally
-            {
-                if (stream != null)
+                try
                 {
-                    stream.Close();
+                    stream = new FileStream(itemListFilename, FileMode.Open, FileAccess.Read, FileShare.Read);
+                    itemList = (List<Item>)formatter.Deserialize(stream);
+                }
+                catch (FileNotFoundException fnfex)
+                {
+
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine(e.StackTrace);
+                    throw e;
+                }
+                finally
+                {
+                    if (stream != null)
+                    {
+                        stream.Close();
+                    }
                 }
             }
 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lsvFileList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -38,8 +37,6 @@
             this.btnSetenv = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.notifyIconMain = new System.Windows.Forms.NotifyIcon(this.components);
-            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.txtViewPath = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -131,18 +128,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // notifyIconMain
-            // 
-            this.notifyIconMain.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconMain.Icon")));
-            this.notifyIconMain.Text = "Mutter Launcher";
-            this.notifyIconMain.Visible = true;
-            this.notifyIconMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconMain_MouseClick);
-            // 
-            // timerUpdate
-            // 
-            this.timerUpdate.Interval = 360000;
-            this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
-            // 
             // txtViewPath
             // 
             this.txtViewPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -191,8 +176,6 @@
         private System.Windows.Forms.Button btnSetenv;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.NotifyIcon notifyIconMain;
-        private System.Windows.Forms.Timer timerUpdate;
         private System.Windows.Forms.TextBox txtViewPath;
         private System.Windows.Forms.ColumnHeader columnHeader1;
     }

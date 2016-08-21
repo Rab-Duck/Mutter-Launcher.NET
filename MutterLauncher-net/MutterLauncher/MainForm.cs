@@ -17,40 +17,44 @@ namespace MutterLauncher
         public MainForm()
         {
             InitializeComponent();
-
-            // ToDo: 前バージョンの復元
-            Properties.Settings.Default.Upgrade();
-
-            mc = new MainCollector();
-            mc.cachedCollect();
-
-            runCollectTask();
-
         }
 
-        private void runCollectTask()
+        private MainCollector _mc;
+        public MainCollector mc
         {
-            try
+            get { return _mc; }
+            set
             {
-                collectTask = Task.Run(() =>
-                {
-                    mc.collect();
-                });
+                _mc = value;
+                _mc.setInvoker(collectStateHandler);
             }
-            catch (Exception ex)
+        }
+
+        private void collectStateHandler(CollectState state, string msg)
+        {
+            switch (state)
             {
-                System.Console.WriteLine(ex.StackTrace);
+                case CollectState.START:
+                    btnUpdate.Enabled = false;
+                    break;
+                case CollectState.END:
+                    updateView(null);
+                    break;
+                case CollectState.FAILED:
+                    btnUpdate.Enabled = true;
+                    break;
+                default:
+                    btnUpdate.Enabled = true;
+                    break;
             }
         }
 
         private static IntPtr SmallImageListHandle;
         private static IntPtr LargeImageListHandle;
-        private MainCollector mc;
         List<Item> itemList = new List<Item>();
         private EnvManager envmngr = EnvManager.getInstance();
-        private Task collectTask = null;
 
-        private async void MainForm_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             Trace.WriteLine("form loaded!");
 
@@ -80,17 +84,8 @@ namespace MutterLauncher
             NativeMethods.SendMessage(lsvFileList.Handle, NativeMethods.LVM_SETIMAGELIST,
                 new IntPtr(NativeMethods.LVSIL_NORMAL), LargeImageListHandle);
 
-
-
-            // show cached list
             updateView("");
-            btnUpdate.Enabled = false;
 
-            // show collected list
-            await collectTask;
-            updateView(null);
-            timerUpdate.Interval = Properties.Settings.Default.updateInterval * 60 * 1000;
-            timerUpdate.Enabled = true;
         }
 
         private void updateView(String searchStr)
@@ -255,14 +250,6 @@ namespace MutterLauncher
             }
         }
 
-        private void notifyIconMain_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
-            {
-                this.Visible = !this.Visible;
-            }
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -270,7 +257,7 @@ namespace MutterLauncher
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            this.Close();
         }
 
         private void MainForm_VisibleChanged(object sender, EventArgs e)
@@ -302,23 +289,15 @@ namespace MutterLauncher
 
         }
 
-        private async void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            await updateListItem();
+            updateListItem();
         }
-        private async Task updateListItem()
+        private void updateListItem()
         {
-            btnUpdate.Enabled = false;
-            runCollectTask();
-            await collectTask;
-            updateView(null);
-            btnUpdate.Enabled = true;
+            mc.setEvent();
         }
 
-        private async void timerUpdate_Tick(object sender, EventArgs e)
-        {
-            await updateListItem();
-        }
 
         private void lsvFileList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
