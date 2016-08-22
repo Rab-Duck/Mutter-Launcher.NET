@@ -66,6 +66,13 @@ namespace MutterLauncher
         {
             Trace.WriteLine("form loaded!");
 
+            // 22=SPI_GETKEYBOARDDELAY
+            int interval=0;
+            if(NativeMethods.SystemParametersInfo(22,  0, ref interval, 0))
+            {
+                timerInput.Interval = (interval+1) * 250 + 50; // /* 1unit = approximately 250,+50 = play */
+            }
+
             // initial position
             int MainWinHeight = Properties.Settings.Default.MainWinHeight;
             if(MainWinHeight > 0)
@@ -197,11 +204,8 @@ namespace MutterLauncher
 
         private void cmbbxSearcText_TextUpdate(object sender, EventArgs e)
         {
-            if (mc != null)
-            {
-                // itemList = mc.grep(cmbbxSearcText.Text);
-                putFileListView(mc.grep(cmbbxSearcText.Text));
-            }
+            timerInput.Enabled = false;
+            timerInput.Enabled = true;
 
         }
 
@@ -327,6 +331,16 @@ namespace MutterLauncher
                 txtViewPath.Text = "";
             }
 
+        }
+
+        private void timerInput_Tick(object sender, EventArgs e)
+        {
+            timerInput.Enabled = false;
+            if (mc != null)
+            {
+                // itemList = mc.grep(cmbbxSearcText.Text);
+                putFileListView(mc.grep(cmbbxSearcText.Text));
+            }
         }
     }
   

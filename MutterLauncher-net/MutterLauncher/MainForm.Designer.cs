@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lsvFileList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -38,6 +39,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.txtViewPath = new System.Windows.Forms.TextBox();
+            this.timerInput = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lsvFileList
@@ -138,6 +140,11 @@
             this.txtViewPath.Size = new System.Drawing.Size(295, 19);
             this.txtViewPath.TabIndex = 2;
             // 
+            // timerInput
+            // 
+            this.timerInput.Interval = 300;
+            this.timerInput.Tick += new System.EventHandler(this.timerInput_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -178,6 +185,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.TextBox txtViewPath;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Timer timerInput;
     }
 }
 

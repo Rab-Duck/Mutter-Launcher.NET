@@ -67,6 +67,9 @@ namespace MutterLauncher
         public static extern void SHParseDisplayName([MarshalAs(UnmanagedType.LPWStr)] string name, IntPtr bindingContext, [Out()] out IntPtr pidl, uint sfgaoIn, [Out()] out uint psfgaoOut);
         [DllImport("user32.dll")]
         public static extern int GetKeyboardState(byte[] lpKeyState);
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SystemParametersInfo(uint uiAction, uint uiParam, ref int pvParam, uint fWinIni);
         public NativeMethods()
 		{
 		}
