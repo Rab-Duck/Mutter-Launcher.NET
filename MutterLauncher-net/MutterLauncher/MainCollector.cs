@@ -11,7 +11,9 @@ namespace MutterLauncher
 {
     public enum CollectState
     {
+        IDLE = 0,
         START = 10,
+        RUNNING = 15,
         END = 20,
         FAILED = -1,
     }
@@ -31,8 +33,10 @@ namespace MutterLauncher
         private AutoResetEvent autoEvent = new AutoResetEvent(true);
 
         public delegate void MultiInvoker(CollectState type, string msg);
-        private MultiInvoker multiInvoker;
+        private volatile MultiInvoker multiInvoker;
         private Form frmCtrl;
+        private volatile CollectState _state = CollectState.IDLE;
+        public CollectState state { get { return _state; } set { _state = value; } }
        
         public MainCollector(Form frmCtrl)
         {
@@ -53,12 +57,15 @@ namespace MutterLauncher
                     autoEvent.WaitOne();
                     try
                     {
+                        state = CollectState.RUNNING;
                         frmCtrl.Invoke(multiInvoker, new object[] { CollectState.START, "START" });
                         collect();
+                        state = CollectState.END;
                         frmCtrl.Invoke(multiInvoker, new object[] { CollectState.END, "END" });
                     }
                     catch (Exception ex)
                     {
+                        state = CollectState.FAILED;
                         frmCtrl.Invoke(multiInvoker, new object[] { CollectState.FAILED,  ex.Message });
                         Trace.WriteLine(ex.Message + "\n" + ex.StackTrace);
                     }
@@ -76,6 +83,11 @@ namespace MutterLauncher
         public void setInvoker(MultiInvoker invoker)
         {
             multiInvoker += invoker;
+        }
+
+        public void removeInvoker(MultiInvoker invoker)
+        {
+            multiInvoker -= invoker;
         }
 
         public void collect()

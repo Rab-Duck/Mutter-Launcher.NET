@@ -14,9 +14,10 @@ namespace MutterLauncher
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public MainForm(MainCollector mc)
         {
             InitializeComponent();
+            this.mc = mc;
         }
 
         private MainCollector _mc;
@@ -27,11 +28,17 @@ namespace MutterLauncher
             {
                 _mc = value;
                 _mc.setInvoker(collectStateHandler);
+                if (_mc.state == CollectState.RUNNING)
+                {
+                    btnUpdate.Enabled = false;
+                }
+                
             }
         }
 
         private void collectStateHandler(CollectState state, string msg)
         {
+            Debug.WriteLine("called MainForm.collectStateHandler():" + state + ", " + msg);
             switch (state)
             {
                 case CollectState.START:
@@ -39,6 +46,7 @@ namespace MutterLauncher
                     break;
                 case CollectState.END:
                     updateView(null);
+                    btnUpdate.Enabled = true;
                     break;
                 case CollectState.FAILED:
                     btnUpdate.Enabled = true;
@@ -99,7 +107,6 @@ namespace MutterLauncher
                 // itemList.Clear();
                 // itemList.AddRange(mc.grep(searchStr));
                 putFileListView(mc.grep(searchStr));
-                btnUpdate.Enabled = true;
             }
 
         }
@@ -241,13 +248,16 @@ namespace MutterLauncher
             Trace.WriteLine("form Closing!");
 
             SavePos();
+            mc.removeInvoker(collectStateHandler);
 
             // reference: http://stackoverflow.com/questions/2021681/hide-form-instead-of-closing-when-close-button-clicked
-            if (e.CloseReason == CloseReason.UserClosing)
+            /*
+             * if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
                 this.Hide();
             }
+            */
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -284,7 +294,7 @@ namespace MutterLauncher
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Hide();
+                this.Close();
             }
 
         }

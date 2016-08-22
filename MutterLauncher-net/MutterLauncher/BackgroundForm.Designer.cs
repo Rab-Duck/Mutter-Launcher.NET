@@ -60,6 +60,8 @@
             this.ShowInTaskbar = false;
             this.Text = "BackgroundForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BackgroundForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BackgroundForm_FormClosed);
             this.Load += new System.EventHandler(this.BackgroundForm_Load);
             this.ResumeLayout(false);
 

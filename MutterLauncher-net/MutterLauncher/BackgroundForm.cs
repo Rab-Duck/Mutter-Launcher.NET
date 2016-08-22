@@ -13,27 +13,42 @@ namespace MutterLauncher
 {
     public partial class BackgroundForm : Form
     {
-        public Form frmMain { get; set; }
+        public MainForm frmMainForm { get; set; }
         private MainCollector mc;
+        private Hotkey hk;
 
-        public BackgroundForm(MainForm frmMain)
+        public BackgroundForm()
         {
             InitializeComponent();
-            this.frmMain = frmMain;
 
             // ToDo: 前バージョンの復元
             Properties.Settings.Default.Upgrade();
 
 
             mc = new MainCollector(this);
-            frmMain.mc = mc;
+            // InitMainForm(false);
             mc.setInvoker(collectStateHandler);
 
         }
 
-        private BackgroundForm()
+        private void InitMainForm(bool show)
         {
-            
+            if (frmMainForm == null || frmMainForm.IsDisposed)
+            {
+                frmMainForm = new MainForm(mc);
+            }
+
+            if (show)
+            {
+                frmMainForm.Show();
+                frmMainForm.Activate();
+            }
+        }
+
+        private void CloseMainForm()
+        {
+            frmMainForm.Close();
+            frmMainForm = null;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -47,6 +62,7 @@ namespace MutterLauncher
 
         private void collectStateHandler(CollectState state, string msg)
         {
+            Debug.WriteLine("called BackgroundForm.collectStateHandler():" + state + ", " + msg);
             switch (state)
             {
                 case CollectState.START:
@@ -72,14 +88,13 @@ namespace MutterLauncher
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                if (frmMain.Visible)
+                if (frmMainForm != null &&  frmMainForm.Visible)
                 {
-                    frmMain.Close();
+                    CloseMainForm();
                 }
                 else
                 {
-                    frmMain.Show();
-                    frmMain.Activate();
+                    InitMainForm(true);
                 }
             }
 
@@ -92,6 +107,41 @@ namespace MutterLauncher
             timerUpdate.Interval = Properties.Settings.Default.updateInterval * 60 * 1000;
             timerUpdate.Enabled = true;
 
+            hk = new Hotkey();
+            hk.KeyCode = (Keys)Properties.Settings.Default.HotKeyCode;
+            hk.Windows = Properties.Settings.Default.HotKeyWin;
+            hk.Alt = Properties.Settings.Default.HotKeyAlt;
+            hk.Control = Properties.Settings.Default.HotKeyCtrl;
+            hk.Shift = Properties.Settings.Default.HotKeyShift;
+
+            hk.Pressed += (objSender, ea) => { this.InitMainForm(true); };
+
+            if (!hk.GetCanRegister(this))
+            {
+                MessageBox.Show("Can't register Hot-Key", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                hk.Register(this);
+            }
+
+        }
+
+        private void BackgroundForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (hk.Registered)
+            {
+                hk.Unregister();
+            }
+            if (frmMainForm != null && !frmMainForm.IsDisposed)
+            {
+                CloseMainForm();
+            }
+        }
+
+        private void BackgroundForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mc.removeInvoker(collectStateHandler);
         }
     }
 }
