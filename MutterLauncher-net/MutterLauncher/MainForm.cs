@@ -14,43 +14,55 @@ namespace MutterLauncher
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public MainForm(MainCollector mc)
         {
             InitializeComponent();
-
-            // ToDo: 前バージョンの復元
-            Properties.Settings.Default.Upgrade();
-
-            mc = new MainCollector();
-            mc.cachedCollect();
-
-            runCollectTask();
-
+            this.mc = mc;
         }
 
-        private void runCollectTask()
+        private MainCollector _mc;
+        public MainCollector mc
         {
-            try
+            get { return _mc; }
+            set
             {
-                collectTask = Task.Run(() =>
+                _mc = value;
+                _mc.setInvoker(collectStateHandler);
+                if (_mc.state == CollectState.RUNNING)
                 {
-                    mc.collect();
-                });
+                    btnUpdate.Enabled = false;
+                }
+                
             }
-            catch (Exception ex)
+        }
+
+        private void collectStateHandler(CollectState state, string msg)
+        {
+            Debug.WriteLine("called MainForm.collectStateHandler():" + state + ", " + msg);
+            switch (state)
             {
-                System.Console.WriteLine(ex.StackTrace);
+                case CollectState.START:
+                    btnUpdate.Enabled = false;
+                    break;
+                case CollectState.END:
+                    updateView(null);
+                    btnUpdate.Enabled = true;
+                    break;
+                case CollectState.FAILED:
+                    btnUpdate.Enabled = true;
+                    break;
+                default:
+                    btnUpdate.Enabled = true;
+                    break;
             }
         }
 
         private static IntPtr SmallImageListHandle;
         private static IntPtr LargeImageListHandle;
-        private MainCollector mc;
         List<Item> itemList = new List<Item>();
         private EnvManager envmngr = EnvManager.getInstance();
-        private Task collectTask = null;
 
-        private async void MainForm_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             Trace.WriteLine("form loaded!");
 
@@ -80,17 +92,8 @@ namespace MutterLauncher
             NativeMethods.SendMessage(lsvFileList.Handle, NativeMethods.LVM_SETIMAGELIST,
                 new IntPtr(NativeMethods.LVSIL_NORMAL), LargeImageListHandle);
 
-
-
-            // show cached list
             updateView("");
-            btnUpdate.Enabled = false;
 
-            // show collected list
-            await collectTask;
-            updateView(null);
-            timerUpdate.Interval = Properties.Settings.Default.updateInterval * 60 * 1000;
-            timerUpdate.Enabled = true;
         }
 
         private void updateView(String searchStr)
@@ -104,7 +107,6 @@ namespace MutterLauncher
                 // itemList.Clear();
                 // itemList.AddRange(mc.grep(searchStr));
                 putFileListView(mc.grep(searchStr));
-                btnUpdate.Enabled = true;
             }
 
         }
@@ -246,21 +248,16 @@ namespace MutterLauncher
             Trace.WriteLine("form Closing!");
 
             SavePos();
+            mc.removeInvoker(collectStateHandler);
 
             // reference: http://stackoverflow.com/questions/2021681/hide-form-instead-of-closing-when-close-button-clicked
-            if (e.CloseReason == CloseReason.UserClosing)
+            /*
+             * if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
                 this.Hide();
             }
-        }
-
-        private void notifyIconMain_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
-            {
-                this.Visible = !this.Visible;
-            }
+            */
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -270,7 +267,7 @@ namespace MutterLauncher
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            this.Close();
         }
 
         private void MainForm_VisibleChanged(object sender, EventArgs e)
@@ -297,28 +294,20 @@ namespace MutterLauncher
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Hide();
+                this.Close();
             }
 
         }
 
-        private async void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            await updateListItem();
+            updateListItem();
         }
-        private async Task updateListItem()
+        private void updateListItem()
         {
-            btnUpdate.Enabled = false;
-            runCollectTask();
-            await collectTask;
-            updateView(null);
-            btnUpdate.Enabled = true;
+            mc.setEvent();
         }
 
-        private async void timerUpdate_Tick(object sender, EventArgs e)
-        {
-            await updateListItem();
-        }
 
         private void lsvFileList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {

@@ -121,7 +121,7 @@ namespace MutterLauncher
                     NativeMethods.SHGFI_SYSICONINDEX | NativeMethods.SHGFI_OVERLAYINDEX);
                 if (shFileInfo.iIcon == -1)
                 {
-                    iconIndex = 1;
+                    iconIndex = 1; // for dummy
                 }
                 else
                 {

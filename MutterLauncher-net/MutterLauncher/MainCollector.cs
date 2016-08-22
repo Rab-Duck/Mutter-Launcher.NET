@@ -1,12 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MutterLauncher
 {
-    class MainCollector
+    public enum CollectState
+    {
+        IDLE = 0,
+        START = 10,
+        RUNNING = 15,
+        END = 20,
+        FAILED = -1,
+    }
+
+
+    public class MainCollector
     {
         private static Object syncStoreItem = new Object();
         private static Object syncStoreHistory = new Object();
@@ -16,8 +29,19 @@ namespace MutterLauncher
         private List<Item> historyItemList;
         private EnvManager envmngr = EnvManager.getInstance();
 
-        public MainCollector()
+        private Task taskCollect;
+        private AutoResetEvent autoEvent = new AutoResetEvent(true);
+
+        public delegate void MultiInvoker(CollectState type, string msg);
+        private volatile MultiInvoker multiInvoker;
+        private Form frmCtrl;
+        private volatile CollectState _state = CollectState.IDLE;
+        public CollectState state { get { return _state; } set { _state = value; } }
+       
+        public MainCollector(Form frmCtrl)
         {
+            this.frmCtrl = frmCtrl;
+            cachedCollect();
         }
 
         public void cachedCollect()
@@ -25,10 +49,49 @@ namespace MutterLauncher
             itemList = envmngr.getItemList();
         }
 
+        public void run()
+        {
+            taskCollect = Task.Run(() => {
+                while (true)
+                {
+                    autoEvent.WaitOne();
+                    try
+                    {
+                        state = CollectState.RUNNING;
+                        frmCtrl.Invoke(multiInvoker, new object[] { CollectState.START, "START" });
+                        collect();
+                        state = CollectState.END;
+                        frmCtrl.Invoke(multiInvoker, new object[] { CollectState.END, "END" });
+                    }
+                    catch (Exception ex)
+                    {
+                        state = CollectState.FAILED;
+                        frmCtrl.Invoke(multiInvoker, new object[] { CollectState.FAILED,  ex.Message });
+                        Trace.WriteLine(ex.Message + "\n" + ex.StackTrace);
+                    }
+                    autoEvent.Reset();
+                }
+            });
+    
+        }
+
+        public void setEvent()
+        {
+            autoEvent.Set();
+        }
+
+        public void setInvoker(MultiInvoker invoker)
+        {
+            multiInvoker += invoker;
+        }
+
+        public void removeInvoker(MultiInvoker invoker)
+        {
+            multiInvoker -= invoker;
+        }
+
         public void collect()
         {
-
-
             List<AppCollector> listApp = new List<AppCollector>();
             string[] collectors = { "MutterLauncher.SHFolderCollector", "MutterLauncher.PathFolderCollector"};
             foreach (string collector in collectors)
