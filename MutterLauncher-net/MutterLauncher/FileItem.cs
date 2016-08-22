@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -30,22 +31,23 @@ namespace MutterLauncher
 
         public bool execute(string option, Keys modifiers)
         {
-            if((modifiers & Keys.Shift) == Keys.Shift)
+            string curdir;
+
+            curdir = System.Environment.CurrentDirectory;
+            System.Environment.CurrentDirectory = Path.GetDirectoryName(path);
+
+            if ((modifiers & Keys.Shift) == Keys.Shift)
             {
-                if (System.Diagnostics.Process.Start(Path.GetDirectoryName(path), "/select,\"" + Path.GetFileName(path) + "\"" ) == null)
-                {
-                    return false;
-                }
-                return true;
+                System.Diagnostics.Process.Start("explorer", "/select,\"" + path + "\"");
             }
             else
             {
-                if(System.Diagnostics.Process.Start(path, option) == null)
-                {
-                    return false;
-                }
-                return true;
+                System.Diagnostics.Process.Start(path, option);
             }
+
+            System.Environment.CurrentDirectory = Path.GetDirectoryName(curdir);
+
+            return true;
         }
 
         public int getIconIndex()
@@ -85,7 +87,10 @@ namespace MutterLauncher
 
         public bool historyEquals(Item item)
         {
-            throw new NotImplementedException();
+            if (item.GetType() == typeof(FileItem)) {
+                return (item.getItemPath() == this.getItemPath());
+            }
+            return false;
         }
 
         public void setItemPath(string path)

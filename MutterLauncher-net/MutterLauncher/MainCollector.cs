@@ -26,7 +26,7 @@ namespace MutterLauncher
 
         private Object syncItem = new Object();
         private List<Item> itemList = new List<Item>();
-        private List<Item> historyItemList;
+        private List<Item> historyItemList = null;
         private EnvManager envmngr = EnvManager.getInstance();
 
         private Task taskCollect;
@@ -42,6 +42,7 @@ namespace MutterLauncher
         {
             this.frmCtrl = frmCtrl;
             cachedCollect();
+            historyItemList = envmngr.getExecHistory();
         }
 
         public void cachedCollect()
@@ -120,7 +121,7 @@ namespace MutterLauncher
                 }
                 envmngr.setItemList(itemList);
             }
-            historyItemList = null;
+            // historyItemList = null;
 
             listApp = null;
         }
@@ -129,13 +130,8 @@ namespace MutterLauncher
         public List<Item> getAllItemList()
         {
             List<Item> allItemList = new List<Item>();
-            if (historyItemList == null)
-            {
-                lock(syncStoreHistory) {
-                    // historyItemList = envmngr.getExecHistory();
-                }
-            }
-            // allItemList.AddRange(historyItemList);
+
+            allItemList.AddRange(historyItemList);
             lock (syncItem)
             {
                 allItemList.AddRange(itemList);
@@ -154,23 +150,22 @@ namespace MutterLauncher
 
             List<Item> grepList = new List<Item>();
 
-            if (historyItemList == null)
-            {
-                lock(syncStoreHistory) {
-                    // historyItemList = envmngr.getExecHistory();
-                }
-            }
-            // historyItemList.stream()
-            // .filter(item-> { return item.getItemName().toUpperCase(Locale.JAPANESE).contains(grepStr.toUpperCase(Locale.JAPANESE)); })
-            // .forEach(item-> { grepList.add(item); });
 
             IEnumerable<Item> grepQuery;
+
+            grepQuery =
+                from item in historyItemList
+                where item.getItemName().ToUpper().Contains(grepStr.ToUpper())
+                select item;
+            grepList.AddRange(grepQuery);
+
+
             lock (syncItem)
             {
                 grepQuery =
-                from item in itemList
-                where item.getItemName().ToUpper().Contains(grepStr.ToUpper())
-                select item;
+                    from item in itemList
+                    where item.getItemName().ToUpper().Contains(grepStr.ToUpper())
+                    select item;
             }
             
             grepList.AddRange(grepQuery);
@@ -179,42 +174,29 @@ namespace MutterLauncher
         }
 
 
-#if false
-    public boolean cachedCollect()
-        {
-            List<Item> cachedItemList = envmngr.getItemList();
-            if (cachedItemList == null)
-            {
-                return false;
-            }
-            itemList = cachedItemList;
-            return true;
-        }
-
-
         public void setExecHistory(Item execItem)
         {
-            final int historyMax = envmngr.getIntProperty("HistoryMax");
+            int historyMax = Properties.Settings.Default.HistoryMax;
 
-            Item historyItem = execItem.copy();
-            historyItem.setType(Item.TYPE_HISTORY);
-            historyItemList.add(0, historyItem);
 
-            int i = 0;
-            for (Iterator<Item> iterator = historyItemList.iterator(); iterator.hasNext(); i++)
+            for (int i = historyItemList.Count - 1; i >= 0; i--)
             {
-                Item itrItem = (Item)iterator.next();
-                if (i >= historyMax || (i != 0 && itrItem.historyEquals(execItem)))
+                if (historyItemList.ElementAt(i).historyEquals(execItem))
                 {
-                    iterator.remove();
-                    i--;
+                    historyItemList.RemoveAt(i);
                 }
             }
 
-            synchronized(syncObj) {
-                envmngr.setExecHistory(historyItemList);
+            Item historyItem = execItem.cloneItem();
+            historyItem.setType(ItemType.TYPE_HISTORY);
+            historyItemList.Insert(0, historyItem);
+
+            if (historyItemList.Count > historyMax)
+            {
+                historyItemList.RemoveRange(historyMax, historyItemList.Count - historyMax);
             }
 
-#endif
+            envmngr.setExecHistory(historyItemList);
+        }
     }
 }

@@ -93,9 +93,9 @@ namespace MutterLauncher.Properties {
         /// <summary>
         ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Icon mutter {
+        internal static System.Drawing.Icon MutterIco {
             get {
-                object obj = ResourceManager.GetObject("mutter", resourceCulture);
+                object obj = ResourceManager.GetObject("MutterIco", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -107,6 +107,16 @@ namespace MutterLauncher.Properties {
             get {
                 object obj = ResourceManager.GetObject("Refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Icon RefreshIco {
+            get {
+                object obj = ResourceManager.GetObject("RefreshIco", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

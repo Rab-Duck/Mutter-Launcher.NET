@@ -67,9 +67,11 @@ namespace MutterLauncher
             {
                 case CollectState.START:
                     timerUpdate.Enabled = false;
+                    notifyIconMain.Icon = Properties.Resources.RefreshIco;
                     break;
                 case CollectState.END:
                     timerUpdate.Enabled = true;
+                    notifyIconMain.Icon = Properties.Resources.MutterIco;
                     break;
                 case CollectState.FAILED:
                     break;

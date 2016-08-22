@@ -154,5 +154,17 @@ namespace MutterLauncher.Properties {
                 this["HotKeyCode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int HistoryMax {
+            get {
+                return ((int)(this["HistoryMax"]));
+            }
+            set {
+                this["HistoryMax"] = value;
+            }
+        }
     }
 }

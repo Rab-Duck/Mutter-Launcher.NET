@@ -181,11 +181,16 @@ namespace MutterLauncher
                         }
                     }
 
-                    item.execute("", modifiers);
+                    if(item.execute("", modifiers))
+                    {
+                        mc.setExecHistory(item);
+                        this.Close();
+                    }
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Trace.WriteLine(e.Message + "\n" + e.StackTrace);
                 }
             }
         }

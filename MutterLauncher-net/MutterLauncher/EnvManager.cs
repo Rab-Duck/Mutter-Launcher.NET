@@ -13,10 +13,11 @@ namespace MutterLauncher
 {
     class EnvManager
     {
-        private string historyFilename = "HistoryList.ser";
+        private string historyFilename = "HistoryList.bin";
         private string itemListFilename = "ItemList.bin";
         private string envDir;
         private Object lockItemList = new Object();
+        private Object lockHistoryList = new Object();
 
         public static EnvManager envmngr;
         public static EnvManager getInstance()
@@ -39,59 +40,96 @@ namespace MutterLauncher
         {
             lock (lockItemList)
             {
-                IFormatter formatter = new BinaryFormatter();
-                Stream stream=null;
-                try
-                {
-                    stream = new FileStream(itemListFilename, FileMode.Create, FileAccess.Write, FileShare.None);
-                    formatter.Serialize(stream, itemList);
-                }
-                catch (Exception e)
-                {
-                    Debug.WriteLine(e.StackTrace);
-                    throw e;
-                }
-                finally
-                {
-                    if(stream != null)
-                    {
-                        stream.Close();
-                    }
-                }
+                SaveList(itemList, itemListFilename);
             }
         }
+
         public List<Item> getItemList()
+        {
+            lock (lockItemList)
+            {
+                return LoadList(itemListFilename);
+            }
+
+        }
+
+        public void setExecHistory(List<Item> itemList)
+        {
+            lock (lockHistoryList)
+            {
+                SaveList(itemList, historyFilename);
+            }
+        }
+
+        public List<Item> getExecHistory()
+        {
+            lock (lockHistoryList)
+            {
+                return LoadList(historyFilename);
+            }
+        }
+
+        private void SaveList(List<Item> itemList, string fname)
         {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = null;
-            List<Item> itemList = new List<Item>();
-            lock (lockItemList)
+            try
             {
-                try
+                stream = new FileStream(fname, FileMode.Create, FileAccess.Write, FileShare.None);
+                formatter.Serialize(stream, itemList);
+            }
+            catch (Exception e)
+            {
+                Trace.WriteLine(e.Message + "\n" + e.StackTrace);
+                throw e;
+            }
+            finally
+            {
+                if (stream != null)
                 {
-                    stream = new FileStream(itemListFilename, FileMode.Open, FileAccess.Read, FileShare.Read);
-                    itemList = (List<Item>)formatter.Deserialize(stream);
-                }
-                catch (FileNotFoundException fnfex)
-                {
-
-                }
-                catch (Exception e)
-                {
-                    Debug.WriteLine(e.StackTrace);
-                    throw e;
-                }
-                finally
-                {
-                    if (stream != null)
-                    {
-                        stream.Close();
-                    }
+                    stream.Close();
                 }
             }
+        }
 
+
+        private List<Item> LoadList(string fname)
+        {
+            List<Item> itemList = new List<Item>();
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = null;
+            try
+            {
+                stream = new FileStream(fname, FileMode.Open, FileAccess.Read, FileShare.Read);
+                itemList = (List<Item>)formatter.Deserialize(stream);
+            }
+            catch (FileNotFoundException)
+            {
+
+            }
+            catch (SerializationException)
+            {
+                // the file may be broken...
+                stream.Close();
+                stream = null;
+                File.Delete(fname);
+                itemList = new List<Item>();
+            }
+            catch (Exception e)
+            {
+                Trace.WriteLine(e.Message + "\n" + e.StackTrace);
+                throw e;
+            }
+            finally
+            {
+                if (stream != null)
+                {
+                    stream.Close();
+                }
+            }
             return itemList;
         }
+
 
     }
 }
