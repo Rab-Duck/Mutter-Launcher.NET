@@ -36,16 +36,21 @@ namespace MutterLauncher
             curdir = System.Environment.CurrentDirectory;
             System.Environment.CurrentDirectory = Path.GetDirectoryName(path);
 
-            if ((modifiers & Keys.Shift) == Keys.Shift)
+            try
             {
-                System.Diagnostics.Process.Start("explorer", "/select,\"" + path + "\"");
+                if ((modifiers & Keys.Shift) == Keys.Shift)
+                {
+                    System.Diagnostics.Process.Start("explorer", "/select,\"" + path + "\"");
+                }
+                else
+                {
+                    System.Diagnostics.Process.Start(path, option);
+                }
             }
-            else
+            finally
             {
-                System.Diagnostics.Process.Start(path, option);
+                System.Environment.CurrentDirectory = Path.GetDirectoryName(curdir);
             }
-
-            System.Environment.CurrentDirectory = Path.GetDirectoryName(curdir);
 
             return true;
         }

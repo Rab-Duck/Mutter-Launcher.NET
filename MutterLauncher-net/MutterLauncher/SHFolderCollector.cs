@@ -16,10 +16,10 @@ namespace MutterLauncher
         public SHFolderCollector()
         {
             Environment.SpecialFolder[] sfs = {
-                Environment.SpecialFolder.CommonStartMenu,
-                Environment.SpecialFolder.StartMenu,
                 Environment.SpecialFolder.CommonDesktopDirectory,
                 Environment.SpecialFolder.Desktop,
+                Environment.SpecialFolder.CommonStartMenu,
+                Environment.SpecialFolder.StartMenu,
                 Environment.SpecialFolder.Favorites,
                 // Environment.SpecialFolder.Recent,
             };

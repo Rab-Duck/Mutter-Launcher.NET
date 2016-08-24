@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -155,7 +156,7 @@ namespace MutterLauncher
 
             grepQuery =
                 from item in historyItemList
-                where item.getItemName().ToUpper().Contains(grepStr.ToUpper())
+                where item.getItemName().ToUpper(CultureInfo.CurrentUICulture).Contains(grepStr.ToUpper(CultureInfo.CurrentUICulture))
                 select item;
             grepList.AddRange(grepQuery);
 
@@ -164,7 +165,7 @@ namespace MutterLauncher
             {
                 grepQuery =
                     from item in itemList
-                    where item.getItemName().ToUpper().Contains(grepStr.ToUpper())
+                    where item.getItemName().ToUpper(CultureInfo.CurrentUICulture).Contains(grepStr.ToUpper(CultureInfo.CurrentUICulture))
                     select item;
             }
             
