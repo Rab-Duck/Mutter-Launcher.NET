@@ -140,12 +140,17 @@ namespace MutterLauncher
                 lvi.ImageIndex = iconIndex;
                 
                 lsvFileList.Items.Add(lvi);
+                /*
+                 * 
+                // for overlaing shotcut arrow icon 
                 LVITEM lvitem = new LVITEM();
                 lvitem.stateMask = NativeMethods.LVIS_OVERLAYMASK;
                 // 最上位8ビットの値を、8-11ビット目に格納、それ以外のビットは 0 にする
                 lvitem.state = ((item.getIconIndex() >> 16) & 0x0F00);
-                // NativeMethods.SendMessage(lsvFileList.Handle,
-                    // NativeMethods.LVM_SETITEMSTATE, lvi.Index, ref lvitem);
+                NativeMethods.SendMessage(lsvFileList.Handle,
+                    NativeMethods.LVM_SETITEMSTATE, lvi.Index, ref lvitem);
+                 * 
+                 */
             }
             lsvFileList.EndUpdate();
             txtViewPath.Text = "";
@@ -267,7 +272,7 @@ namespace MutterLauncher
                 this.Hide();
             }
             */
-        }
+            }
 
         private void btnExit_Click(object sender, EventArgs e)
         {

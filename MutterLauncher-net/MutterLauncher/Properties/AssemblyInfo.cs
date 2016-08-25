@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("MutterLauncher")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Mutter Launcher .NET")]
+[assembly: AssemblyDescription("Application Launcher")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("RabDuck")]
-[assembly: AssemblyProduct("MutterLauncher")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCompany("-")]
+[assembly: AssemblyProduct("Mutter Launcher .NET")]
+[assembly: AssemblyCopyright("Copyright (C) 2016, Rab-Duck")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

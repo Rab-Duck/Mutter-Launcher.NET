@@ -74,7 +74,7 @@ namespace MutterLauncher
 
         public void collect()
         {
-            items = new List<Item>();
+            items.Clear();
 
 
             // reference: http://www.atmarkit.co.jp/fdotnet/dotnettips/053allfiles/allfiles.html

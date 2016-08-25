@@ -95,7 +95,7 @@ namespace MutterLauncher
         public void collect()
         {
             List<AppCollector> listApp = new List<AppCollector>();
-            string[] collectors = { "MutterLauncher.SHFolderCollector", "MutterLauncher.PathFolderCollector"};
+            string[] collectors = { "MutterLauncher.SHFolderCollector", "MutterLauncher.PathFolderCollector", "MutterLauncher.ControlPanelCollector"};
             foreach (string collector in collectors)
             {
                 listApp.Add((AppCollector)Activator.CreateInstance(Type.GetType(collector)));

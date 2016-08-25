@@ -10,6 +10,12 @@ using System.Windows.Forms;
 
 namespace MutterLauncher
 {
+    public enum FileType
+    {
+        NORMAL = 1,
+        CLSID = 2,
+    }
+
     [Serializable]
     class FileItem : Item
     {
@@ -17,11 +23,20 @@ namespace MutterLauncher
         private string path;
         private string name;
         [NonSerialized] private int iconIndex = -1;
-        private ItemType type;
+        private ItemType itemType;
+        private FileType fileType;
 
         public FileItem(string fullPath)
         {
+            fileType = FileType.NORMAL;
             setItemPath(fullPath);
+        }
+
+        public FileItem(string clsidpath, string name)
+        {
+            fileType = FileType.CLSID;
+            this.name = name;
+            this.path = clsidpath;
         }
 
         public Item cloneItem()
@@ -31,10 +46,12 @@ namespace MutterLauncher
 
         public bool execute(string option, Keys modifiers)
         {
-            string curdir;
+            string curdir = System.Environment.CurrentDirectory;
 
-            curdir = System.Environment.CurrentDirectory;
-            System.Environment.CurrentDirectory = Path.GetDirectoryName(path);
+            if (fileType == FileType.NORMAL)
+            {
+                System.Environment.CurrentDirectory = Path.GetDirectoryName(path);
+            }
 
             try
             {
@@ -49,7 +66,10 @@ namespace MutterLauncher
             }
             finally
             {
-                System.Environment.CurrentDirectory = Path.GetDirectoryName(curdir);
+                if (fileType == FileType.NORMAL)
+                {
+                    System.Environment.CurrentDirectory = Path.GetDirectoryName(curdir);
+                }
             }
 
             return true;
@@ -87,7 +107,7 @@ namespace MutterLauncher
 
         public ItemType getType()
         {
-            return type;
+            return itemType;
         }
 
         public bool historyEquals(Item item)
@@ -100,7 +120,7 @@ namespace MutterLauncher
 
         public void setItemPath(string path)
         {
-            type = ItemType.TYPE_NORMAL;
+            itemType = ItemType.TYPE_NORMAL;
             this.path = path;
             if (bIconCached)
             {
@@ -110,7 +130,7 @@ namespace MutterLauncher
 
         public void setType(ItemType type)
         {
-            this.type = type;
+            this.itemType = type;
         }
 
         public override string ToString()
@@ -126,9 +146,26 @@ namespace MutterLauncher
                 SHFILEINFO shFileInfo = new SHFILEINFO();
                 shFileInfo.iIcon = -1;
                 shFileInfo.hIcon = IntPtr.Zero;
-                NativeMethods.SHGetFileInfo(path, 0, out shFileInfo,
-                    (uint)Marshal.SizeOf(shFileInfo), NativeMethods.SHGFI_ICON |
-                    NativeMethods.SHGFI_SYSICONINDEX | NativeMethods.SHGFI_OVERLAYINDEX);
+                if (fileType == FileType.NORMAL)
+                {
+                    NativeMethods.SHGetFileInfo(path, 0, out shFileInfo,
+                        (uint)Marshal.SizeOf(shFileInfo), 
+                        NativeMethods.SHGFI_ICON | NativeMethods.SHGFI_SYSICONINDEX |
+                        NativeMethods.SHGFI_OVERLAYINDEX);
+
+                }
+                else if (fileType == FileType.CLSID)
+                {
+                    IntPtr pidl;
+                    uint sfgaoOut;
+                    NativeMethods.SHParseDisplayName(path, IntPtr.Zero, out pidl, 0, out sfgaoOut);
+                    NativeMethods.SHGetFileInfo(pidl, 0, out shFileInfo,
+                        (uint)Marshal.SizeOf(shFileInfo),
+                        NativeMethods.SHGFI_ICON | NativeMethods.SHGFI_SYSICONINDEX |
+                        NativeMethods.SHGFI_OVERLAYINDEX | NativeMethods.SHGFI_PIDL);
+
+                }
+
                 if (shFileInfo.iIcon == -1)
                 {
                     iconIndex = 1; // for dummy
