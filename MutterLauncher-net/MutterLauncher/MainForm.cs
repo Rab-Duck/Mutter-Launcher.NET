@@ -70,7 +70,7 @@ namespace MutterLauncher
             int interval=0;
             if(NativeMethods.SystemParametersInfo(22,  0, ref interval, 0))
             {
-                timerInput.Interval = (interval+1) * 250 + 50; // /* 1unit = approximately 250,+50 = play */
+                timerInput.Interval = (interval+1) * 250; // /* 1unit = approximately 250 */
             }
 
             // initial position

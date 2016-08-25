@@ -142,7 +142,7 @@
             // 
             // timerInput
             // 
-            this.timerInput.Interval = 300;
+            this.timerInput.Interval = 250;
             this.timerInput.Tick += new System.EventHandler(this.timerInput_Tick);
             // 
             // MainForm

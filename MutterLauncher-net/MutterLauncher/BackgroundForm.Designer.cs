@@ -37,13 +37,13 @@
             // notifyIconMain
             // 
             this.notifyIconMain.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconMain.Icon")));
-            this.notifyIconMain.Text = "notifyIconMain";
+            this.notifyIconMain.Text = "Mutter Launcher";
             this.notifyIconMain.Visible = true;
             this.notifyIconMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconMain_MouseClick);
             // 
             // timerUpdate
             // 
-            this.timerUpdate.Interval = 1000;
+            this.timerUpdate.Interval = 300;
             this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
             // 
             // BackgroundForm

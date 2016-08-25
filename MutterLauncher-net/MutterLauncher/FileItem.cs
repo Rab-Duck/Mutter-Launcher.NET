@@ -13,7 +13,7 @@ namespace MutterLauncher
     [Serializable]
     class FileItem : Item
     {
-        private static bool bIconCached = true;
+        private static bool bIconCached = false; // false fixed for accurate icons
         private string path;
         private string name;
         [NonSerialized] private int iconIndex = -1;
@@ -120,7 +120,7 @@ namespace MutterLauncher
 
         private void setIconIndex()
         {
-            if (iconIndex == -1 || iconIndex == 0) // 0 は serialize 対策
+            if (bIconCached || iconIndex == -1 || iconIndex == 0) // 0 は serialize 対策
             {
                 // reference: http://acha-ya.cocolog-nifty.com/blog/2010/11/2-f06c.html
                 SHFILEINFO shFileInfo = new SHFILEINFO();
