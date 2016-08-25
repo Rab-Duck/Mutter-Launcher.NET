@@ -85,7 +85,7 @@ namespace MutterLauncher.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("240")]
         public int updateInterval {
             get {
                 return ((int)(this["updateInterval"]));

@@ -19,6 +19,7 @@ namespace MutterLauncher
             // Folder folder = shell.NameSpace("::{21EC2020-3AEA-1069-A2DD-08002B30309D}");
             // これは別スレッドで走るので、
             // reference: http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q13163101003
+            //            http://stackoverflow.com/questions/12075188/reference-a-windows-shell-interface-using-net-4-0
             var shellAppType = Type.GetTypeFromProgID("Shell.Application");
             if (shellAppType == null)
             {

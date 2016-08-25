@@ -18,7 +18,7 @@
       <Value Profile="(Default)">50</Value>
     </Setting>
     <Setting Name="updateInterval" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
+      <Value Profile="(Default)">240</Value>
     </Setting>
     <Setting Name="HotKeyShift" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

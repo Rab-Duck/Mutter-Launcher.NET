@@ -67,10 +67,12 @@ namespace MutterLauncher
             {
                 case CollectState.START:
                     timerUpdate.Enabled = false;
+                    miUpdate.Enabled = false;
                     notifyIconMain.Icon = Properties.Resources.RefreshIco;
                     break;
                 case CollectState.END:
                     timerUpdate.Enabled = true;
+                    miUpdate.Enabled = true;
                     notifyIconMain.Icon = Properties.Resources.MutterIco;
                     break;
                 case CollectState.FAILED:
@@ -99,7 +101,6 @@ namespace MutterLauncher
                     InitMainForm(true);
                 }
             }
-
         }
 
         private void BackgroundForm_Load(object sender, EventArgs e)
@@ -143,7 +144,39 @@ namespace MutterLauncher
 
         private void BackgroundForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Debug.WriteLine(this + " closing!");
             mc.removeInvoker(collectStateHandler);
+
+        }
+
+        private void miExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void miUpdate_Click(object sender, EventArgs e)
+        {
+            Trace.WriteLine("miUpdate Clicked!");
+            mc.setEvent();
+        }
+
+        private void cmsMain_Closing(object sender, ToolStripDropDownClosingEventArgs e)
+        {
+            Debug.WriteLine("cmsMain closing!");
+        }
+
+        private void cmsMain_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+        }
+
+        private void BackgroundForm_Deactivate(object sender, EventArgs e)
+        {
+            Debug.WriteLine(this + " de-activated!");
+        }
+
+        private void BackgroundForm_Activated(object sender, EventArgs e)
+        {
+            Debug.WriteLine(this + " activated!");
         }
     }
 }
