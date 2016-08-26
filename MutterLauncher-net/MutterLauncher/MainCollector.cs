@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace MutterLauncher
 {
@@ -156,7 +157,7 @@ namespace MutterLauncher
 
             grepQuery =
                 from item in historyItemList
-                where item.getItemName().ToUpper(CultureInfo.CurrentUICulture).Contains(grepStr.ToUpper(CultureInfo.CurrentUICulture))
+                where nameMatching(item, grepStr)
                 select item;
             grepList.AddRange(grepQuery);
 
@@ -165,13 +166,36 @@ namespace MutterLauncher
             {
                 grepQuery =
                     from item in itemList
-                    where item.getItemName().ToUpper(CultureInfo.CurrentUICulture).Contains(grepStr.ToUpper(CultureInfo.CurrentUICulture))
+                    where nameMatching(item, grepStr)
                     select item;
             }
             
             grepList.AddRange(grepQuery);
 
             return grepList;
+        }
+
+        private bool nameMatching(Item item, string grepStr)
+        {
+            int matchType=1;
+
+            if (item.getConvItemName() == null)
+            {
+                item.setConvItemName(Strings.StrConv(item.getItemName(), VbStrConv.Uppercase | VbStrConv.Wide));
+            }
+
+            grepStr = Strings.StrConv(grepStr, VbStrConv.Uppercase | VbStrConv.Wide);
+
+            switch (matchType)
+            {
+                case 1:
+                    return item.getConvItemName().Contains(grepStr);
+
+                default:
+                    break;
+            }
+
+            return false;
         }
 
 

@@ -25,6 +25,7 @@ namespace MutterLauncher
         [NonSerialized] private int iconIndex = -1;
         private ItemType itemType;
         private FileType fileType;
+        private string convName = null;
 
         public FileItem(string fullPath)
         {
@@ -179,6 +180,15 @@ namespace MutterLauncher
                     NativeMethods.DestroyIcon(shFileInfo.hIcon);
                 }
             }
+        }
+        public void setConvItemName(string convName)
+        {
+            this.convName = convName;
+        }
+
+        public string getConvItemName()
+        {
+            return convName;
         }
     }
 }

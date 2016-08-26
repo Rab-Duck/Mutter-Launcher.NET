@@ -19,6 +19,9 @@ namespace MutterLauncher
         Item cloneItem();
 
         string getItemName();
+        void setConvItemName(string convName);
+        string getConvItemName();
+
         void setItemPath(string path);
         string getItemPath();
 

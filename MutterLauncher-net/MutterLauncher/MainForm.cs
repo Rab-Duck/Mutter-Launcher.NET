@@ -72,6 +72,8 @@ namespace MutterLauncher
             {
                 timerInput.Interval = (interval+1) * 250; // /* 1unit = approximately 250 */
             }
+            timerInput.Enabled = true;
+            timerInput.Stop();
 
             // initial position
             int MainWinHeight = Properties.Settings.Default.MainWinHeight;
@@ -209,8 +211,10 @@ namespace MutterLauncher
 
         private void cmbbxSearcText_TextUpdate(object sender, EventArgs e)
         {
-            timerInput.Enabled = false;
-            timerInput.Enabled = true;
+            // timerInput.Enabled = false;
+            // timerInput.Enabled = true;
+            timerInput.Stop();
+            timerInput.Start();
 
         }
 
@@ -340,7 +344,9 @@ namespace MutterLauncher
 
         private void timerInput_Tick(object sender, EventArgs e)
         {
-            timerInput.Enabled = false;
+            // timerInput.Enabled = false;
+            timerInput.Stop();
+
             if (mc != null)
             {
                 // itemList = mc.grep(cmbbxSearcText.Text);
