@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using System.Text.RegularExpressions;
 
 namespace MutterLauncher
 {
@@ -142,22 +143,25 @@ namespace MutterLauncher
             return allItemList;
         }
 
-        public List<Item> grep(String grepStr)
+        public List<Item> grep(string grepStr)
         {
 
-            if (grepStr == null || grepStr == "")
+            List<Item> grepList = new List<Item>();
+
+
+            Regex regex = makeRegex(grepStr);
+
+            if (regex == null)
             {
                 return getAllItemList();
             }
-
-            List<Item> grepList = new List<Item>();
 
 
             IEnumerable<Item> grepQuery;
 
             grepQuery =
                 from item in historyItemList
-                where nameMatching(item, grepStr)
+                where nameMatching(item, regex)
                 select item;
             grepList.AddRange(grepQuery);
 
@@ -166,7 +170,7 @@ namespace MutterLauncher
             {
                 grepQuery =
                     from item in itemList
-                    where nameMatching(item, grepStr)
+                    where nameMatching(item, regex)
                     select item;
             }
             
@@ -175,27 +179,92 @@ namespace MutterLauncher
             return grepList;
         }
 
-        private bool nameMatching(Item item, string grepStr)
+        private Regex makeRegex(string grepStr)
         {
-            int matchType=1;
+            int matchingType = 0;
 
-            if (item.getConvItemName() == null)
+            if (String.IsNullOrEmpty(grepStr))
             {
-                item.setConvItemName(Strings.StrConv(item.getItemName(), VbStrConv.Uppercase | VbStrConv.Wide));
+                return null;
             }
 
-            grepStr = Strings.StrConv(grepStr, VbStrConv.Uppercase | VbStrConv.Wide);
-
-            switch (matchType)
+            switch (grepStr[0])
             {
-                case 1:
-                    return item.getConvItemName().Contains(grepStr);
-
+                case '^':
+                    matchingType = 1; // StartsWith
+                    break;
+                case '\\':
+                    matchingType = 3; // equal
+                    break;
+                case ' ':
+                    matchingType = 4; // skip-matching
+                    break;
                 default:
                     break;
             }
+            if (matchingType > 0)
+            {
+                grepStr = grepStr.Substring(1);
+            }
+            if (grepStr.EndsWith("$"))
+            {
+                if (matchingType == 1)
+                {
+                    matchingType = 3; // equal
+                }
+                else
+                {
+                    matchingType = 2; // EndWith
+                }
+                grepStr = grepStr.Substring(0, grepStr.Length - 1);
+            }
 
-            return false;
+            if (String.IsNullOrEmpty(grepStr))
+            {
+                return null;
+            }
+
+            grepStr = Strings.StrConv(grepStr, VbStrConv.Uppercase | VbStrConv.Wide | VbStrConv.Hiragana);
+
+            switch (matchingType)
+            {
+                case 0:
+                    grepStr = ".*" + grepStr + ".*";
+                    break;
+                case 1:
+                    grepStr = "^" + grepStr + ".*";
+                    break;
+                case 2:
+                    grepStr = ".*" + grepStr + "$";
+                    break;
+                case 3:
+                    grepStr = "^" + grepStr + "$";
+                    break;
+                case 4:
+                    string work = ".*";
+                    for (int i = 0; i < grepStr.Length; i++)
+                    {
+                        work = work + grepStr[i] + ".*";
+                    }
+                    grepStr = work;
+                    break;
+                default:
+                    return null;
+            }
+
+            return new Regex(grepStr);
+
+        }
+
+        private bool nameMatching(Item item, Regex regex)
+        {
+
+            if (item.getConvItemName() == null)
+            {
+                item.setConvItemName(Strings.StrConv(item.getItemName(), VbStrConv.Uppercase | VbStrConv.Wide | VbStrConv.Hiragana));
+            }
+
+            return regex.IsMatch(item.getConvItemName());
         }
 
 
