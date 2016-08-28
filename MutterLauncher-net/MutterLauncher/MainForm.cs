@@ -86,7 +86,6 @@ namespace MutterLauncher
 
             // prepare LSV
             // lsvFileList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
 
             // reference: http://acha-ya.cocolog-nifty.com/blog/2010/11/2-f06c.html
             SHFILEINFO shFileInfo = new SHFILEINFO();
@@ -118,6 +117,7 @@ namespace MutterLauncher
                 putFileListView(mc.grep(searchStr));
             }
 
+            lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
         }
 
         private void putFileListView(List<Item> itemList)

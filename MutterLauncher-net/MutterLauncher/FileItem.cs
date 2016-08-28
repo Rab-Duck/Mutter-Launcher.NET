@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -21,7 +22,7 @@ namespace MutterLauncher
     {
         private static bool bIconCached = false; // false fixed for accurate icons
         private string path;
-        private string name;
+        private string name=null;
         [NonSerialized] private int iconIndex = -1;
         private ItemType itemType;
         private FileType fileType;
@@ -37,7 +38,7 @@ namespace MutterLauncher
         {
             fileType = FileType.CLSID;
             this.name = name;
-            this.path = clsidpath;
+            setItemPath(clsidpath);
         }
 
         public Item cloneItem()
@@ -85,19 +86,6 @@ namespace MutterLauncher
 
         public string getItemName()
         {
-            if(name == null)
-            {
-                SHFILEINFO shFileInfo = new SHFILEINFO();
-                NativeMethods.SHGetFileInfo(path, 0, out shFileInfo, (uint)Marshal.SizeOf(shFileInfo), NativeMethods.SHGFI_DISPLAYNAME);
-                if(shFileInfo.szDisplayName != null && shFileInfo.szDisplayName.Length > 0)
-                {
-                    name = shFileInfo.szDisplayName;
-                }
-                else
-                {
-                    name = Path.GetFileName(path);
-                }
-            }
             return name;
         }
 
@@ -119,13 +107,38 @@ namespace MutterLauncher
             return false;
         }
 
-        public void setItemPath(string path)
+        private void setItemPath(string path)
         {
             itemType = ItemType.TYPE_NORMAL;
+
+            // set path
             this.path = path;
+
             if (bIconCached)
             {
+                // set icon
                 setIconIndex();
+            }
+
+            if (name == null)
+            {
+                // set name
+                SHFILEINFO shFileInfo = new SHFILEINFO();
+                NativeMethods.SHGetFileInfo(path, 0, out shFileInfo, (uint)Marshal.SizeOf(shFileInfo), NativeMethods.SHGFI_DISPLAYNAME);
+                if (shFileInfo.szDisplayName != null && shFileInfo.szDisplayName.Length > 0)
+                {
+                    name = shFileInfo.szDisplayName;
+                }
+                else
+                {
+                    name = Path.GetFileName(path);
+                }
+            }
+
+            if (convName == null)
+            {
+                // set convName
+                convName = Strings.StrConv(name, VbStrConv.Uppercase | VbStrConv.Wide | VbStrConv.Hiragana);
             }
         }
 
@@ -180,10 +193,6 @@ namespace MutterLauncher
                     NativeMethods.DestroyIcon(shFileInfo.hIcon);
                 }
             }
-        }
-        public void setConvItemName(string convName)
-        {
-            this.convName = convName;
         }
 
         public string getConvItemName()

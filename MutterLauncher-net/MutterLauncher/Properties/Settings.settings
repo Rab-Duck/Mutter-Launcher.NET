@@ -38,5 +38,17 @@
     <Setting Name="HistoryMax" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">50</Value>
     </Setting>
+    <Setting Name="ChrStartWith" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">94</Value>
+    </Setting>
+    <Setting Name="ChrEndWith" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">36</Value>
+    </Setting>
+    <Setting Name="ChrSkipMatch" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">32</Value>
+    </Setting>
+    <Setting Name="ChrEqual" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">92</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

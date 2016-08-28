@@ -166,5 +166,53 @@ namespace MutterLauncher.Properties {
                 this["HistoryMax"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("94")]
+        public int ChrStartWith {
+            get {
+                return ((int)(this["ChrStartWith"]));
+            }
+            set {
+                this["ChrStartWith"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("36")]
+        public int ChrEndWith {
+            get {
+                return ((int)(this["ChrEndWith"]));
+            }
+            set {
+                this["ChrEndWith"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("32")]
+        public int ChrSkipMatch {
+            get {
+                return ((int)(this["ChrSkipMatch"]));
+            }
+            set {
+                this["ChrSkipMatch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("92")]
+        public int ChrEqual {
+            get {
+                return ((int)(this["ChrEqual"]));
+            }
+            set {
+                this["ChrEqual"] = value;
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Mutter Launcher .NET")]
 [assembly: AssemblyDescription("Application Launcher")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("-")]
+[assembly: AssemblyCompany("Rab-Duck")]
 [assembly: AssemblyProduct("Mutter Launcher .NET")]
 [assembly: AssemblyCopyright("Copyright (C) 2016, Rab-Duck")]
 [assembly: AssemblyTrademark("")]

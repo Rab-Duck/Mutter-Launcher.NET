@@ -188,25 +188,23 @@ namespace MutterLauncher
                 return null;
             }
 
-            switch (grepStr[0])
-            {
-                case '^':
-                    matchingType = 1; // StartsWith
-                    break;
-                case '\\':
-                    matchingType = 3; // equal
-                    break;
-                case ' ':
-                    matchingType = 4; // skip-matching
-                    break;
-                default:
-                    break;
-            }
+            if (grepStr[0] == Properties.Settings.Default.ChrStartWith)
+                matchingType = 1; // StartsWith
+            else if (grepStr[0] == Properties.Settings.Default.ChrEqual)
+                matchingType = 3; // equal
+            else if (grepStr[0] == Properties.Settings.Default.ChrSkipMatch)
+                matchingType = 4; // skip-matching
+
             if (matchingType > 0)
             {
                 grepStr = grepStr.Substring(1);
+                if (String.IsNullOrEmpty(grepStr))
+                {
+                    return null;
+                }
             }
-            if (grepStr.EndsWith("$"))
+
+            if (grepStr[grepStr.Length-1] == Properties.Settings.Default.ChrEndWith)
             {
                 if (matchingType == 1)
                 {
@@ -258,11 +256,6 @@ namespace MutterLauncher
 
         private bool nameMatching(Item item, Regex regex)
         {
-
-            if (item.getConvItemName() == null)
-            {
-                item.setConvItemName(Strings.StrConv(item.getItemName(), VbStrConv.Uppercase | VbStrConv.Wide | VbStrConv.Hiragana));
-            }
 
             return regex.IsMatch(item.getConvItemName());
         }
