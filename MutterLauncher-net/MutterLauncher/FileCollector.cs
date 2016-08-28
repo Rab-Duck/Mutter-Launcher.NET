@@ -38,11 +38,12 @@ namespace MutterLauncher
             this.dirPath = dirPath;
             this.recursive = recursive;
 
-            if (pathExt == null || pathExt == "")
+            if (String.IsNullOrEmpty(pathExt))
             {
                 pathExt = Environment.GetEnvironmentVariable("PATHEXT");
                 if (pathExt == null)
                 {
+                    // default value from https://en.wikipedia.org/wiki/Environment_variable#Default_values
                     pathExt = ".com;.exe;.bat;.cmd;.vbs;.vbe;.js;.jse;.wsf;.wsh;.msc";
                 }
             }
@@ -52,7 +53,7 @@ namespace MutterLauncher
 
         private void setExtRegex(string pathExt)
         {
-            if (pathExt == null || pathExt == "")
+            if (String.IsNullOrEmpty(pathExt))
             {
                 throw new System.ArgumentException("pathExt is " + pathExt);
             }

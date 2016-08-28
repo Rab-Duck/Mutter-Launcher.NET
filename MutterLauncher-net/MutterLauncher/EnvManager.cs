@@ -15,6 +15,7 @@ namespace MutterLauncher
     {
         private string historyFilename = "HistoryList.bin";
         private string itemListFilename = "ItemList.bin";
+        private string anyFolderListFilename = "AnyFolderList.txt";
         private string envDir;
         private Object lockItemList = new Object();
         private Object lockHistoryList = new Object();
@@ -34,6 +35,7 @@ namespace MutterLauncher
             envDir = Path.GetFullPath(Application.LocalUserAppDataPath + "\\..");
             itemListFilename = envDir + "\\" + itemListFilename;
             historyFilename = envDir + "\\" + historyFilename;
+            anyFolderListFilename = envDir + "\\" + anyFolderListFilename;
         }
 
         public void setItemList(List<Item> itemList)
@@ -128,6 +130,25 @@ namespace MutterLauncher
                 }
             }
             return itemList;
+        }
+
+        public string[] getAnyFolderList()
+        {
+            try
+            {
+                string [] allLines = File.ReadAllLines(anyFolderListFilename);
+                return allLines;
+            }
+            catch (FileNotFoundException)
+            {
+                return new string[0];
+            }
+            catch (Exception e)
+            {
+                Trace.WriteLine("Cannot read " + anyFolderListFilename + ", " + e.Message + "\n" + e.StackTrace);
+                MessageBox.Show("Can't read " + anyFolderListFilename + "\nreason:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return new String[0];
         }
 
 
