@@ -50,5 +50,8 @@
     <Setting Name="ChrEqual" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">92</Value>
     </Setting>
+    <Setting Name="Upgraded" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

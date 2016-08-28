@@ -21,9 +21,13 @@ namespace MutterLauncher
         {
             InitializeComponent();
 
-            // ToDo: 前バージョンの復元
-            Properties.Settings.Default.Upgrade();
-
+            // 前バージョンの復元
+            if (!Properties.Settings.Default.Upgraded)
+            {
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.Upgraded = true;
+                Properties.Settings.Default.Save();
+            }
 
             mc = new MainCollector(this);
             // InitMainForm(false);
