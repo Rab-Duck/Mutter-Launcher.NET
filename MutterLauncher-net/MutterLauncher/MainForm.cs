@@ -45,7 +45,7 @@ namespace MutterLauncher
                     btnUpdate.Enabled = false;
                     break;
                 case CollectState.END:
-                    updateView(null);
+                    updateView(null, true);
                     btnUpdate.Enabled = true;
                     break;
                 case CollectState.FAILED:
@@ -100,21 +100,26 @@ namespace MutterLauncher
             NativeMethods.SendMessage(lsvFileList.Handle, NativeMethods.LVM_SETIMAGELIST,
                 new IntPtr(NativeMethods.LVSIL_NORMAL), LargeImageListHandle);
 
-            updateView("");
+            updateView("", true);
 
         }
 
-        private void updateView(String searchStr)
+        private string prevOption=null;
+        private void updateView(String searchStr, bool forced)
         {
+            int a;
             if (searchStr == null)
             {
                 searchStr = cmbbxSearcText.Text;
             }
             if (mc != null)
             {
-                // itemList.Clear();
-                // itemList.AddRange(mc.grep(searchStr));
-                putFileListView(mc.grep(searchStr));
+                SearchCmd sc = Util.analyzeSearchCmd(searchStr);
+                if (forced || prevOption==null || sc.strOption == null)
+                {
+                    putFileListView(mc.grep(searchStr));
+                }
+                prevOption = sc.strOption;
             }
 
             lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
@@ -195,7 +200,7 @@ namespace MutterLauncher
                         }
                     }
 
-                    if(item.execute("", modifiers))
+                    if(item.execute(cmbbxSearcText.Text, modifiers))
                     {
                         mc.setExecHistory(item);
                         this.Close();
@@ -349,8 +354,7 @@ namespace MutterLauncher
 
             if (mc != null)
             {
-                // itemList = mc.grep(cmbbxSearcText.Text);
-                putFileListView(mc.grep(cmbbxSearcText.Text));
+                updateView(null, false);
             }
         }
     }

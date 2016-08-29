@@ -28,6 +28,6 @@ namespace MutterLauncher
         bool historyEquals(Item item);
         int getIconIndex();
 
-        bool execute(string option, System.Windows.Forms.Keys modifiers);
+        bool execute(string strExec, System.Windows.Forms.Keys modifiers);
     }
 }

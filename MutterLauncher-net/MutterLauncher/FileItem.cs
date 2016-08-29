@@ -46,9 +46,10 @@ namespace MutterLauncher
             return (Item)MemberwiseClone();
         }
 
-        public bool execute(string option, Keys modifiers)
+        public bool execute(string strExec, Keys modifiers)
         {
             string curdir = System.Environment.CurrentDirectory;
+
 
             if (fileType == FileType.NORMAL)
             {
@@ -63,7 +64,8 @@ namespace MutterLauncher
                 }
                 else
                 {
-                    System.Diagnostics.Process.Start(path, option);
+                    SearchCmd sc = Util.analyzeSearchCmd(strExec);
+                    System.Diagnostics.Process.Start(path, sc.strOption);
                 }
             }
             finally

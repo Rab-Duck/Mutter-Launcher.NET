@@ -182,50 +182,16 @@ namespace MutterLauncher
 
         private Regex makeRegex(string grepStr)
         {
-            int matchingType = 0;
+            SearchCmd sc = Util.analyzeSearchCmd(grepStr);
 
-            if (String.IsNullOrEmpty(grepStr))
+            if (String.IsNullOrEmpty(sc.strSearch))
             {
                 return null;
             }
 
-            if (grepStr[0] == Properties.Settings.Default.ChrStartWith)
-                matchingType = 1; // StartsWith
-            else if (grepStr[0] == Properties.Settings.Default.ChrEqual)
-                matchingType = 3; // equal
-            else if (grepStr[0] == Properties.Settings.Default.ChrSkipMatch)
-                matchingType = 4; // skip-matching
+            grepStr = Strings.StrConv(sc.strSearch, VbStrConv.Uppercase | VbStrConv.Wide | VbStrConv.Hiragana);
 
-            if (matchingType > 0)
-            {
-                grepStr = grepStr.Substring(1);
-                if (String.IsNullOrEmpty(grepStr))
-                {
-                    return null;
-                }
-            }
-
-            if (grepStr[grepStr.Length-1] == Properties.Settings.Default.ChrEndWith)
-            {
-                if (matchingType == 1)
-                {
-                    matchingType = 3; // equal
-                }
-                else
-                {
-                    matchingType = 2; // EndWith
-                }
-                grepStr = grepStr.Substring(0, grepStr.Length - 1);
-            }
-
-            if (String.IsNullOrEmpty(grepStr))
-            {
-                return null;
-            }
-
-            grepStr = Strings.StrConv(grepStr, VbStrConv.Uppercase | VbStrConv.Wide | VbStrConv.Hiragana);
-
-            switch (matchingType)
+            switch (sc.matchingType)
             {
                 case 0:
                     grepStr = ".*" + grepStr + ".*";
