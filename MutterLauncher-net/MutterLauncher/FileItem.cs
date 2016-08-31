@@ -96,7 +96,7 @@ namespace MutterLauncher
             return path;
         }
 
-        public ItemType getType()
+        public ItemType getItemType()
         {
             return itemType;
         }
@@ -144,7 +144,7 @@ namespace MutterLauncher
             }
         }
 
-        public void setType(ItemType type)
+        public void setItemType(ItemType type)
         {
             this.itemType = type;
         }

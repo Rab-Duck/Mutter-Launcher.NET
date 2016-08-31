@@ -107,7 +107,6 @@ namespace MutterLauncher
         private string prevOption=null;
         private void updateView(String searchStr, bool forced)
         {
-            int a;
             if (searchStr == null)
             {
                 searchStr = cmbbxSearcText.Text;
@@ -164,6 +163,16 @@ namespace MutterLauncher
             if (lsvFileList.Items.Count > 0)
             {
                 lsvFileList.Items[0].Selected = true;
+                for (i = 0; i < lsvFileList.Items.Count; i++)
+                {
+                    Item item = (Item)lsvFileList.Items[i].Tag;
+                    if (item.getItemType() != ItemType.TYPE_FIX)
+                    {
+                        lsvFileList.Items[i].Selected = true;
+                        lsvFileList.FocusedItem = lsvFileList.Items[i];
+                        break;
+                    }
+                }
             }
         }
 
@@ -175,7 +184,6 @@ namespace MutterLauncher
         private void btnExec_Click(object sender, EventArgs e)
         {
             execSelectedItem();
-
         }
 
         private void execSelectedItem()

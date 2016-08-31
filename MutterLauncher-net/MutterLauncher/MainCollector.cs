@@ -30,6 +30,7 @@ namespace MutterLauncher
         private Object syncItem = new Object();
         private List<Item> itemList = new List<Item>();
         private List<Item> historyItemList = null;
+        private List<Item> userItemList = null;
         private EnvManager envmngr = EnvManager.getInstance();
 
         private Task taskCollect;
@@ -46,6 +47,7 @@ namespace MutterLauncher
             this.frmCtrl = frmCtrl;
             cachedCollect();
             historyItemList = envmngr.getExecHistory();
+            userItemList = envmngr.getUserItemList();
         }
 
         public void cachedCollect()
@@ -135,6 +137,11 @@ namespace MutterLauncher
         {
             List<Item> allItemList = new List<Item>();
 
+            allItemList.AddRange(
+                                from item in userItemList
+                                where item.getItemType() == ItemType.TYPE_FIX
+                                select item
+            );
             allItemList.AddRange(historyItemList);
             lock (syncItem)
             {
@@ -160,12 +167,18 @@ namespace MutterLauncher
 
             IEnumerable<Item> grepQuery;
 
+
+            grepQuery =
+                from item in userItemList
+                where item.getItemType() == ItemType.TYPE_FIX || nameMatching(item, regex)
+                select item;
+            grepList.AddRange(grepQuery);
+
             grepQuery =
                 from item in historyItemList
                 where nameMatching(item, regex)
                 select item;
             grepList.AddRange(grepQuery);
-
 
             lock (syncItem)
             {
@@ -174,7 +187,7 @@ namespace MutterLauncher
                     where nameMatching(item, regex)
                     select item;
             }
-            
+
             grepList.AddRange(grepQuery);
 
             return grepList;
@@ -232,6 +245,11 @@ namespace MutterLauncher
         {
             int historyMax = Properties.Settings.Default.HistoryMax;
 
+            if (execItem.GetType() == typeof(UserItem))
+            {
+                // UserItem は履歴に残さない
+                return;
+            }
 
             for (int i = historyItemList.Count - 1; i >= 0; i--)
             {
@@ -242,7 +260,7 @@ namespace MutterLauncher
             }
 
             Item historyItem = execItem.cloneItem();
-            historyItem.setType(ItemType.TYPE_HISTORY);
+            historyItem.setItemType(ItemType.TYPE_HISTORY);
             historyItemList.Insert(0, historyItem);
 
             if (historyItemList.Count > historyMax)

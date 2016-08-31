@@ -23,8 +23,8 @@ namespace MutterLauncher
 
         string getItemPath();
 
-        void setType(ItemType type);
-        ItemType getType();
+        void setItemType(ItemType type);
+        ItemType getItemType();
         bool historyEquals(Item item);
         int getIconIndex();
 
