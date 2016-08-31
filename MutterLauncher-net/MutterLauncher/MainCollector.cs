@@ -30,6 +30,7 @@ namespace MutterLauncher
         private Object syncItem = new Object();
         private List<Item> itemList = new List<Item>();
         private List<Item> historyItemList = null;
+        private List<Item> userItemList = null;
         private EnvManager envmngr = EnvManager.getInstance();
 
         private Task taskCollect;
@@ -46,6 +47,7 @@ namespace MutterLauncher
             this.frmCtrl = frmCtrl;
             cachedCollect();
             historyItemList = envmngr.getExecHistory();
+            userItemList = envmngr.getUserItemList();
         }
 
         public void cachedCollect()
@@ -135,6 +137,11 @@ namespace MutterLauncher
         {
             List<Item> allItemList = new List<Item>();
 
+            allItemList.AddRange(
+                                from item in userItemList
+                                where item.getItemType() == ItemType.TYPE_FIX
+                                select item
+            );
             allItemList.AddRange(historyItemList);
             lock (syncItem)
             {
@@ -160,12 +167,18 @@ namespace MutterLauncher
 
             IEnumerable<Item> grepQuery;
 
+
+            grepQuery =
+                from item in userItemList
+                where item.getItemType() == ItemType.TYPE_FIX || nameMatching(item, regex)
+                select item;
+            grepList.AddRange(grepQuery);
+
             grepQuery =
                 from item in historyItemList
                 where nameMatching(item, regex)
                 select item;
             grepList.AddRange(grepQuery);
-
 
             lock (syncItem)
             {
@@ -174,7 +187,7 @@ namespace MutterLauncher
                     where nameMatching(item, regex)
                     select item;
             }
-            
+
             grepList.AddRange(grepQuery);
 
             return grepList;
@@ -182,50 +195,16 @@ namespace MutterLauncher
 
         private Regex makeRegex(string grepStr)
         {
-            int matchingType = 0;
+            SearchCmd sc = Util.analyzeSearchCmd(grepStr);
 
-            if (String.IsNullOrEmpty(grepStr))
+            if (String.IsNullOrEmpty(sc.strSearch))
             {
                 return null;
             }
 
-            if (grepStr[0] == Properties.Settings.Default.ChrStartWith)
-                matchingType = 1; // StartsWith
-            else if (grepStr[0] == Properties.Settings.Default.ChrEqual)
-                matchingType = 3; // equal
-            else if (grepStr[0] == Properties.Settings.Default.ChrSkipMatch)
-                matchingType = 4; // skip-matching
+            grepStr = Strings.StrConv(sc.strSearch, VbStrConv.Uppercase | VbStrConv.Wide | VbStrConv.Hiragana);
 
-            if (matchingType > 0)
-            {
-                grepStr = grepStr.Substring(1);
-                if (String.IsNullOrEmpty(grepStr))
-                {
-                    return null;
-                }
-            }
-
-            if (grepStr[grepStr.Length-1] == Properties.Settings.Default.ChrEndWith)
-            {
-                if (matchingType == 1)
-                {
-                    matchingType = 3; // equal
-                }
-                else
-                {
-                    matchingType = 2; // EndWith
-                }
-                grepStr = grepStr.Substring(0, grepStr.Length - 1);
-            }
-
-            if (String.IsNullOrEmpty(grepStr))
-            {
-                return null;
-            }
-
-            grepStr = Strings.StrConv(grepStr, VbStrConv.Uppercase | VbStrConv.Wide | VbStrConv.Hiragana);
-
-            switch (matchingType)
+            switch (sc.matchingType)
             {
                 case 0:
                     grepStr = ".*" + grepStr + ".*";
@@ -266,6 +245,11 @@ namespace MutterLauncher
         {
             int historyMax = Properties.Settings.Default.HistoryMax;
 
+            if (execItem.GetType() == typeof(UserItem))
+            {
+                // UserItem は履歴に残さない
+                return;
+            }
 
             for (int i = historyItemList.Count - 1; i >= 0; i--)
             {
@@ -276,7 +260,7 @@ namespace MutterLauncher
             }
 
             Item historyItem = execItem.cloneItem();
-            historyItem.setType(ItemType.TYPE_HISTORY);
+            historyItem.setItemType(ItemType.TYPE_HISTORY);
             historyItemList.Insert(0, historyItem);
 
             if (historyItemList.Count > historyMax)

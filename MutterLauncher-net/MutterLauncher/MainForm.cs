@@ -45,7 +45,7 @@ namespace MutterLauncher
                     btnUpdate.Enabled = false;
                     break;
                 case CollectState.END:
-                    updateView(null);
+                    updateView(null, true);
                     btnUpdate.Enabled = true;
                     break;
                 case CollectState.FAILED:
@@ -100,11 +100,12 @@ namespace MutterLauncher
             NativeMethods.SendMessage(lsvFileList.Handle, NativeMethods.LVM_SETIMAGELIST,
                 new IntPtr(NativeMethods.LVSIL_NORMAL), LargeImageListHandle);
 
-            updateView("");
+            updateView("", true);
 
         }
 
-        private void updateView(String searchStr)
+        private string prevOption=null;
+        private void updateView(String searchStr, bool forced)
         {
             if (searchStr == null)
             {
@@ -112,9 +113,12 @@ namespace MutterLauncher
             }
             if (mc != null)
             {
-                // itemList.Clear();
-                // itemList.AddRange(mc.grep(searchStr));
-                putFileListView(mc.grep(searchStr));
+                SearchCmd sc = Util.analyzeSearchCmd(searchStr);
+                if (forced || prevOption==null || sc.strOption == null)
+                {
+                    putFileListView(mc.grep(searchStr));
+                }
+                prevOption = sc.strOption;
             }
 
             lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
@@ -159,6 +163,16 @@ namespace MutterLauncher
             if (lsvFileList.Items.Count > 0)
             {
                 lsvFileList.Items[0].Selected = true;
+                for (i = 0; i < lsvFileList.Items.Count; i++)
+                {
+                    Item item = (Item)lsvFileList.Items[i].Tag;
+                    if (item.getItemType() != ItemType.TYPE_FIX)
+                    {
+                        lsvFileList.Items[i].Selected = true;
+                        lsvFileList.FocusedItem = lsvFileList.Items[i];
+                        break;
+                    }
+                }
             }
         }
 
@@ -170,7 +184,6 @@ namespace MutterLauncher
         private void btnExec_Click(object sender, EventArgs e)
         {
             execSelectedItem();
-
         }
 
         private void execSelectedItem()
@@ -195,7 +208,7 @@ namespace MutterLauncher
                         }
                     }
 
-                    if(item.execute("", modifiers))
+                    if(item.execute(cmbbxSearcText.Text, modifiers))
                     {
                         mc.setExecHistory(item);
                         this.Close();
@@ -349,8 +362,7 @@ namespace MutterLauncher
 
             if (mc != null)
             {
-                // itemList = mc.grep(cmbbxSearcText.Text);
-                putFileListView(mc.grep(cmbbxSearcText.Text));
+                updateView(null, false);
             }
         }
     }

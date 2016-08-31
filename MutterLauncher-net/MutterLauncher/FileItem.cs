@@ -46,9 +46,10 @@ namespace MutterLauncher
             return (Item)MemberwiseClone();
         }
 
-        public bool execute(string option, Keys modifiers)
+        public bool execute(string strExec, Keys modifiers)
         {
             string curdir = System.Environment.CurrentDirectory;
+
 
             if (fileType == FileType.NORMAL)
             {
@@ -63,7 +64,8 @@ namespace MutterLauncher
                 }
                 else
                 {
-                    System.Diagnostics.Process.Start(path, option);
+                    SearchCmd sc = Util.analyzeSearchCmd(strExec);
+                    System.Diagnostics.Process.Start(path, sc.strOption);
                 }
             }
             finally
@@ -94,7 +96,7 @@ namespace MutterLauncher
             return path;
         }
 
-        public ItemType getType()
+        public ItemType getItemType()
         {
             return itemType;
         }
@@ -142,7 +144,7 @@ namespace MutterLauncher
             }
         }
 
-        public void setType(ItemType type)
+        public void setItemType(ItemType type)
         {
             this.itemType = type;
         }

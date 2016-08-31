@@ -40,6 +40,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.txtViewPath = new System.Windows.Forms.TextBox();
             this.timerInput = new System.Windows.Forms.Timer(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lsvFileList
@@ -84,6 +85,7 @@
             this.cmbbxSearcText.Name = "cmbbxSearcText";
             this.cmbbxSearcText.Size = new System.Drawing.Size(295, 20);
             this.cmbbxSearcText.TabIndex = 0;
+            this.toolTip.SetToolTip(this.cmbbxSearcText, "Search Text");
             this.cmbbxSearcText.TextUpdate += new System.EventHandler(this.cmbbxSearcText_TextUpdate);
             this.cmbbxSearcText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbbxSearcText_KeyDown);
             // 
@@ -106,6 +108,7 @@
             this.btnSetenv.Name = "btnSetenv";
             this.btnSetenv.Size = new System.Drawing.Size(34, 23);
             this.btnSetenv.TabIndex = 5;
+            this.toolTip.SetToolTip(this.btnSetenv, "Setting...");
             this.btnSetenv.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
@@ -116,6 +119,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(33, 23);
             this.btnUpdate.TabIndex = 6;
+            this.toolTip.SetToolTip(this.btnUpdate, "Update");
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -127,6 +131,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(34, 23);
             this.btnExit.TabIndex = 7;
+            this.toolTip.SetToolTip(this.btnExit, "Exit(&E)");
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -139,6 +144,7 @@
             this.txtViewPath.ReadOnly = true;
             this.txtViewPath.Size = new System.Drawing.Size(295, 19);
             this.txtViewPath.TabIndex = 2;
+            this.toolTip.SetToolTip(this.txtViewPath, "Path");
             // 
             // timerInput
             // 
@@ -186,6 +192,7 @@
         private System.Windows.Forms.TextBox txtViewPath;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Timer timerInput;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

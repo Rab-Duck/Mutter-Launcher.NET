@@ -226,5 +226,17 @@ namespace MutterLauncher.Properties {
                 this["Upgraded"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SpaceIsOption {
+            get {
+                return ((bool)(this["SpaceIsOption"]));
+            }
+            set {
+                this["SpaceIsOption"] = value;
+            }
+        }
     }
 }
