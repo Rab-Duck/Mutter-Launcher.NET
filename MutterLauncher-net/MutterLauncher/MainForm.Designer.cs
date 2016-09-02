@@ -81,6 +81,10 @@
             this.cmbbxSearcText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbbxSearcText.FormattingEnabled = true;
+            this.cmbbxSearcText.Items.AddRange(new object[] {
+            "test",
+            "google",
+            "hoge"});
             this.cmbbxSearcText.Location = new System.Drawing.Point(4, 13);
             this.cmbbxSearcText.Name = "cmbbxSearcText";
             this.cmbbxSearcText.Size = new System.Drawing.Size(295, 20);
@@ -110,6 +114,7 @@
             this.btnSetenv.TabIndex = 5;
             this.toolTip.SetToolTip(this.btnSetenv, "Setting...");
             this.btnSetenv.UseVisualStyleBackColor = true;
+            this.btnSetenv.Click += new System.EventHandler(this.btnSetenv_Click);
             // 
             // btnUpdate
             // 
@@ -131,7 +136,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(34, 23);
             this.btnExit.TabIndex = 7;
-            this.toolTip.SetToolTip(this.btnExit, "Exit(&E)");
+            this.toolTip.SetToolTip(this.btnExit, "Exit");
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 

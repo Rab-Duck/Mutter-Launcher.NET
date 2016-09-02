@@ -82,6 +82,10 @@ namespace MutterLauncher
                 this.Size = new Size(Properties.Settings.Default.MainWinWidth, MainWinHeight);
                 this.Location = new Point(Properties.Settings.Default.MainWinPosX, Properties.Settings.Default.MainWinPosY);
             }
+            else
+            {
+                this.CenterToScreen();
+            }
 
 
             // prepare LSV
@@ -131,7 +135,7 @@ namespace MutterLauncher
             int i = 0;
             foreach (Item item in itemList)
             {
-                if (i++ >= Properties.Settings.Default.ListNumMax)
+                if (i++ >= Properties.Settings.Default.DisplayItemMax)
                 {
                     break;
                 }
@@ -245,10 +249,12 @@ namespace MutterLauncher
                 case Keys.PageUp:
                 case Keys.PageDown:
                     NativeMethods.SendMessage(lsvFileList.Handle, 0x0100, (IntPtr)e.KeyCode, IntPtr.Zero);
+                    e.Handled = true;
                     break;
 
                 case Keys.Enter:
                     execSelectedItem();
+                    e.Handled = true;
                     break;
                      
                 default:
@@ -262,6 +268,7 @@ namespace MutterLauncher
             {
                 case Keys.Enter:
                     execSelectedItem();
+                    e.Handled = true;
                     break;
 
                 default:
@@ -325,6 +332,7 @@ namespace MutterLauncher
         {
             if (e.KeyCode == Keys.Escape)
             {
+                e.Handled = true;
                 this.Close();
             }
 
@@ -364,6 +372,11 @@ namespace MutterLauncher
             {
                 updateView(null, false);
             }
+        }
+
+        private void btnSetenv_Click(object sender, EventArgs e)
+        {
+            SettingForm.ShowSettingForm();
         }
     }
   

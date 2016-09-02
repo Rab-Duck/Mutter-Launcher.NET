@@ -10,16 +10,18 @@ using System.Windows.Forms;
 namespace MutterLauncher
 {
     [Serializable]
-    class UserItem : Item
+    public class UserItem : Item
     {
         private string name;
         private string cmd;
-        private bool bCmdOption;
         private ItemType itemType;
-        private bool bUrlEncode;
-        private string encode;
         private string convName = null;
-        [NonSerialized] private int iconIndex = -1;
+        [NonSerialized]
+        private int iconIndex = -1;
+
+        public bool bCmdOption { get;  }
+        public bool bUrlEncode { get;  }
+        public string encoding { get;  }
 
         /*
          * 
@@ -28,7 +30,7 @@ namespace MutterLauncher
          * bFix: 
          * 
          */
-        public UserItem(string name, string cmd, bool bFix, bool bCmdOption, bool bUrlEncode, string encode)
+        public UserItem(string name, string cmd, bool bFix, bool bCmdOption, bool bUrlEncode, string encoding)
         {
             this.name = name;
             // set convName
@@ -45,7 +47,7 @@ namespace MutterLauncher
             }
             this.bCmdOption = bCmdOption;
             this.bUrlEncode = bUrlEncode;
-            this.encode = encode;
+            this.encoding = encoding;
         }
 
         public Item cloneItem()
@@ -103,7 +105,7 @@ namespace MutterLauncher
 
         private string urlEncode(string str)
         {
-            System.Text.Encoding enc = System.Text.Encoding.GetEncoding(encode);
+            System.Text.Encoding enc = System.Text.Encoding.GetEncoding(encoding);
             return System.Web.HttpUtility.UrlEncode(str, enc);
         }
 

@@ -17,8 +17,16 @@ namespace MutterLauncher
         private string itemListFilename = "ItemList.bin";
         private string anyFolderListFilename = "AnyFolderList.txt";
         private string envDir;
+        private bool _bNeedUpdateList = false;
+        public bool bNeedUpdateList {
+            get {
+                bool retVal = _bNeedUpdateList;
+                _bNeedUpdateList = false;
+                return retVal;
+            } }
         private Object lockItemList = new Object();
         private Object lockHistoryList = new Object();
+        private Object lockAnyFolerList = new Object();
 
         public static EnvManager envmngr;
         public static EnvManager getInstance()
@@ -132,11 +140,43 @@ namespace MutterLauncher
             return itemList;
         }
 
+        public void setAnyFolderList(string strAnyFolerList)
+        {
+            string[] oldValue;
+            string[] newValue;
+            try
+            {
+                lock (lockAnyFolerList)
+                {
+                    oldValue = getAnyFolderList();
+                    File.WriteAllText(anyFolderListFilename, strAnyFolerList);
+                    newValue = getAnyFolderList();
+                }
+            }
+            catch (Exception e)
+            {
+                Trace.WriteLine("Cannot write " + anyFolderListFilename + ", " + e.Message + "\n" + e.StackTrace);
+                MessageBox.Show("Cannot write " + anyFolderListFilename + "\nreason:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!oldValue.SequenceEqual(newValue))
+            {
+                _bNeedUpdateList = true;
+            }
+
+            return;
+        }
+
         public string[] getAnyFolderList()
         {
             try
             {
-                string [] allLines = File.ReadAllLines(anyFolderListFilename);
+                string[] allLines;
+                lock (lockAnyFolerList)
+                {
+                    allLines = File.ReadAllLines(anyFolderListFilename);
+                }
                 return allLines;
             }
             catch (FileNotFoundException)
@@ -146,7 +186,7 @@ namespace MutterLauncher
             catch (Exception e)
             {
                 Trace.WriteLine("Cannot read " + anyFolderListFilename + ", " + e.Message + "\n" + e.StackTrace);
-                MessageBox.Show("Can't read " + anyFolderListFilename + "\nreason:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Cannot read " + anyFolderListFilename + "\nreason:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return new String[0];
         }

@@ -14,8 +14,8 @@
     <Setting Name="MainWinPosY" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="ListNumMax" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">50</Value>
+    <Setting Name="DisplayItemMax" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="updateInterval" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">240</Value>
@@ -24,18 +24,18 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="HotKeyCtrl" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="HotKeyAlt" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="HotKeyWin" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="HotKeyCode" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">67</Value>
+      <Value Profile="(Default)">32</Value>
     </Setting>
-    <Setting Name="HistoryMax" Type="System.Int32" Scope="User">
+    <Setting Name="ExecHistoryMax" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">50</Value>
     </Setting>
     <Setting Name="ChrStartWith" Type="System.Int32" Scope="User">
@@ -44,7 +44,7 @@
     <Setting Name="ChrEndWith" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">36</Value>
     </Setting>
-    <Setting Name="ChrSkipMatch" Type="System.Int32" Scope="User">
+    <Setting Name="ChrSkipMatching" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">32</Value>
     </Setting>
     <Setting Name="ChrEqual" Type="System.Int32" Scope="User">
@@ -55,6 +55,9 @@
     </Setting>
     <Setting Name="SpaceIsOption" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SearchHistoryMax" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
     </Setting>
   </Settings>
 </SettingsFile>

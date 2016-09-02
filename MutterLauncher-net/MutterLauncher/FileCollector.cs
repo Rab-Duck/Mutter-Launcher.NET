@@ -113,7 +113,7 @@ namespace MutterLauncher
                             Regex.IsMatch(file, extRegex, RegexOptions.IgnoreCase /*| RegexOptions.Compiled*/))
                         {
                             items.Add(new FileItem(file));
-                            Debug.WriteLine("match file:" + file);
+                            // Debug.WriteLine("match file:" + file);
                         }
 
                     }

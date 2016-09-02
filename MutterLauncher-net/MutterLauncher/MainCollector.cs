@@ -75,7 +75,7 @@ namespace MutterLauncher
                         frmCtrl.Invoke(multiInvoker, new object[] { CollectState.FAILED,  ex.Message });
                         Trace.WriteLine(ex.Message + "\n" + ex.StackTrace);
                     }
-                    autoEvent.Reset();
+                    // autoEvent.Reset();
                 }
             });
     
@@ -136,6 +136,9 @@ namespace MutterLauncher
         public List<Item> getAllItemList()
         {
             List<Item> allItemList = new List<Item>();
+
+            // update, when all list is needed
+            userItemList = envmngr.getUserItemList();
 
             allItemList.AddRange(
                                 from item in userItemList
@@ -243,7 +246,7 @@ namespace MutterLauncher
 
         public void setExecHistory(Item execItem)
         {
-            int historyMax = Properties.Settings.Default.HistoryMax;
+            int historyMax = Properties.Settings.Default.ExecHistoryMax;
 
             if (execItem.GetType() == typeof(UserItem))
             {
