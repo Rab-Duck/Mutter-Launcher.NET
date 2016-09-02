@@ -1,6 +1,4 @@
-﻿・ダイアログの Enter や Esc での Close()
-・CauseValidation を false にしても cancel で閉じられない
-・UserItem の設定画面の作成
+﻿・UserItem の設定画面の作成
 
 ・エラー対応
   ・regex
@@ -21,6 +19,9 @@
   → 色々と試してみるが、やっぱりダメ
 
 済
+・ダイアログの Enter や Esc での Close()
+・CauseValidation を false にしても cancel で閉じられない
+  →Close() 時はだめなので、全体の AutoValidate を disable する
 ・環境取得・格納
 ・環境設定ダイアログ（部分）
 ・ダイアログのシングルインスタンス化

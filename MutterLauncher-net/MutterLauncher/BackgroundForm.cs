@@ -16,6 +16,7 @@ namespace MutterLauncher
         public MainForm frmMainForm { get; set; }
         private MainCollector mc;
         private Hotkey hk;
+        private EnvManager em = EnvManager.getInstance();
 
         public BackgroundForm()
         {
@@ -32,6 +33,8 @@ namespace MutterLauncher
             mc = new MainCollector(this);
             // InitMainForm(false);
             mc.setInvoker(collectStateHandler);
+
+            em.setNotifier(EnvUpdated);
 
         }
 
@@ -190,7 +193,7 @@ namespace MutterLauncher
             SettingForm.ShowSettingForm();
         }
 
-        public void EnvUpdated()
+        private void EnvUpdated(bool bReCollect)
         {
             if (hk.Registered)
                 hk.Unregister();
@@ -200,10 +203,7 @@ namespace MutterLauncher
             timerUpdate.Stop();
             timerUpdate.Interval = Properties.Settings.Default.updateInterval * 60 * 1000;
             timerUpdate.Start();
-
-            if (EnvManager.getInstance().bNeedUpdateList)
-                mc.setEvent();
-
         }
+
     }
 }

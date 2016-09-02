@@ -30,12 +30,5 @@ namespace MutterLauncher
         }
 
         private static BackgroundForm frmBackground;
-        public static void EnvUpdated()
-        {
-            if (frmBackground != null && !frmBackground.IsDisposed)
-            {
-                frmBackground.EnvUpdated();
-            }
-        }
     }
 }

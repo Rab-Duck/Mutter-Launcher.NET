@@ -112,10 +112,7 @@ namespace MutterLauncher
 
         private void txtbxHotkey_Validating(object sender, CancelEventArgs e)
         {
-            // reference:
-            //   http://blog.hiros-dot.net/?p=5439
-            //   http://blog.hiros-dot.net/?p=5443
-            if (txtbxHotkey.Text == "" && ActiveControl != txtbxHotkey)
+            if (txtbxHotkey.Text == "")
             {
                 ShowErrMsg(txtbxHotkey, "Please set a valid key.");
                 e.Cancel = true;
@@ -209,8 +206,6 @@ namespace MutterLauncher
         private void CheckMinMaxNum(TextBox tbTarget, int min, int max, CancelEventArgs e)
         {
             int value;
-            if (ActiveControl == tbTarget)
-                return;
 
             try
             {
@@ -268,6 +263,7 @@ namespace MutterLauncher
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            // dialog -> value + save
             Properties.Settings.Default.HotKeyAlt = cbAlt.Checked;
             Properties.Settings.Default.HotKeyCtrl = cbCtrl.Checked;
             Properties.Settings.Default.HotKeyShift = cbShift.Checked;
@@ -291,14 +287,39 @@ namespace MutterLauncher
             Properties.Settings.Default.DisplayItemMax = int.Parse(tbDisplayItemMax.Text);
             Properties.Settings.Default.Save();
 
-            Program.EnvUpdated();
-
+            em.notifyAll();
+            em.notifyFinishedAll();
+            
             this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            AutoValidate = AutoValidate.Disable;
             this.Close();
+        }
+
+        // reference: http://stackoverflow.com/questions/15920770/closing-the-c-sharp-windows-form-by-avoiding-textbox-validation
+        // To capture the Upper right "X" click
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x10) // The upper right "X" was clicked
+            {
+                AutoValidate = AutoValidate.Disable; //Deactivate all validations
+            }
+            base.WndProc(ref m);
+        }
+
+        // To capture the "Esc" key
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                // AutoValidate = AutoValidate.Disable;
+                btnCancel.PerformClick();
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
         }
     }
 }

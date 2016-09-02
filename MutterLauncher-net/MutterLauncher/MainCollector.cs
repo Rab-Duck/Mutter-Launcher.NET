@@ -48,6 +48,28 @@ namespace MutterLauncher
             cachedCollect();
             historyItemList = envmngr.getExecHistory();
             userItemList = envmngr.getUserItemList();
+
+            envmngr.setNotifier(EnvUpdated);
+            envmngr.setNotifyFinished(EnvFinished);
+        }
+
+        private void EnvUpdated(bool bReCollect)
+        {
+            userItemList = envmngr.getUserItemList();
+
+            int historyMax = Properties.Settings.Default.ExecHistoryMax;
+            if (historyItemList.Count > historyMax)
+            {
+                historyItemList.RemoveRange(historyMax, historyItemList.Count - historyMax);
+            }
+            envmngr.setExecHistory(historyItemList);
+
+        }
+
+        private void EnvFinished(bool bReCollect)
+        {
+            if (bReCollect)
+                setEvent();
         }
 
         public void cachedCollect()
@@ -137,8 +159,6 @@ namespace MutterLauncher
         {
             List<Item> allItemList = new List<Item>();
 
-            // update, when all list is needed
-            userItemList = envmngr.getUserItemList();
 
             allItemList.AddRange(
                                 from item in userItemList
@@ -246,8 +266,6 @@ namespace MutterLauncher
 
         public void setExecHistory(Item execItem)
         {
-            int historyMax = Properties.Settings.Default.ExecHistoryMax;
-
             if (execItem.GetType() == typeof(UserItem))
             {
                 // UserItem は履歴に残さない
@@ -266,6 +284,7 @@ namespace MutterLauncher
             historyItem.setItemType(ItemType.TYPE_HISTORY);
             historyItemList.Insert(0, historyItem);
 
+            int historyMax = Properties.Settings.Default.ExecHistoryMax;
             if (historyItemList.Count > historyMax)
             {
                 historyItemList.RemoveRange(historyMax, historyItemList.Count - historyMax);

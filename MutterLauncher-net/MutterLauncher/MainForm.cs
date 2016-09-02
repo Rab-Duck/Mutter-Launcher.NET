@@ -106,9 +106,15 @@ namespace MutterLauncher
 
             updateView("", true);
 
+            envmngr.setNotifyFinished(EnvFinished);
         }
 
-        private string prevOption=null;
+        private void EnvFinished(bool bReCollect)
+        {
+            updateView(null, true);
+        }
+
+        private string prevSearchStr=null;
         private void updateView(String searchStr, bool forced)
         {
             if (searchStr == null)
@@ -118,11 +124,11 @@ namespace MutterLauncher
             if (mc != null)
             {
                 SearchCmd sc = Util.analyzeSearchCmd(searchStr);
-                if (forced || prevOption==null || sc.strOption == null)
+                if (forced || sc.strSearch != prevSearchStr)
                 {
                     putFileListView(mc.grep(searchStr));
                 }
-                prevOption = sc.strOption;
+                prevSearchStr = sc.strSearch;
             }
 
             lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
@@ -252,11 +258,6 @@ namespace MutterLauncher
                     e.Handled = true;
                     break;
 
-                case Keys.Enter:
-                    execSelectedItem();
-                    e.Handled = true;
-                    break;
-                     
                 default:
                     break;
             }
@@ -266,10 +267,6 @@ namespace MutterLauncher
         {
             switch (e.KeyCode)
             {
-                case Keys.Enter:
-                    execSelectedItem();
-                    e.Handled = true;
-                    break;
 
                 default:
                     break;
@@ -287,6 +284,7 @@ namespace MutterLauncher
 
             SavePos();
             mc.removeInvoker(collectStateHandler);
+            envmngr.removeNotifyFinished(EnvFinished);
 
             // reference: http://stackoverflow.com/questions/2021681/hide-form-instead-of-closing-when-close-button-clicked
             /*
@@ -296,7 +294,7 @@ namespace MutterLauncher
                 this.Hide();
             }
             */
-            }
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -328,14 +326,15 @@ namespace MutterLauncher
             Properties.Settings.Default.Save();
         }
 
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        // To capture the "Esc" key
+        protected override bool ProcessDialogKey(Keys keyData)
         {
-            if (e.KeyCode == Keys.Escape)
+            if (keyData == Keys.Escape)
             {
-                e.Handled = true;
-                this.Close();
+                btnClose.PerformClick();
+                return true;
             }
-
+            return base.ProcessDialogKey(keyData);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

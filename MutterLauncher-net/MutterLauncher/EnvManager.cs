@@ -17,16 +17,14 @@ namespace MutterLauncher
         private string itemListFilename = "ItemList.bin";
         private string anyFolderListFilename = "AnyFolderList.txt";
         private string envDir;
-        private bool _bNeedUpdateList = false;
-        public bool bNeedUpdateList {
-            get {
-                bool retVal = _bNeedUpdateList;
-                _bNeedUpdateList = false;
-                return retVal;
-            } }
+        private bool bNeedUpdateList = false;
         private Object lockItemList = new Object();
         private Object lockHistoryList = new Object();
         private Object lockAnyFolerList = new Object();
+
+        public delegate void MultiNotifier(bool bReCollect);
+        private MultiNotifier multinotifier;
+        private MultiNotifier multinotifierFinished;
 
         public static EnvManager envmngr;
         public static EnvManager getInstance()
@@ -162,7 +160,7 @@ namespace MutterLauncher
 
             if (!oldValue.SequenceEqual(newValue))
             {
-                _bNeedUpdateList = true;
+                bNeedUpdateList = true;
             }
 
             return;
@@ -202,5 +200,30 @@ namespace MutterLauncher
             return itemList;
         }
 
+        public void setNotifier(MultiNotifier notifier)
+        {
+            multinotifier += notifier;
+        }
+        public void removeNotifier(MultiNotifier notifier)
+        {
+            multinotifier -= notifier;
+        }
+        public void notifyAll()
+        {
+            multinotifier(bNeedUpdateList);
+        }
+        public void setNotifyFinished(MultiNotifier notifier)
+        {
+            multinotifierFinished += notifier;
+        }
+        public void removeNotifyFinished(MultiNotifier notifier)
+        {
+            multinotifierFinished -= notifier;
+        }
+        public void notifyFinishedAll()
+        {
+            multinotifierFinished(bNeedUpdateList);
+            bNeedUpdateList = false;
+        }
     }
 }
