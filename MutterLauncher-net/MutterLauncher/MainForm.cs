@@ -66,9 +66,8 @@ namespace MutterLauncher
         {
             Trace.WriteLine("form loaded!");
 
-            // 22=SPI_GETKEYBOARDDELAY
             int interval=0;
-            if(NativeMethods.SystemParametersInfo(22,  0, ref interval, 0))
+            if(NativeMethods.SystemParametersInfo(22,  0, ref interval, 0)) // 22=SPI_GETKEYBOARDDELAY
             {
                 timerInput.Interval = (interval+1) * 250; // /* 1unit = approximately 250 */
             }
@@ -198,8 +197,14 @@ namespace MutterLauncher
             execSelectedItem();
         }
 
+        /// <summary>
+        /// exec selected item in lsv
+        /// </summary>
         private void execSelectedItem()
         {
+            // for waiting search / too fast-input to exec
+            updateView(null, false);
+
             if (lsvFileList.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = (ListViewItem)lsvFileList.Items[lsvFileList.SelectedItems[0].Index];

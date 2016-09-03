@@ -36,18 +36,18 @@
             this.cbAlt = new System.Windows.Forms.CheckBox();
             this.cbShift = new System.Windows.Forms.CheckBox();
             this.toolTipSetting = new System.Windows.Forms.ToolTip(this.components);
+            this.btnUserItemDel = new System.Windows.Forms.Button();
+            this.btnUserItemUpdate = new System.Windows.Forms.Button();
+            this.btnUserItemAdd = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lsvUserItem = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnUserItemDel = new System.Windows.Forms.Button();
-            this.btnUserItemUpdate = new System.Windows.Forms.Button();
-            this.btnUserItemAdd = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbEqual = new System.Windows.Forms.TextBox();
@@ -79,7 +79,7 @@
             this.txtbxHotkey.Name = "txtbxHotkey";
             this.txtbxHotkey.Size = new System.Drawing.Size(120, 19);
             this.txtbxHotkey.TabIndex = 5;
-            this.toolTipSetting.SetToolTip(this.txtbxHotkey, "Input Key for Hotkey");
+            this.toolTipSetting.SetToolTip(this.txtbxHotkey, "Input a key for Hotkey");
             this.txtbxHotkey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbxHotkey_KeyDown);
             this.txtbxHotkey.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxHotkey_KeyPress);
             this.txtbxHotkey.Validating += new System.ComponentModel.CancelEventHandler(this.txtbxHotkey_Validating);
@@ -134,45 +134,6 @@
             this.cbShift.Text = "Shift";
             this.cbShift.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HotKey(&K)";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 113);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 12);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Any Foler List(&F)";
-            // 
-            // lsvUserItem
-            // 
-            this.lsvUserItem.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.lsvUserItem.FullRowSelect = true;
-            this.lsvUserItem.GridLines = true;
-            this.lsvUserItem.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lsvUserItem.HideSelection = false;
-            this.lsvUserItem.Location = new System.Drawing.Point(12, 242);
-            this.lsvUserItem.MultiSelect = false;
-            this.lsvUserItem.Name = "lsvUserItem";
-            this.lsvUserItem.Size = new System.Drawing.Size(291, 89);
-            this.lsvUserItem.TabIndex = 10;
-            this.lsvUserItem.UseCompatibleStateImageBehavior = false;
-            this.lsvUserItem.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "User Item";
-            this.columnHeader1.Width = 244;
-            // 
             // btnUserItemDel
             // 
             this.btnUserItemDel.Enabled = false;
@@ -207,27 +168,6 @@
             this.btnUserItemAdd.UseVisualStyleBackColor = true;
             this.btnUserItemAdd.Click += new System.EventHandler(this.btnUserItemAdd_Click);
             // 
-            // btnOk
-            // 
-            this.btnOk.Location = new System.Drawing.Point(339, 373);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 17;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.CausesValidation = false;
-            this.btnCancel.Location = new System.Drawing.Point(419, 373);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 18;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // button1
             // 
             this.button1.Enabled = false;
@@ -258,6 +198,68 @@
             this.label12.Size = new System.Drawing.Size(94, 12);
             this.label12.TabIndex = 9;
             this.label12.Text = "User Item List(&U)";
+            this.toolTipSetting.SetToolTip(this.label12, "Not Implimented");
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "HotKey(&K)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 113);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 12);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Any Foler List(&F)";
+            // 
+            // lsvUserItem
+            // 
+            this.lsvUserItem.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.lsvUserItem.Enabled = false;
+            this.lsvUserItem.FullRowSelect = true;
+            this.lsvUserItem.GridLines = true;
+            this.lsvUserItem.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lsvUserItem.HideSelection = false;
+            this.lsvUserItem.Location = new System.Drawing.Point(12, 242);
+            this.lsvUserItem.MultiSelect = false;
+            this.lsvUserItem.Name = "lsvUserItem";
+            this.lsvUserItem.Size = new System.Drawing.Size(291, 89);
+            this.lsvUserItem.TabIndex = 10;
+            this.lsvUserItem.UseCompatibleStateImageBehavior = false;
+            this.lsvUserItem.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "User Item";
+            this.columnHeader1.Width = 244;
+            // 
+            // btnOk
+            // 
+            this.btnOk.Location = new System.Drawing.Point(339, 373);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 17;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.CausesValidation = false;
+            this.btnCancel.Location = new System.Drawing.Point(419, 373);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 18;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // errorProvider1
             // 

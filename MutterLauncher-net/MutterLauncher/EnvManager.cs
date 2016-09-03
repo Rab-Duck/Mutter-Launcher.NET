@@ -192,10 +192,9 @@ namespace MutterLauncher
         public List<Item> getUserItemList()
         {
             List<Item> itemList = new List<Item>();
-            itemList.Add(new UserItem("起動", "%1", true, true, false, null));
-            itemList.Add(new UserItem("google", "http://www.google.com/search?hl=ja&ie=UTF-8&q=%1", true, false, true, "UTF-8"));
-            itemList.Add(new UserItem("netstat", "netstat -rn %1", false, true, false, null));
-
+            itemList.Add(new UserItem("Run", "%1", true, true, false, null));
+            itemList.Add(new UserItem("Google Search", "http://www.google.com/search?hl=ja&ie=UTF-8&q=%1", true, false, true, "UTF-8"));
+            // itemList.Add(new UserItem("netstat", "netstat -rn %1", false, true, false, null));
 
             return itemList;
         }

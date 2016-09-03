@@ -59,6 +59,7 @@
             this.lsvFileList.Name = "lsvFileList";
             this.lsvFileList.Size = new System.Drawing.Size(295, 264);
             this.lsvFileList.TabIndex = 2;
+            this.toolTip.SetToolTip(this.lsvFileList, "For exec, select item & enter or double click.");
             this.lsvFileList.UseCompatibleStateImageBehavior = false;
             this.lsvFileList.View = System.Windows.Forms.View.Details;
             this.lsvFileList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lsvFileList_ItemSelectionChanged);
@@ -90,7 +91,7 @@
             this.cmbbxSearcText.Name = "cmbbxSearcText";
             this.cmbbxSearcText.Size = new System.Drawing.Size(279, 20);
             this.cmbbxSearcText.TabIndex = 1;
-            this.toolTip.SetToolTip(this.cmbbxSearcText, "Search Text");
+            this.toolTip.SetToolTip(this.cmbbxSearcText, "Input search text");
             this.cmbbxSearcText.TextUpdate += new System.EventHandler(this.cmbbxSearcText_TextUpdate);
             this.cmbbxSearcText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbbxSearcText_KeyDown);
             // 

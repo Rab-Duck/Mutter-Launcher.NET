@@ -97,10 +97,7 @@ namespace MutterLauncher
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                if (frmMainForm != null &&  frmMainForm.Visible)
-                    CloseMainForm();
-                else
-                    InitMainForm(true);
+                InitMainForm(true);
             }
         }
 

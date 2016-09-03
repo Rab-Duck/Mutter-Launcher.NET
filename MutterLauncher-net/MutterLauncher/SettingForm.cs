@@ -150,9 +150,6 @@ namespace MutterLauncher
 
         private void CheckAsciiChar(TextBox tbTarget, CancelEventArgs e)
         {
-            if (ActiveControl == tbTarget)
-                return;
-
             if ((new Regex("^[\u0020-\u007E]$")).IsMatch(tbTarget.Text))
             {
                 return;
@@ -165,6 +162,11 @@ namespace MutterLauncher
 
         private void tbEndWith_Validating(object sender, CancelEventArgs e)
         {
+            if (tbEndWith.Text == " ")
+            {
+                ShowErrMsg(tbEndWith, "SPACE is not permitted for EndWith-char.");
+                e.Cancel = true;
+            }
             CheckAsciiChar(tbEndWith, e);
         }
 
@@ -263,34 +265,41 @@ namespace MutterLauncher
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            // dialog -> value + save
-            Properties.Settings.Default.HotKeyAlt = cbAlt.Checked;
-            Properties.Settings.Default.HotKeyCtrl = cbCtrl.Checked;
-            Properties.Settings.Default.HotKeyShift = cbShift.Checked;
-            Properties.Settings.Default.HotKeyWin = cbWin.Checked;
-            Properties.Settings.Default.HotKeyCode = (int)txtbxHotkey.Tag;
+            try
+            {
+                // dialog -> value + save
+                Properties.Settings.Default.HotKeyAlt = cbAlt.Checked;
+                Properties.Settings.Default.HotKeyCtrl = cbCtrl.Checked;
+                Properties.Settings.Default.HotKeyShift = cbShift.Checked;
+                Properties.Settings.Default.HotKeyWin = cbWin.Checked;
+                Properties.Settings.Default.HotKeyCode = (int)txtbxHotkey.Tag;
 
-            Properties.Settings.Default.ChrStartWith = tbStartWith.Text[0];
-            Properties.Settings.Default.ChrEndWith = tbEndWith.Text[0];
-            Properties.Settings.Default.ChrSkipMatching = tbSkipMatching.Text[0];
-            Properties.Settings.Default.ChrEqual = tbEqual.Text[0];
+                Properties.Settings.Default.ChrStartWith = tbStartWith.Text[0];
+                Properties.Settings.Default.ChrEndWith = tbEndWith.Text[0];
+                Properties.Settings.Default.ChrSkipMatching = tbSkipMatching.Text[0];
+                Properties.Settings.Default.ChrEqual = tbEqual.Text[0];
 
-            EnvManager em = EnvManager.getInstance();
-            em.setAnyFolderList(tbAnyFolder.Text);
+                EnvManager em = EnvManager.getInstance();
+                em.setAnyFolderList(tbAnyFolder.Text);
 
-            // Not Implimented
-            // Store lsvUserItem -> UserItemList.bin
+                // Not Implimented
+                // Store lsvUserItem -> UserItemList.bin
 
-            Properties.Settings.Default.updateInterval = int.Parse(tbUpdateInterval.Text);
-            Properties.Settings.Default.SearchHistoryMax = int.Parse(tbSearchHistoryMax.Text);
-            Properties.Settings.Default.ExecHistoryMax = int.Parse(tbExecHistoryMax.Text);
-            Properties.Settings.Default.DisplayItemMax = int.Parse(tbDisplayItemMax.Text);
-            Properties.Settings.Default.Save();
+                Properties.Settings.Default.updateInterval = int.Parse(tbUpdateInterval.Text);
+                Properties.Settings.Default.SearchHistoryMax = int.Parse(tbSearchHistoryMax.Text);
+                Properties.Settings.Default.ExecHistoryMax = int.Parse(tbExecHistoryMax.Text);
+                Properties.Settings.Default.DisplayItemMax = int.Parse(tbDisplayItemMax.Text);
+                Properties.Settings.Default.Save();
 
-            em.notifyAll();
-            em.notifyFinishedAll();
-            
-            this.Close();
+                em.notifyAll();
+                em.notifyFinishedAll();
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Setting Error");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
