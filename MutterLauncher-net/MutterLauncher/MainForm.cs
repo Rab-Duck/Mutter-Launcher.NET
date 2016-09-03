@@ -116,6 +116,7 @@ namespace MutterLauncher
         private SearchCmd prevSearchCmd;
         private void updateView(String searchStr, bool forced)
         {
+
             if (searchStr == null)
             {
                 searchStr = cmbbxSearcText.Text;
@@ -132,7 +133,6 @@ namespace MutterLauncher
                 prevSearchCmd = sc;
             }
 
-            lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
         }
 
         private void putFileListView(List<Item> itemList)
@@ -148,7 +148,7 @@ namespace MutterLauncher
                 }
                 ListViewItem lvi = new ListViewItem(item.getItemName());
 
-                // オブジェクトを 1対1 でリストにひも付け
+                // a ListViewItem have a Item-object
                 lvi.Tag = item;
 
                 // reference: http://acha-ya.cocolog-nifty.com/blog/2010/11/2-f06c.html
@@ -170,6 +170,11 @@ namespace MutterLauncher
                  */
             }
             lsvFileList.EndUpdate();
+
+            // hack code: stop to display a horizontal scrollbar
+            lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width - 1;
+            lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
+
             txtViewPath.Text = "";
             if (lsvFileList.Items.Count > 0)
             {

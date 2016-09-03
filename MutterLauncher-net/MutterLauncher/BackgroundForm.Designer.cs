@@ -32,10 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackgroundForm));
             this.notifyIconMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.miSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.miUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.miExit = new System.Windows.Forms.ToolStripMenuItem();
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cmsMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,20 +46,28 @@
             // 
             this.notifyIconMain.ContextMenuStrip = this.cmsMain;
             this.notifyIconMain.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIconMain.Icon")));
-            this.notifyIconMain.Text = "Mutter Launcher";
+            this.notifyIconMain.Text = "Mutter Launcher .NET";
             this.notifyIconMain.Visible = true;
             this.notifyIconMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconMain_MouseClick);
             // 
             // cmsMain
             // 
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miSetting,
+            this.aboutToolStripMenuItem,
+            this.toolStripSeparator1,
             this.miUpdate,
+            this.miSetting,
+            this.toolStripSeparator2,
             this.miExit});
             this.cmsMain.Name = "cmsMain";
-            this.cmsMain.Size = new System.Drawing.Size(153, 92);
+            this.cmsMain.Size = new System.Drawing.Size(153, 126);
             this.cmsMain.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.cmsMain_Closing);
             this.cmsMain.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cmsMain_PreviewKeyDown);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // miSetting
             // 
@@ -83,6 +94,18 @@
             // 
             this.timerUpdate.Interval = 300;
             this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // BackgroundForm
             // 
@@ -116,5 +139,8 @@
         private System.Windows.Forms.ToolStripMenuItem miUpdate;
         private System.Windows.Forms.ToolStripMenuItem miExit;
         private System.Windows.Forms.ToolStripMenuItem miSetting;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
