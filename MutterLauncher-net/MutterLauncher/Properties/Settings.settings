@@ -21,10 +21,10 @@
       <Value Profile="(Default)">240</Value>
     </Setting>
     <Setting Name="HotKeyShift" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="HotKeyCtrl" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="HotKeyAlt" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

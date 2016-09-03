@@ -97,7 +97,7 @@ namespace MutterLauncher.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool HotKeyShift {
             get {
                 return ((bool)(this["HotKeyShift"]));
@@ -109,7 +109,7 @@ namespace MutterLauncher.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool HotKeyCtrl {
             get {
                 return ((bool)(this["HotKeyCtrl"]));
