@@ -202,5 +202,9 @@ namespace MutterLauncher
             timerUpdate.Start();
         }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm.ShowAboutForm();
+        }
     }
 }

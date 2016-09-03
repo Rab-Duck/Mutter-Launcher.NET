@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("Mutter Launcher .NET")]
-[assembly: AssemblyDescription("Application Launcher")]
+[assembly: AssemblyDescription("Application Launcher for Windows")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Rab-Duck")]
 [assembly: AssemblyProduct("Mutter Launcher .NET")]
