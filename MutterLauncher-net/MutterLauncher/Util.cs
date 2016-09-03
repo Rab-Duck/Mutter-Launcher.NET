@@ -44,7 +44,7 @@ namespace MutterLauncher
                 sc.matchingType = 1; // StartsWith
             else if (str[0] == Properties.Settings.Default.ChrEqual)
                 sc.matchingType = 3; // equal
-            else if (str[0] == Properties.Settings.Default.ChrSkipMatch)
+            else if (str[0] == Properties.Settings.Default.ChrSkipMatching)
                 sc.matchingType = 4; // skip-matching
 
             if (sc.matchingType > 0)
@@ -61,7 +61,7 @@ namespace MutterLauncher
             {
                 pos = str.Length;
             }
-            if (str[pos - 1] == Properties.Settings.Default.ChrEndWith)
+            if (pos > 0 && str[pos - 1] == Properties.Settings.Default.ChrEndWith)
             {
                 if (sc.matchingType == 1)
                 {

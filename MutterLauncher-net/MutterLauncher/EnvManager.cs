@@ -17,8 +17,14 @@ namespace MutterLauncher
         private string itemListFilename = "ItemList.bin";
         private string anyFolderListFilename = "AnyFolderList.txt";
         private string envDir;
+        private bool bNeedUpdateList = false;
         private Object lockItemList = new Object();
         private Object lockHistoryList = new Object();
+        private Object lockAnyFolerList = new Object();
+
+        public delegate void MultiNotifier(bool bReCollect);
+        private MultiNotifier multinotifier;
+        private MultiNotifier multinotifierFinished;
 
         public static EnvManager envmngr;
         public static EnvManager getInstance()
@@ -132,11 +138,43 @@ namespace MutterLauncher
             return itemList;
         }
 
+        public void setAnyFolderList(string strAnyFolerList)
+        {
+            string[] oldValue;
+            string[] newValue;
+            try
+            {
+                lock (lockAnyFolerList)
+                {
+                    oldValue = getAnyFolderList();
+                    File.WriteAllText(anyFolderListFilename, strAnyFolerList);
+                    newValue = getAnyFolderList();
+                }
+            }
+            catch (Exception e)
+            {
+                Trace.WriteLine("Cannot write " + anyFolderListFilename + ", " + e.Message + "\n" + e.StackTrace);
+                MessageBox.Show("Cannot write " + anyFolderListFilename + "\nreason:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!oldValue.SequenceEqual(newValue))
+            {
+                bNeedUpdateList = true;
+            }
+
+            return;
+        }
+
         public string[] getAnyFolderList()
         {
             try
             {
-                string [] allLines = File.ReadAllLines(anyFolderListFilename);
+                string[] allLines;
+                lock (lockAnyFolerList)
+                {
+                    allLines = File.ReadAllLines(anyFolderListFilename);
+                }
                 return allLines;
             }
             catch (FileNotFoundException)
@@ -146,7 +184,7 @@ namespace MutterLauncher
             catch (Exception e)
             {
                 Trace.WriteLine("Cannot read " + anyFolderListFilename + ", " + e.Message + "\n" + e.StackTrace);
-                MessageBox.Show("Can't read " + anyFolderListFilename + "\nreason:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Cannot read " + anyFolderListFilename + "\nreason:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return new String[0];
         }
@@ -154,13 +192,37 @@ namespace MutterLauncher
         public List<Item> getUserItemList()
         {
             List<Item> itemList = new List<Item>();
-            itemList.Add(new UserItem("起動", "%1", true, true, false, null));
-            itemList.Add(new UserItem("google", "http://www.google.com/search?hl=ja&ie=UTF-8&q=%1", true, false, true, "UTF-8"));
-            itemList.Add(new UserItem("netstat", "netstat -rn %1", false, true, false, null));
-
+            itemList.Add(new UserItem("Run", "%1", true, true, false, null));
+            itemList.Add(new UserItem("Google Search", "http://www.google.com/search?hl=ja&ie=UTF-8&q=%1", true, false, true, "UTF-8"));
+            // itemList.Add(new UserItem("netstat", "netstat -rn %1", false, true, false, null));
 
             return itemList;
         }
 
+        public void setNotifier(MultiNotifier notifier)
+        {
+            multinotifier += notifier;
+        }
+        public void removeNotifier(MultiNotifier notifier)
+        {
+            multinotifier -= notifier;
+        }
+        public void notifyAll()
+        {
+            multinotifier(bNeedUpdateList);
+        }
+        public void setNotifyFinished(MultiNotifier notifier)
+        {
+            multinotifierFinished += notifier;
+        }
+        public void removeNotifyFinished(MultiNotifier notifier)
+        {
+            multinotifierFinished -= notifier;
+        }
+        public void notifyFinishedAll()
+        {
+            multinotifierFinished(bNeedUpdateList);
+            bNeedUpdateList = false;
+        }
     }
 }

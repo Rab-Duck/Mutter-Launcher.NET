@@ -109,13 +109,20 @@ namespace MutterLauncher
                     attr = File.GetAttributes(file);
                     if ((attr & (FileAttributes.System | FileAttributes.Hidden)) == 0)
                     {
-                        if (pathExt == "*" ||
-                            Regex.IsMatch(file, extRegex, RegexOptions.IgnoreCase /*| RegexOptions.Compiled*/))
+                        try
                         {
-                            items.Add(new FileItem(file));
-                            Debug.WriteLine("match file:" + file);
+                            if (pathExt == "*" ||
+                                Regex.IsMatch(file, extRegex, RegexOptions.IgnoreCase /*| RegexOptions.Compiled*/))
+                            {
+                                items.Add(new FileItem(file));
+                                // Debug.WriteLine("match file:" + file);
+                            }
                         }
-
+                        catch (ArgumentException ae)
+                        {
+                            Trace.WriteLine("Regex error:" + extRegex + ", " + ae.Message);
+                            return;
+                        }
                     }
                 }
                 if (!recursive)

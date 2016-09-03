@@ -48,6 +48,28 @@ namespace MutterLauncher
             cachedCollect();
             historyItemList = envmngr.getExecHistory();
             userItemList = envmngr.getUserItemList();
+
+            envmngr.setNotifier(EnvUpdated);
+            envmngr.setNotifyFinished(EnvFinished);
+        }
+
+        private void EnvUpdated(bool bReCollect)
+        {
+            userItemList = envmngr.getUserItemList();
+
+            int historyMax = Properties.Settings.Default.ExecHistoryMax;
+            if (historyItemList.Count > historyMax)
+            {
+                historyItemList.RemoveRange(historyMax, historyItemList.Count - historyMax);
+            }
+            envmngr.setExecHistory(historyItemList);
+
+        }
+
+        private void EnvFinished(bool bReCollect)
+        {
+            if (bReCollect)
+                setEvent();
         }
 
         public void cachedCollect()
@@ -75,7 +97,7 @@ namespace MutterLauncher
                         frmCtrl.Invoke(multiInvoker, new object[] { CollectState.FAILED,  ex.Message });
                         Trace.WriteLine(ex.Message + "\n" + ex.StackTrace);
                     }
-                    autoEvent.Reset();
+                    // autoEvent.Reset();
                 }
             });
     
@@ -136,6 +158,7 @@ namespace MutterLauncher
         public List<Item> getAllItemList()
         {
             List<Item> allItemList = new List<Item>();
+
 
             allItemList.AddRange(
                                 from item in userItemList
@@ -243,8 +266,6 @@ namespace MutterLauncher
 
         public void setExecHistory(Item execItem)
         {
-            int historyMax = Properties.Settings.Default.HistoryMax;
-
             if (execItem.GetType() == typeof(UserItem))
             {
                 // UserItem は履歴に残さない
@@ -263,6 +284,7 @@ namespace MutterLauncher
             historyItem.setItemType(ItemType.TYPE_HISTORY);
             historyItemList.Insert(0, historyItem);
 
+            int historyMax = Properties.Settings.Default.ExecHistoryMax;
             if (historyItemList.Count > historyMax)
             {
                 historyItemList.RemoveRange(historyMax, historyItemList.Count - historyMax);

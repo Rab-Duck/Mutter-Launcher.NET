@@ -66,9 +66,8 @@ namespace MutterLauncher
         {
             Trace.WriteLine("form loaded!");
 
-            // 22=SPI_GETKEYBOARDDELAY
             int interval=0;
-            if(NativeMethods.SystemParametersInfo(22,  0, ref interval, 0))
+            if(NativeMethods.SystemParametersInfo(22,  0, ref interval, 0)) // 22=SPI_GETKEYBOARDDELAY
             {
                 timerInput.Interval = (interval+1) * 250; // /* 1unit = approximately 250 */
             }
@@ -81,6 +80,10 @@ namespace MutterLauncher
             {
                 this.Size = new Size(Properties.Settings.Default.MainWinWidth, MainWinHeight);
                 this.Location = new Point(Properties.Settings.Default.MainWinPosX, Properties.Settings.Default.MainWinPosY);
+            }
+            else
+            {
+                this.CenterToScreen();
             }
 
 
@@ -102,9 +105,15 @@ namespace MutterLauncher
 
             updateView("", true);
 
+            envmngr.setNotifyFinished(EnvFinished);
         }
 
-        private string prevOption=null;
+        private void EnvFinished(bool bReCollect)
+        {
+            updateView(null, true);
+        }
+
+        private SearchCmd prevSearchCmd;
         private void updateView(String searchStr, bool forced)
         {
             if (searchStr == null)
@@ -114,11 +123,13 @@ namespace MutterLauncher
             if (mc != null)
             {
                 SearchCmd sc = Util.analyzeSearchCmd(searchStr);
-                if (forced || prevOption==null || sc.strOption == null)
+                if (forced ||
+                    !(string.IsNullOrEmpty(sc.strSearch) && string.IsNullOrEmpty(prevSearchCmd.strSearch)) &&
+                    (sc.matchingType != prevSearchCmd.matchingType || sc.strSearch != prevSearchCmd.strSearch))
                 {
                     putFileListView(mc.grep(searchStr));
                 }
-                prevOption = sc.strOption;
+                prevSearchCmd = sc;
             }
 
             lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
@@ -131,7 +142,7 @@ namespace MutterLauncher
             int i = 0;
             foreach (Item item in itemList)
             {
-                if (i++ >= Properties.Settings.Default.ListNumMax)
+                if (i++ >= Properties.Settings.Default.DisplayItemMax)
                 {
                     break;
                 }
@@ -186,8 +197,14 @@ namespace MutterLauncher
             execSelectedItem();
         }
 
+        /// <summary>
+        /// exec selected item in lsv
+        /// </summary>
         private void execSelectedItem()
         {
+            // for waiting search / too fast-input to exec
+            updateView(null, false);
+
             if (lsvFileList.SelectedItems.Count > 0)
             {
                 ListViewItem lvi = (ListViewItem)lsvFileList.Items[lsvFileList.SelectedItems[0].Index];
@@ -245,12 +262,9 @@ namespace MutterLauncher
                 case Keys.PageUp:
                 case Keys.PageDown:
                     NativeMethods.SendMessage(lsvFileList.Handle, 0x0100, (IntPtr)e.KeyCode, IntPtr.Zero);
+                    e.Handled = true;
                     break;
 
-                case Keys.Enter:
-                    execSelectedItem();
-                    break;
-                     
                 default:
                     break;
             }
@@ -260,9 +274,6 @@ namespace MutterLauncher
         {
             switch (e.KeyCode)
             {
-                case Keys.Enter:
-                    execSelectedItem();
-                    break;
 
                 default:
                     break;
@@ -280,6 +291,7 @@ namespace MutterLauncher
 
             SavePos();
             mc.removeInvoker(collectStateHandler);
+            envmngr.removeNotifyFinished(EnvFinished);
 
             // reference: http://stackoverflow.com/questions/2021681/hide-form-instead-of-closing-when-close-button-clicked
             /*
@@ -289,7 +301,7 @@ namespace MutterLauncher
                 this.Hide();
             }
             */
-            }
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -321,13 +333,15 @@ namespace MutterLauncher
             Properties.Settings.Default.Save();
         }
 
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        // To capture the "Esc" key
+        protected override bool ProcessDialogKey(Keys keyData)
         {
-            if (e.KeyCode == Keys.Escape)
+            if (keyData == Keys.Escape)
             {
-                this.Close();
+                btnClose.PerformClick();
+                return true;
             }
-
+            return base.ProcessDialogKey(keyData);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -364,6 +378,11 @@ namespace MutterLauncher
             {
                 updateView(null, false);
             }
+        }
+
+        private void btnSetenv_Click(object sender, EventArgs e)
+        {
+            SettingForm.ShowSettingForm();
         }
     }
   

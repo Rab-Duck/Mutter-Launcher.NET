@@ -31,10 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackgroundForm));
             this.notifyIconMain = new System.Windows.Forms.NotifyIcon(this.components);
-            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.miSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.miUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.miExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.cmsMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,34 +47,42 @@
             this.notifyIconMain.Visible = true;
             this.notifyIconMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconMain_MouseClick);
             // 
-            // timerUpdate
-            // 
-            this.timerUpdate.Interval = 300;
-            this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
-            // 
             // cmsMain
             // 
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miSetting,
             this.miUpdate,
             this.miExit});
             this.cmsMain.Name = "cmsMain";
-            this.cmsMain.Size = new System.Drawing.Size(149, 48);
+            this.cmsMain.Size = new System.Drawing.Size(153, 92);
             this.cmsMain.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.cmsMain_Closing);
             this.cmsMain.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cmsMain_PreviewKeyDown);
+            // 
+            // miSetting
+            // 
+            this.miSetting.Name = "miSetting";
+            this.miSetting.Size = new System.Drawing.Size(152, 22);
+            this.miSetting.Text = "Settings...";
+            this.miSetting.Click += new System.EventHandler(this.miSetting_Click);
             // 
             // miUpdate
             // 
             this.miUpdate.Name = "miUpdate";
-            this.miUpdate.Size = new System.Drawing.Size(148, 22);
-            this.miUpdate.Text = "リスト再取得";
+            this.miUpdate.Size = new System.Drawing.Size(152, 22);
+            this.miUpdate.Text = "Update List";
             this.miUpdate.Click += new System.EventHandler(this.miUpdate_Click);
             // 
             // miExit
             // 
             this.miExit.Name = "miExit";
-            this.miExit.Size = new System.Drawing.Size(148, 22);
-            this.miExit.Text = "終了";
+            this.miExit.Size = new System.Drawing.Size(152, 22);
+            this.miExit.Text = "Exit";
             this.miExit.Click += new System.EventHandler(this.miExit_Click);
+            // 
+            // timerUpdate
+            // 
+            this.timerUpdate.Interval = 300;
+            this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
             // 
             // BackgroundForm
             // 
@@ -106,5 +115,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsMain;
         private System.Windows.Forms.ToolStripMenuItem miUpdate;
         private System.Windows.Forms.ToolStripMenuItem miExit;
+        private System.Windows.Forms.ToolStripMenuItem miSetting;
     }
 }

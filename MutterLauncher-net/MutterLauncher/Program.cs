@@ -18,7 +18,7 @@ namespace MutterLauncher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            BackgroundForm frmBackground = new BackgroundForm();
+            frmBackground = new BackgroundForm();
             //frmMainForm.Show();
             frmBackground.Show();
 
@@ -28,5 +28,7 @@ namespace MutterLauncher
             frmBackground.Close();
 
         }
+
+        private static BackgroundForm frmBackground;
     }
 }

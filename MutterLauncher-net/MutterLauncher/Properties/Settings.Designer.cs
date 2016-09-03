@@ -73,13 +73,13 @@ namespace MutterLauncher.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("50")]
-        public int ListNumMax {
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int DisplayItemMax {
             get {
-                return ((int)(this["ListNumMax"]));
+                return ((int)(this["DisplayItemMax"]));
             }
             set {
-                this["ListNumMax"] = value;
+                this["DisplayItemMax"] = value;
             }
         }
         
@@ -109,7 +109,7 @@ namespace MutterLauncher.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool HotKeyCtrl {
             get {
                 return ((bool)(this["HotKeyCtrl"]));
@@ -133,7 +133,7 @@ namespace MutterLauncher.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool HotKeyWin {
             get {
                 return ((bool)(this["HotKeyWin"]));
@@ -145,7 +145,7 @@ namespace MutterLauncher.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("67")]
+        [global::System.Configuration.DefaultSettingValueAttribute("32")]
         public int HotKeyCode {
             get {
                 return ((int)(this["HotKeyCode"]));
@@ -158,12 +158,12 @@ namespace MutterLauncher.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("50")]
-        public int HistoryMax {
+        public int ExecHistoryMax {
             get {
-                return ((int)(this["HistoryMax"]));
+                return ((int)(this["ExecHistoryMax"]));
             }
             set {
-                this["HistoryMax"] = value;
+                this["ExecHistoryMax"] = value;
             }
         }
         
@@ -194,12 +194,12 @@ namespace MutterLauncher.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("32")]
-        public int ChrSkipMatch {
+        public int ChrSkipMatching {
             get {
-                return ((int)(this["ChrSkipMatch"]));
+                return ((int)(this["ChrSkipMatching"]));
             }
             set {
-                this["ChrSkipMatch"] = value;
+                this["ChrSkipMatching"] = value;
             }
         }
         
@@ -236,6 +236,18 @@ namespace MutterLauncher.Properties {
             }
             set {
                 this["SpaceIsOption"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
+        public int SearchHistoryMax {
+            get {
+                return ((int)(this["SearchHistoryMax"]));
+            }
+            set {
+                this["SearchHistoryMax"] = value;
             }
         }
     }

@@ -16,6 +16,7 @@ namespace MutterLauncher
         public MainForm frmMainForm { get; set; }
         private MainCollector mc;
         private Hotkey hk;
+        private EnvManager em = EnvManager.getInstance();
 
         public BackgroundForm()
         {
@@ -33,14 +34,14 @@ namespace MutterLauncher
             // InitMainForm(false);
             mc.setInvoker(collectStateHandler);
 
+            em.setNotifier(EnvUpdated);
+
         }
 
         private void InitMainForm(bool show)
         {
             if (frmMainForm == null || frmMainForm.IsDisposed)
-            {
                 frmMainForm = new MainForm(mc);
-            }
 
             if (show)
             {
@@ -70,12 +71,12 @@ namespace MutterLauncher
             switch (state)
             {
                 case CollectState.START:
-                    timerUpdate.Enabled = false;
+                    timerUpdate.Stop();
                     miUpdate.Enabled = false;
                     notifyIconMain.Icon = Properties.Resources.RefreshIco;
                     break;
                 case CollectState.END:
-                    timerUpdate.Enabled = true;
+                    timerUpdate.Start();
                     miUpdate.Enabled = true;
                     notifyIconMain.Icon = Properties.Resources.MutterIco;
                     break;
@@ -96,14 +97,7 @@ namespace MutterLauncher
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                if (frmMainForm != null &&  frmMainForm.Visible)
-                {
-                    CloseMainForm();
-                }
-                else
-                {
-                    InitMainForm(true);
-                }
+                InitMainForm(true);
             }
         }
 
@@ -114,6 +108,12 @@ namespace MutterLauncher
             timerUpdate.Interval = Properties.Settings.Default.updateInterval * 60 * 1000;
             timerUpdate.Enabled = true;
 
+            RegisterHotKey();
+
+        }
+
+        private void RegisterHotKey()
+        {
             hk = new Hotkey();
             hk.KeyCode = (Keys)Properties.Settings.Default.HotKeyCode;
             hk.Windows = Properties.Settings.Default.HotKeyWin;
@@ -125,25 +125,22 @@ namespace MutterLauncher
 
             if (!hk.GetCanRegister(this))
             {
-                MessageBox.Show("Can't register Hot-Key", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Cannot register Hot-Key", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 hk.Register(this);
             }
-
         }
 
         private void BackgroundForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (hk.Registered)
-            {
                 hk.Unregister();
-            }
+
             if (frmMainForm != null && !frmMainForm.IsDisposed)
-            {
                 CloseMainForm();
-            }
+
         }
 
         private void BackgroundForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -182,5 +179,28 @@ namespace MutterLauncher
         {
             Debug.WriteLine(this + " activated!");
         }
+
+        private void miSetting_Click(object sender, EventArgs e)
+        {
+            ShowSettingForm();
+        }
+
+        public static void ShowSettingForm()
+        {
+            SettingForm.ShowSettingForm();
+        }
+
+        private void EnvUpdated(bool bReCollect)
+        {
+            if (hk.Registered)
+                hk.Unregister();
+
+            RegisterHotKey();
+
+            timerUpdate.Stop();
+            timerUpdate.Interval = Properties.Settings.Default.updateInterval * 60 * 1000;
+            timerUpdate.Start();
+        }
+
     }
 }
