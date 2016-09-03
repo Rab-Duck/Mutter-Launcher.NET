@@ -61,7 +61,7 @@ namespace MutterLauncher
             {
                 pos = str.Length;
             }
-            if (str[pos - 1] == Properties.Settings.Default.ChrEndWith)
+            if (pos > 0 && str[pos - 1] == Properties.Settings.Default.ChrEndWith)
             {
                 if (sc.matchingType == 1)
                 {

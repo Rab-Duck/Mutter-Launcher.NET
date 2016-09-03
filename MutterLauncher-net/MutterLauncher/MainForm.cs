@@ -114,7 +114,7 @@ namespace MutterLauncher
             updateView(null, true);
         }
 
-        private string prevSearchStr=null;
+        private SearchCmd prevSearchCmd;
         private void updateView(String searchStr, bool forced)
         {
             if (searchStr == null)
@@ -124,11 +124,13 @@ namespace MutterLauncher
             if (mc != null)
             {
                 SearchCmd sc = Util.analyzeSearchCmd(searchStr);
-                if (forced || sc.strSearch != prevSearchStr)
+                if (forced ||
+                    !(string.IsNullOrEmpty(sc.strSearch) && string.IsNullOrEmpty(prevSearchCmd.strSearch)) &&
+                    (sc.matchingType != prevSearchCmd.matchingType || sc.strSearch != prevSearchCmd.strSearch))
                 {
                     putFileListView(mc.grep(searchStr));
                 }
-                prevSearchStr = sc.strSearch;
+                prevSearchCmd = sc;
             }
 
             lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
