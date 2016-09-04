@@ -65,14 +65,17 @@ namespace MutterLauncher
                 else
                 {
                     SearchCmd sc = Util.analyzeSearchCmd(strExec);
-                    System.Diagnostics.Process.Start(path, sc.strOption);
+                    if (string.IsNullOrEmpty(sc.strOption))
+                        System.Diagnostics.Process.Start(path);
+                    else
+                        System.Diagnostics.Process.Start(path, sc.strOption);
                 }
             }
             finally
             {
                 if (fileType == FileType.NORMAL)
                 {
-                    System.Environment.CurrentDirectory = Path.GetDirectoryName(curdir);
+                    System.Environment.CurrentDirectory = curdir;
                 }
             }
 
