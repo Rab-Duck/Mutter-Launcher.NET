@@ -21,6 +21,9 @@ Mutter Launcher <http://hp.vector.co.jp/authors/VA022068/soft/bin/mlnch/>
 - 機能はほぼ Mutter Launcher に準じて＆＋α しています（ただ、まだ実装途中のものもありますが…）。  
 詳しくはそちらを参照してみて下さい。
 
+- 設定は %userprofile%\AppData\Local\Rab-Duck に保存されますので、
+アンインストール時にはこちらも削除して下さい。
+
 ## プロジェクトをビルドしてみるには？
 
 Visual Studio 2015 で作っています。  
