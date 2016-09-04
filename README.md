@@ -18,6 +18,9 @@ Mutter Launcher <http://hp.vector.co.jp/authors/VA022068/soft/bin/mlnch/>
 - 起動後に <kbd>Shift</kbd>+<kbd>Space</kbd> でメイン画面が開きます。  
 メイン画面のボタンやタスクトレイのアイコンから右クリックで、設定画面を開くことができます。
 
+- 機能はほぼ Mutter Launcher に準じて＆＋α しています（ただ、まだ実装途中のものもありますが…）。  
+詳しくはそちらを参照してみて下さい。
+
 ## プロジェクトをビルドしてみるには？
 
 Visual Studio 2015 で作っています。  
