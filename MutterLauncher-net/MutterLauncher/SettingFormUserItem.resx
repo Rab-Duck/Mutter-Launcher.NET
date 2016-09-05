@@ -117,4 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAICAQAAAAAADoAgAAJgAAABAQEAAAAAAAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAAAC
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwACAgIAAAAD/AAD/
+        AAAA//8A/wAAAP8A/wD//wAA////AAAAAI7u7ggAAAAAAAAAAAAAAACO7u4IAAAAAAAAAAAAAAAAju7u
+        CAAAAAAAAAAAAAAAAI7u7giIAAAAAAAAAAAAAIiO7u4AAAAAAAAAAAAAAA7u7u7u7u4AAAAAAAAAAAAA
+        7u7u7u7gAN3d3d3dAAAAAA7u7u7uAADd3d3d3QAAAAAA7u7u4AAA3d3d3d0AAAAAAA7u7gAAAN3dAAAA
+        AAAIiIiI7uiIiIjd3YiIAAAACIiIiI6IiIiI3d2IiAAAAAf//////////93d/4gAAAAH///////////d
+        3f+IAAAAB///////////3d3/iAAAAAf/qq/6/6qv/93d/4gAAAAH/6qvqq+qr//d3f+IAAAAB/+qr6qv
+        qq//3d3/iAAAAAf/qq+vr6qv/93d/4gAAAAH/6qvr6+qr//d3f+IAAAAB/+qr6+vqq//////iAAAAAf/
+        qqqvqqqv/////4gAAAAH/6qqr6qqr/////+IAAAAB/+qqv/6qq//////iAAAAAf/qqr/+qqv/////4gA
+        AAAH/6qq//qqr/////+IAAAAB///////////////iAAAAAf//////////////4gAAAAMzMzMzMzMzMzM
+        zMzMAAAADMzMzMzMzMzMzMzMzAAAAAzMzMzMzMzMzMzMzMwAAAAAAAAAAAAAAAAAAAAAAAAA/AP///wD
+        ///8A////AD///AA///gAP//8AHAD/gDwA/8B8AP/g/D/4AAAD+AAAA/gAAAP4AAAD+AAAA/gAAAP4AA
+        AD+AAAA/gAAAP4AAAD+AAAA/gAAAP4AAAD+AAAA/gAAAP4AAAD+AAAA/gAAAP4AAAD+AAAA/gAAAP///
+        //8oAAAAEAAAACAAAAABAAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAA
+        AACAAIAAgIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAADu4AAAAAAAAO7gAA
+        AAAADu7u7t3d3QAA7u7g3d3dAAAO7gDdAAAIiIjoiN2IgAf/////3fiAB//////d+IAH+q+vqt34gAf6
+        r6+q3fiAB/qvr6r/+IAH+qr6qv/4gAf6r/+q//iAB///////+IAMzMzMzMzMwAzMzMzMzMzA+H+mAPg/
+        IQDgAP//8GDAMMABojDAAbAwwAE6ecAB2zDAAcgwwAH8MMABJgCAASkAwAEAAMABgVDAAQAA//+zAA==
+</value>
+  </data>
 </root>

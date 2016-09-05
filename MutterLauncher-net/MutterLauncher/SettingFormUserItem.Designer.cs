@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingFormUserItem));
             this.txtCmd = new System.Windows.Forms.TextBox();
             this.cbName = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -172,6 +173,7 @@
             this.Controls.Add(this.txtCmd);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingFormUserItem";
             this.Text = "Setting User Item";
             this.Load += new System.EventHandler(this.SettingFormUserItem_Load);

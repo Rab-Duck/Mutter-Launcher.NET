@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.txtbxHotkey = new System.Windows.Forms.TextBox();
             this.tbAnyFolder = new System.Windows.Forms.TextBox();
             this.cbCtrl = new System.Windows.Forms.CheckBox();
@@ -483,7 +484,10 @@
             this.Controls.Add(this.cbCtrl);
             this.Controls.Add(this.tbAnyFolder);
             this.Controls.Add(this.txtbxHotkey);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SettingForm";
             this.Text = "Setting Dialog";
             this.Load += new System.EventHandler(this.SettingForm_Load);
