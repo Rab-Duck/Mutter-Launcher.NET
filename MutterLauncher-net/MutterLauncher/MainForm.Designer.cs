@@ -87,9 +87,9 @@
             "test",
             "google",
             "hoge"});
-            this.cmbbxSearcText.Location = new System.Drawing.Point(20, 13);
+            this.cmbbxSearcText.Location = new System.Drawing.Point(23, 13);
             this.cmbbxSearcText.Name = "cmbbxSearcText";
-            this.cmbbxSearcText.Size = new System.Drawing.Size(279, 20);
+            this.cmbbxSearcText.Size = new System.Drawing.Size(276, 20);
             this.cmbbxSearcText.TabIndex = 1;
             this.toolTip.SetToolTip(this.cmbbxSearcText, "Input search text");
             this.cmbbxSearcText.TextUpdate += new System.EventHandler(this.cmbbxSearcText_TextUpdate);
@@ -98,6 +98,7 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(224, 335);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
@@ -161,7 +162,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 16);
+            this.label1.Location = new System.Drawing.Point(5, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(12, 12);
             this.label1.TabIndex = 0;
@@ -172,6 +173,7 @@
             this.AcceptButton = this.btnExec;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(304, 362);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);

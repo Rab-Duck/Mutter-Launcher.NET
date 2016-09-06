@@ -328,16 +328,16 @@ namespace MutterLauncher
         }
         private void SavePos()
         {
-            // 実装場所は要検討
             Properties.Settings.Default.MainWinWidth = this.Size.Width;
             Properties.Settings.Default.MainWinHeight = this.Size.Height;
             Properties.Settings.Default.MainWinPosX = this.Location.X;
             Properties.Settings.Default.MainWinPosY = this.Location.Y;
 
-            // 実装場所は要検討
             Properties.Settings.Default.Save();
         }
 
+        /* move to CancelButton Property of Form
+        /* 
         // To capture the "Esc" key
         protected override bool ProcessDialogKey(Keys keyData)
         {
@@ -348,6 +348,7 @@ namespace MutterLauncher
             }
             return base.ProcessDialogKey(keyData);
         }
+        */
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {

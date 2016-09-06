@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.txtbxHotkey = new System.Windows.Forms.TextBox();
             this.tbAnyFolder = new System.Windows.Forms.TextBox();
             this.cbCtrl = new System.Windows.Forms.CheckBox();
@@ -39,8 +40,8 @@
             this.btnUserItemDel = new System.Windows.Forms.Button();
             this.btnUserItemUpdate = new System.Windows.Forms.Button();
             this.btnUserItemAdd = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUserItemUp = new System.Windows.Forms.Button();
+            this.btnUserItemDown = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -136,7 +137,6 @@
             // 
             // btnUserItemDel
             // 
-            this.btnUserItemDel.Enabled = false;
             this.btnUserItemDel.Location = new System.Drawing.Point(228, 337);
             this.btnUserItemDel.Name = "btnUserItemDel";
             this.btnUserItemDel.Size = new System.Drawing.Size(75, 23);
@@ -144,10 +144,10 @@
             this.btnUserItemDel.Text = "Delete";
             this.toolTipSetting.SetToolTip(this.btnUserItemDel, "Not Implimented");
             this.btnUserItemDel.UseVisualStyleBackColor = true;
+            this.btnUserItemDel.Click += new System.EventHandler(this.btnUserItemDel_Click);
             // 
             // btnUserItemUpdate
             // 
-            this.btnUserItemUpdate.Enabled = false;
             this.btnUserItemUpdate.Location = new System.Drawing.Point(148, 337);
             this.btnUserItemUpdate.Name = "btnUserItemUpdate";
             this.btnUserItemUpdate.Size = new System.Drawing.Size(75, 23);
@@ -155,10 +155,10 @@
             this.btnUserItemUpdate.Text = "Update";
             this.toolTipSetting.SetToolTip(this.btnUserItemUpdate, "Not Implimented");
             this.btnUserItemUpdate.UseVisualStyleBackColor = true;
+            this.btnUserItemUpdate.Click += new System.EventHandler(this.btnUserItemUpdate_Click);
             // 
             // btnUserItemAdd
             // 
-            this.btnUserItemAdd.Enabled = false;
             this.btnUserItemAdd.Location = new System.Drawing.Point(68, 337);
             this.btnUserItemAdd.Name = "btnUserItemAdd";
             this.btnUserItemAdd.Size = new System.Drawing.Size(75, 23);
@@ -168,27 +168,27 @@
             this.btnUserItemAdd.UseVisualStyleBackColor = true;
             this.btnUserItemAdd.Click += new System.EventHandler(this.btnUserItemAdd_Click);
             // 
-            // button1
+            // btnUserItemUp
             // 
-            this.button1.Enabled = false;
-            this.button1.Image = global::MutterLauncher.Properties.Resources.ARW07UP;
-            this.button1.Location = new System.Drawing.Point(306, 266);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 23);
-            this.button1.TabIndex = 11;
-            this.toolTipSetting.SetToolTip(this.button1, "Not Implimented");
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUserItemUp.Image = global::MutterLauncher.Properties.Resources.ARW07UP;
+            this.btnUserItemUp.Location = new System.Drawing.Point(306, 266);
+            this.btnUserItemUp.Name = "btnUserItemUp";
+            this.btnUserItemUp.Size = new System.Drawing.Size(26, 23);
+            this.btnUserItemUp.TabIndex = 11;
+            this.toolTipSetting.SetToolTip(this.btnUserItemUp, "Not Implimented");
+            this.btnUserItemUp.UseVisualStyleBackColor = true;
+            this.btnUserItemUp.Click += new System.EventHandler(this.btnUserItemUp_Click);
             // 
-            // button2
+            // btnUserItemDown
             // 
-            this.button2.Enabled = false;
-            this.button2.Image = global::MutterLauncher.Properties.Resources.ARW07DN;
-            this.button2.Location = new System.Drawing.Point(305, 295);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 23);
-            this.button2.TabIndex = 12;
-            this.toolTipSetting.SetToolTip(this.button2, "Not Implimented");
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUserItemDown.Image = global::MutterLauncher.Properties.Resources.ARW07DN;
+            this.btnUserItemDown.Location = new System.Drawing.Point(305, 295);
+            this.btnUserItemDown.Name = "btnUserItemDown";
+            this.btnUserItemDown.Size = new System.Drawing.Size(27, 23);
+            this.btnUserItemDown.TabIndex = 12;
+            this.toolTipSetting.SetToolTip(this.btnUserItemDown, "Not Implimented");
+            this.btnUserItemDown.UseVisualStyleBackColor = true;
+            this.btnUserItemDown.Click += new System.EventHandler(this.btnUserItemDown_Click);
             // 
             // label12
             // 
@@ -222,7 +222,6 @@
             // 
             this.lsvUserItem.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
-            this.lsvUserItem.Enabled = false;
             this.lsvUserItem.FullRowSelect = true;
             this.lsvUserItem.GridLines = true;
             this.lsvUserItem.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
@@ -253,6 +252,7 @@
             // btnCancel
             // 
             this.btnCancel.CausesValidation = false;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(419, 373);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -461,14 +461,16 @@
             // 
             // SettingForm
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(505, 408);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUserItemDown);
+            this.Controls.Add(this.btnUserItemUp);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnUserItemAdd);
@@ -483,7 +485,10 @@
             this.Controls.Add(this.cbCtrl);
             this.Controls.Add(this.tbAnyFolder);
             this.Controls.Add(this.txtbxHotkey);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SettingForm";
             this.Text = "Setting Dialog";
             this.Load += new System.EventHandler(this.SettingForm_Load);
@@ -515,8 +520,8 @@
         private System.Windows.Forms.Button btnUserItemAdd;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUserItemUp;
+        private System.Windows.Forms.Button btnUserItemDown;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox groupBox2;

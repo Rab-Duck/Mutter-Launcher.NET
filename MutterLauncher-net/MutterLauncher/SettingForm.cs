@@ -94,13 +94,14 @@ namespace MutterLauncher
 
 
             // lsvUserItem.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            lsvUserItem.Columns[0].Width = lsvUserItem.ClientSize.Width;
+            
             foreach (Item item in em.getUserItemList())
             {
                 ListViewItem lvi = new ListViewItem(item.getItemName());
                 lvi.Tag = item;
                 lsvUserItem.Items.Add(lvi);
             }
+            lsvUserItem.Columns[0].Width = lsvUserItem.ClientSize.Width;
 
             tbUpdateInterval.Text = Properties.Settings.Default.updateInterval.ToString();
             tbSearchHistoryMax.Text = Properties.Settings.Default.SearchHistoryMax.ToString();
@@ -139,6 +140,12 @@ namespace MutterLauncher
                 ListViewItem lvi = new ListViewItem(frmUserItem.userItem.getItemName());
                 lvi.Tag = frmUserItem.userItem;
                 lsvUserItem.Items.Add(lvi);
+
+                lsvUserItem.Columns[0].Width = lsvUserItem.ClientSize.Width;
+
+                int index = lsvUserItem.Items.Count - 1;
+                lsvUserItem.Items[index].Selected = true;
+                lsvUserItem.FocusedItem = lsvUserItem.Items[index];
             }
             frmUserItem = null;
         }
@@ -166,6 +173,7 @@ namespace MutterLauncher
             {
                 ShowErrMsg(tbEndWith, "SPACE is not permitted for EndWith-char.");
                 e.Cancel = true;
+                return;
             }
             CheckAsciiChar(tbEndWith, e);
         }
@@ -282,8 +290,13 @@ namespace MutterLauncher
                 EnvManager em = EnvManager.getInstance();
                 em.setAnyFolderList(tbAnyFolder.Text);
 
-                // Not Implimented
                 // Store lsvUserItem -> UserItemList.bin
+                List<Item> listItem = new List<Item>();
+                foreach (ListViewItem lvi in lsvUserItem.Items)
+                {
+                    listItem.Add((Item)lvi.Tag);
+                }
+                em.setUerItemlist(listItem);
 
                 Properties.Settings.Default.updateInterval = int.Parse(tbUpdateInterval.Text);
                 Properties.Settings.Default.SearchHistoryMax = int.Parse(tbSearchHistoryMax.Text);
@@ -319,6 +332,7 @@ namespace MutterLauncher
             base.WndProc(ref m);
         }
 
+        /* move to CancelButton Property of Form
         // To capture the "Esc" key
         protected override bool ProcessDialogKey(Keys keyData)
         {
@@ -329,6 +343,112 @@ namespace MutterLauncher
                 return true;
             }
             return base.ProcessDialogKey(keyData);
+        }
+        */
+
+
+        private void btnUserItemUp_Click(object sender, EventArgs e)
+        {
+            int index;
+            if (lsvUserItem.SelectedItems.Count <= 0 ||
+                (index = lsvUserItem.SelectedItems[0].Index) <= 0)
+            {
+                return;
+            }
+
+            Item moveItem = (Item)lsvUserItem.Items[index].Tag;
+
+            lsvUserItem.Items[index].Remove();
+
+            ListViewItem lvi = new ListViewItem(moveItem.getItemName());
+            lvi.Tag = moveItem;
+
+            index--;
+            lsvUserItem.Items.Insert(index, lvi);
+            lsvUserItem.Items[index].Selected = true;
+            lsvUserItem.FocusedItem = lsvUserItem.Items[index];
+
+        }
+
+        private void btnUserItemDown_Click(object sender, EventArgs e)
+        {
+            int index;
+            if (lsvUserItem.SelectedItems.Count <= 0 ||
+                (index = lsvUserItem.SelectedItems[0].Index) >= lsvUserItem.Items.Count - 1)
+            {
+                return;
+            }
+
+            Item moveItem = (Item)lsvUserItem.Items[index].Tag;
+
+            lsvUserItem.Items[index].Remove();
+
+            ListViewItem lvi = new ListViewItem(moveItem.getItemName());
+            lvi.Tag = moveItem;
+
+            index++;
+            lsvUserItem.Items.Insert(index, lvi);
+            lsvUserItem.Items[index].Selected = true;
+            lsvUserItem.FocusedItem = lsvUserItem.Items[index];
+        }
+
+        private void btnUserItemDel_Click(object sender, EventArgs e)
+        {
+            int index;
+            if (lsvUserItem.SelectedItems.Count <= 0)
+            {
+                return;
+            }
+
+            index = lsvUserItem.SelectedItems[0].Index;
+
+            lsvUserItem.Items[index].Remove();
+            lsvUserItem.Columns[0].Width = lsvUserItem.ClientSize.Width;
+
+            int count;
+            if ((count=lsvUserItem.Items.Count) <= 0)
+            {
+                return;
+            }
+            else if (index >= count)
+            {
+                index--;
+            }
+
+            lsvUserItem.Items[index].Selected = true;
+            lsvUserItem.FocusedItem = lsvUserItem.Items[index];
+
+        }
+
+        private void btnUserItemUpdate_Click(object sender, EventArgs e)
+        {
+            int index;
+            if (lsvUserItem.SelectedItems.Count <= 0)
+            {
+                return;
+            }
+
+            index = lsvUserItem.SelectedItems[0].Index;
+            UserItem moveItem = (UserItem)lsvUserItem.Items[index].Tag;
+
+
+            SettingFormUserItem frmUserItem = new SettingFormUserItem(moveItem);
+            frmUserItem.ShowDialog(this);
+            if (frmUserItem.userItem != null)
+            {
+                lsvUserItem.Items[index].Remove();
+
+                ListViewItem lvi = new ListViewItem(frmUserItem.userItem.getItemName());
+                lvi.Tag = frmUserItem.userItem;
+                lsvUserItem.Items.Insert(index, lvi);
+
+                lsvUserItem.Columns[0].Width = lsvUserItem.ClientSize.Width;
+
+                lsvUserItem.Items[index].Selected = true;
+                lsvUserItem.FocusedItem = lsvUserItem.Items[index];
+            }
+            frmUserItem = null;
+
         }
     }
 }
