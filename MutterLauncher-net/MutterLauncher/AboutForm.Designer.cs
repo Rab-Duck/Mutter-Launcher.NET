@@ -43,7 +43,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(12, 56);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(272, 12);
-            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabIndex = 3;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "https://github.com/Rab-Duck/Mutter-Launcher.NET";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -54,7 +54,7 @@
             this.label1.Location = new System.Drawing.Point(92, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 36);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 2;
             this.label1.Text = "Mutter Launcher .NET\r\nVersion 0.7\r\nCopyright (c) 2016, Rab-Duck\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -63,7 +63,7 @@
             this.button1.Location = new System.Drawing.Point(212, 99);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 0;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -74,7 +74,7 @@
             this.linkLabel2.Location = new System.Drawing.Point(63, 77);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(182, 12);
-            this.linkLabel2.TabIndex = 3;
+            this.linkLabel2.TabIndex = 4;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "mailto:rabduck.software@gmail.com";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
@@ -85,7 +85,7 @@
             this.button2.Location = new System.Drawing.Point(14, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(72, 45);
-            this.button2.TabIndex = 4;
+            this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

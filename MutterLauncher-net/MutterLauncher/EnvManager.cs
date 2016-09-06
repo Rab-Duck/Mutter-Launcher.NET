@@ -16,6 +16,7 @@ namespace MutterLauncher
         private string historyFilename = "HistoryList.bin";
         private string itemListFilename = "ItemList.bin";
         private string anyFolderListFilename = "AnyFolderList.txt";
+        private string userItemListFilename = "UserItemList.bin";
         private string envDir;
         private bool bNeedUpdateList = false;
         private Object lockItemList = new Object();
@@ -42,6 +43,7 @@ namespace MutterLauncher
             itemListFilename = envDir + "\\" + itemListFilename;
             historyFilename = envDir + "\\" + historyFilename;
             anyFolderListFilename = envDir + "\\" + anyFolderListFilename;
+            userItemListFilename = envDir + "\\" + userItemListFilename;
         }
 
         public void setItemList(List<Item> itemList)
@@ -191,12 +193,21 @@ namespace MutterLauncher
 
         public List<Item> getUserItemList()
         {
-            List<Item> itemList = new List<Item>();
-            itemList.Add(new UserItem("Run", "%1", true, true, false, null));
-            itemList.Add(new UserItem("Google Search", "http://www.google.com/search?hl=ja&ie=UTF-8&q=%1", true, false, true, "UTF-8"));
-            // itemList.Add(new UserItem("netstat", "netstat -rn %1", false, true, false, null));
+            if (!File.Exists(userItemListFilename))
+            {
+                List<Item> itemList = new List<Item>();
+                itemList.Add(new UserItem("Run", "%1", true, true, false, null));
+                itemList.Add(new UserItem("Google Search", "http://www.google.com/search?hl=ja&ie=UTF-8&q=%1", true, false, true, "UTF-8"));
+                itemList.Add(new UserItem("netstat", "netstat -rn %1", false, true, false, null));
+                return itemList;
+            }
 
-            return itemList;
+            return LoadList(userItemListFilename);
+        }
+
+        public void setUerItemlist(List<Item> itemList)
+        {
+            SaveList(itemList, userItemListFilename);
         }
 
         public void setNotifier(MultiNotifier notifier)
