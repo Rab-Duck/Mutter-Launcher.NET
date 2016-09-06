@@ -1,11 +1,10 @@
-# Mutter-Launcher.NET
+# Mutter Launcher .NET
 
 Mutter Launcher by C#.NET
 Yet, yet another application lancher for Windows by C#.NET
 
 ## これは何？
 
-自分で C# 学習用に  
 Mutter Launcher <http://hp.vector.co.jp/authors/VA022068/soft/bin/mlnch/>  
 を C#.NET に移植しようとしているものです。  
 一人プロジェクト＆学習を兼ねているので説明などは不十分ですが、
@@ -13,12 +12,23 @@ Mutter Launcher <http://hp.vector.co.jp/authors/VA022068/soft/bin/mlnch/>
 
 ## とりあえずアプリを動かしてみるには？
 
-dist にその時点でのバイナリをおいてあります。
+- dist 配下にその時点でのバイナリ（MutterLaunchr.exe）をおいてあります。  
+.NET Framework 4.5 以上なら動く（と思います。出来たら 4.5.2 以上推奨）。
 
-## プロジェクトを動かすには？
+- 起動後に <kbd>Shift</kbd>+<kbd>Space</kbd> でメイン画面が開きます。  
+メイン画面のボタンやタスクトレイのアイコンから右クリックで、設定画面を開くことができます。
+
+- 機能はほぼ Mutter Launcher に準じて＆＋α しています（ただ、まだ実装途中のものもありますが…）。  
+詳しくはそちらを参照してみて下さい。
+
+- 設定は %userprofile%\AppData\Local\Rab-Duck に保存されますので、
+アンインストール時にはこちらも削除して下さい。
+
+## プロジェクトをビルドしてみるには？
 
 Visual Studio 2015 で作っています。  
-.NET Framework 4.5 以上なら動く（と思います。出来たら 4.5.2 以上推奨）。
+MutterLauncher-net 配下のソリューションファイルを開いて下さい。
+
 
 ## ブランチについて
 develop ブランチで開発をして、適宜 master 側にマージをしています。  
