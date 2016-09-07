@@ -115,14 +115,14 @@ namespace MutterLauncher
         {
             if (txtbxHotkey.Text == "")
             {
-                ShowErrMsg(txtbxHotkey, "Please set a valid key.");
+                ShowErrMsg(txtbxHotkey, Properties.Resources.ErrSettingHotkey);
                 e.Cancel = true;
             }
         }
 
         private void ShowErrMsg(Control control, string msg)
         {
-            MessageBox.Show(msg);
+            MessageBox.Show(msg, "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             errorProvider1.SetError(control, msg);
         }
 
@@ -163,7 +163,7 @@ namespace MutterLauncher
             }
 
             // error
-            ShowErrMsg(tbTarget, "Please set a ascii char.");
+            ShowErrMsg(tbTarget, Properties.Resources.ErrNotAscii);
             e.Cancel = true;
         }
 
@@ -171,7 +171,7 @@ namespace MutterLauncher
         {
             if (tbEndWith.Text == " ")
             {
-                ShowErrMsg(tbEndWith, "SPACE is not permitted for EndWith-char.");
+                ShowErrMsg(tbEndWith, Properties.Resources.ErrEndWithSpace);
                 e.Cancel = true;
                 return;
             }
@@ -223,14 +223,14 @@ namespace MutterLauncher
             }
             catch (Exception)
             {
-                ShowErrMsg(tbTarget, "Please set a numeric value.");
+                ShowErrMsg(tbTarget, Properties.Resources.ErrNumericVal);
                 e.Cancel = true;
                 return;
             }
 
             if (value < min || value > max)
             {
-                ShowErrMsg(tbTarget, "Please set " + min + "-" + max + " value");
+                ShowErrMsg(tbTarget, Properties.Resources.ErrNumericRange + " [" + min + "-" + max + "]");
                 e.Cancel = true;
                 return;
             }
@@ -311,7 +311,7 @@ namespace MutterLauncher
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Setting Error");
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Save Setting Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

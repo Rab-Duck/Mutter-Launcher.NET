@@ -46,20 +46,15 @@
             // 
             // lsvFileList
             // 
-            this.lsvFileList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.lsvFileList, "lsvFileList");
             this.lsvFileList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.lsvFileList.FullRowSelect = true;
             this.lsvFileList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lsvFileList.HideSelection = false;
-            this.lsvFileList.Location = new System.Drawing.Point(4, 40);
             this.lsvFileList.MultiSelect = false;
             this.lsvFileList.Name = "lsvFileList";
-            this.lsvFileList.Size = new System.Drawing.Size(295, 264);
-            this.lsvFileList.TabIndex = 2;
-            this.toolTip.SetToolTip(this.lsvFileList, "For exec, select item & enter or double click.");
+            this.toolTip.SetToolTip(this.lsvFileList, resources.GetString("lsvFileList.ToolTip"));
             this.lsvFileList.UseCompatibleStateImageBehavior = false;
             this.lsvFileList.View = System.Windows.Forms.View.Details;
             this.lsvFileList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lsvFileList_ItemSelectionChanged);
@@ -69,90 +64,65 @@
             // 
             // btnExec
             // 
-            this.btnExec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExec.Location = new System.Drawing.Point(144, 335);
+            resources.ApplyResources(this.btnExec, "btnExec");
             this.btnExec.Name = "btnExec";
-            this.btnExec.Size = new System.Drawing.Size(75, 23);
-            this.btnExec.TabIndex = 4;
-            this.btnExec.Text = "Exec";
             this.btnExec.UseVisualStyleBackColor = true;
             this.btnExec.Click += new System.EventHandler(this.btnExec_Click);
             // 
             // cmbbxSearcText
             // 
-            this.cmbbxSearcText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.cmbbxSearcText, "cmbbxSearcText");
             this.cmbbxSearcText.FormattingEnabled = true;
             this.cmbbxSearcText.Items.AddRange(new object[] {
-            "test",
-            "google",
-            "hoge"});
-            this.cmbbxSearcText.Location = new System.Drawing.Point(23, 13);
+            resources.GetString("cmbbxSearcText.Items"),
+            resources.GetString("cmbbxSearcText.Items1"),
+            resources.GetString("cmbbxSearcText.Items2")});
             this.cmbbxSearcText.Name = "cmbbxSearcText";
-            this.cmbbxSearcText.Size = new System.Drawing.Size(276, 20);
-            this.cmbbxSearcText.TabIndex = 1;
-            this.toolTip.SetToolTip(this.cmbbxSearcText, "Input search text");
+            this.toolTip.SetToolTip(this.cmbbxSearcText, resources.GetString("cmbbxSearcText.ToolTip"));
             this.cmbbxSearcText.TextUpdate += new System.EventHandler(this.cmbbxSearcText_TextUpdate);
             this.cmbbxSearcText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbbxSearcText_KeyDown);
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.btnClose, "btnClose");
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(224, 335);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSetenv
             // 
-            this.btnSetenv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.btnSetenv, "btnSetenv");
             this.btnSetenv.Image = global::MutterLauncher.Properties.Resources.Ctrpanel16;
-            this.btnSetenv.Location = new System.Drawing.Point(4, 335);
             this.btnSetenv.Name = "btnSetenv";
-            this.btnSetenv.Size = new System.Drawing.Size(34, 23);
-            this.btnSetenv.TabIndex = 6;
-            this.toolTip.SetToolTip(this.btnSetenv, "Setting...");
+            this.toolTip.SetToolTip(this.btnSetenv, resources.GetString("btnSetenv.ToolTip"));
             this.btnSetenv.UseVisualStyleBackColor = true;
             this.btnSetenv.Click += new System.EventHandler(this.btnSetenv_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.btnUpdate, "btnUpdate");
             this.btnUpdate.Image = global::MutterLauncher.Properties.Resources.Refresh;
-            this.btnUpdate.Location = new System.Drawing.Point(43, 335);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(33, 23);
-            this.btnUpdate.TabIndex = 7;
-            this.toolTip.SetToolTip(this.btnUpdate, "Update");
+            this.toolTip.SetToolTip(this.btnUpdate, resources.GetString("btnUpdate.ToolTip"));
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.btnExit, "btnExit");
             this.btnExit.Image = global::MutterLauncher.Properties.Resources.Close;
-            this.btnExit.Location = new System.Drawing.Point(80, 335);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(34, 23);
-            this.btnExit.TabIndex = 8;
-            this.toolTip.SetToolTip(this.btnExit, "Exit");
+            this.toolTip.SetToolTip(this.btnExit, resources.GetString("btnExit.ToolTip"));
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // txtViewPath
             // 
-            this.txtViewPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtViewPath.Location = new System.Drawing.Point(4, 310);
+            resources.ApplyResources(this.txtViewPath, "txtViewPath");
             this.txtViewPath.Name = "txtViewPath";
             this.txtViewPath.ReadOnly = true;
-            this.txtViewPath.Size = new System.Drawing.Size(295, 19);
-            this.txtViewPath.TabIndex = 3;
-            this.toolTip.SetToolTip(this.txtViewPath, "Path");
+            this.toolTip.SetToolTip(this.txtViewPath, resources.GetString("txtViewPath.ToolTip"));
             // 
             // timerInput
             // 
@@ -161,20 +131,15 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 16);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(12, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "&S";
             // 
             // MainForm
             // 
             this.AcceptButton = this.btnExec;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(304, 362);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnExec);
@@ -184,11 +149,9 @@
             this.Controls.Add(this.btnSetenv);
             this.Controls.Add(this.cmbbxSearcText);
             this.Controls.Add(this.lsvFileList);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Mutter Launcher .NET";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);

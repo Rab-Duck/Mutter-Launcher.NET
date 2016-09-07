@@ -156,7 +156,7 @@ namespace MutterLauncher
             catch (Exception e)
             {
                 Trace.WriteLine("Cannot write " + anyFolderListFilename + ", " + e.Message + "\n" + e.StackTrace);
-                MessageBox.Show("Cannot write " + anyFolderListFilename + "\nreason:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Properties.Resources.ErrWrite + anyFolderListFilename + "\nreason:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -186,7 +186,7 @@ namespace MutterLauncher
             catch (Exception e)
             {
                 Trace.WriteLine("Cannot read " + anyFolderListFilename + ", " + e.Message + "\n" + e.StackTrace);
-                MessageBox.Show("Cannot read " + anyFolderListFilename + "\nreason:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Properties.Resources.ErrWrite + anyFolderListFilename + "\nreason:" + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return new String[0];
         }
@@ -197,7 +197,7 @@ namespace MutterLauncher
             {
                 List<Item> itemList = new List<Item>();
                 itemList.Add(new UserItem("Run", "%1", true, true, false, null));
-                itemList.Add(new UserItem("Google Search", "http://www.google.com/search?hl=ja&ie=UTF-8&q=%1", true, false, true, "UTF-8"));
+                itemList.Add(new UserItem("Google Search", "http://www.google.com/search?ie=UTF-8&q=%1", true, false, true, "UTF-8"));
                 itemList.Add(new UserItem("netstat", "netstat -rn %1", false, true, false, null));
                 return itemList;
             }

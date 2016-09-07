@@ -125,7 +125,7 @@ namespace MutterLauncher
 
             if (!hk.GetCanRegister(this))
             {
-                MessageBox.Show("Cannot register Hot-Key", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Properties.Resources.ErrRegHotkey, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

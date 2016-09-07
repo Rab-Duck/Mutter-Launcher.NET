@@ -146,39 +146,40 @@
     <value>..\mutter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ErrUserItemName" xml:space="preserve">
-    <value>Please set a name.</value>
+    <value>名前を指定して下さい。</value>
   </data>
   <data name="ErrDuplexRun" xml:space="preserve">
-    <value>Mutter Launcher .NET is already running.</value>
+    <value>Mutter Launcher .NET は既に起動されています。</value>
   </data>
   <data name="ErrEndWithSpace" xml:space="preserve">
-    <value>SPACE is not permitted for EndWith-char.</value>
+    <value>後方一致用文字には空白を指定できません。</value>
   </data>
   <data name="ErrNotAscii" xml:space="preserve">
-    <value>Please set a ascii char.</value>
+    <value>ASCII 文字を一文字指定して下さい。</value>
   </data>
   <data name="ErrNumericRange" xml:space="preserve">
-    <value>Please set a valid value.</value>
+    <value>有効な範囲内の値を指定して下さい。</value>
   </data>
   <data name="ErrNumericVal" xml:space="preserve">
-    <value>Please set a numeric value.</value>
+    <value>数値を指定して下さい。</value>
   </data>
   <data name="ErrRead" xml:space="preserve">
-    <value>Cannot read:</value>
+    <value>読み込み不可：</value>
   </data>
   <data name="ErrRegHotkey" xml:space="preserve">
-    <value>Cannot register Hot-Key.</value>
+    <value>ホットキーが登録できませんでした。
+（他のアプリのものと重複している可能性があります）</value>
   </data>
   <data name="ErrSettingHotkey" xml:space="preserve">
-    <value>Please set a valid key.</value>
+    <value>有効なキーを指定して下さい。</value>
   </data>
   <data name="ErrUserItemCmd" xml:space="preserve">
-    <value>Please set a command.</value>
+    <value>コマンドを指定して下さい。</value>
   </data>
   <data name="ErrUserItemEncoding" xml:space="preserve">
-    <value>Please set a valid encoding.</value>
+    <value>有効な文字エンコーディングを指定して下さい。</value>
   </data>
   <data name="ErrWrite" xml:space="preserve">
-    <value>Cannot write:</value>
+    <value>書き込み不可：</value>
   </data>
 </root>

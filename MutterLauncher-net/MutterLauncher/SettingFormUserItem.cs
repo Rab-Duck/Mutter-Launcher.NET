@@ -92,7 +92,7 @@ namespace MutterLauncher
 
         private void ShowErrMsg(Control control, string msg)
         {
-            MessageBox.Show(msg);
+            MessageBox.Show(msg, "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             errorProvider.SetError(control, msg);
         }
 
@@ -100,7 +100,7 @@ namespace MutterLauncher
         {
             if (cbName.Text == "")
             {
-                ShowErrMsg(cbName, "Set a valid name.");
+                ShowErrMsg(cbName, Properties.Resources.ErrUserItemName);
                 e.Cancel = true;
                 return;
             }
@@ -110,7 +110,7 @@ namespace MutterLauncher
         {
             if (txtCmd.Text == "")
             {
-                ShowErrMsg(txtCmd, "Set a valid command.");
+                ShowErrMsg(txtCmd, Properties.Resources.ErrUserItemCmd);
                 e.Cancel = true;
                 return;
             }
@@ -124,7 +124,7 @@ namespace MutterLauncher
                     _userItem = new UserItem("Run", "%1", true, true, false, null);
                     break;
                 case 1:
-                    _userItem = new UserItem("Google Search", "http://www.google.com/search?hl=ja&ie=UTF-8&q=%1", true, false, true, "UTF-8");
+                    _userItem = new UserItem("Google Search", "http://www.google.com/search?ie=UTF-8&q=%1", true, false, true, "UTF-8");
                     break;
                 case 2:
                     _userItem = new UserItem("netstat", "netstat -rn %1", false, true, false, null);
@@ -155,7 +155,7 @@ namespace MutterLauncher
                 }
                 catch (ArgumentException)
                 {
-                    ShowErrMsg(txtEncoding, "Set a valid encoding.");
+                    ShowErrMsg(txtEncoding, Properties.Resources.ErrUserItemEncoding);
                     e.Cancel = true;
                     return;
                 }

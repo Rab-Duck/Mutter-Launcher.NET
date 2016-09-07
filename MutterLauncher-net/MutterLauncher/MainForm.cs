@@ -238,7 +238,7 @@ namespace MutterLauncher
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message + "\n" + e.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(e.Message + "\n" + e.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Trace.WriteLine(e.Message + "\n" + e.StackTrace);
                 }
             }

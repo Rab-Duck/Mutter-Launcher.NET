@@ -24,7 +24,7 @@ namespace MutterLauncher
                 mutex = new Mutex(true, "Mutter Launcher .NET", out bNew);
                 if (!bNew)
                 {
-                    MessageBox.Show("Mutter Launcher .NET is already running.");
+                    MessageBox.Show(Properties.Resources.ErrDuplexRun);
                     return;
                 }
             }
@@ -33,10 +33,14 @@ namespace MutterLauncher
                 if (ex is WaitHandleCannotBeOpenedException ||
                     ex is UnauthorizedAccessException)
                 {
-                    MessageBox.Show("Mutter Launcher .NET is already running.");
+                    MessageBox.Show(Properties.Resources.ErrDuplexRun);
                 }
                 throw ex;
             }
+
+
+            // reference: http://urashita.com/archives/3521
+            // System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

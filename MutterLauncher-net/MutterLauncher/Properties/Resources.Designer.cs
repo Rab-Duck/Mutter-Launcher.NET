@@ -111,6 +111,114 @@ namespace MutterLauncher.Properties {
         }
         
         /// <summary>
+        ///   Mutter Launcher .NET is already running. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrDuplexRun {
+            get {
+                return ResourceManager.GetString("ErrDuplexRun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SPACE is not permitted for EndWith-char. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrEndWithSpace {
+            get {
+                return ResourceManager.GetString("ErrEndWithSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please set a ascii char. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrNotAscii {
+            get {
+                return ResourceManager.GetString("ErrNotAscii", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please set a valid value. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrNumericRange {
+            get {
+                return ResourceManager.GetString("ErrNumericRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please set a numeric value. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrNumericVal {
+            get {
+                return ResourceManager.GetString("ErrNumericVal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cannot read: に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrRead {
+            get {
+                return ResourceManager.GetString("ErrRead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cannot register Hot-Key. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrRegHotkey {
+            get {
+                return ResourceManager.GetString("ErrRegHotkey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please set a valid key. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrSettingHotkey {
+            get {
+                return ResourceManager.GetString("ErrSettingHotkey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please set a command. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrUserItemCmd {
+            get {
+                return ResourceManager.GetString("ErrUserItemCmd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please set a valid encoding. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrUserItemEncoding {
+            get {
+                return ResourceManager.GetString("ErrUserItemEncoding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please set a name. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrUserItemName {
+            get {
+                return ResourceManager.GetString("ErrUserItemName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cannot write: に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrWrite {
+            get {
+                return ResourceManager.GetString("ErrWrite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
         internal static System.Drawing.Bitmap mutter {
