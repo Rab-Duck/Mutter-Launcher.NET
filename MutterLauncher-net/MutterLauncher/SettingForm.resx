@@ -118,265 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label9.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnUserItemUpdate.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
-  <data name="btnCancel.Error" xml:space="preserve">
-    <value />
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label3.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lsvUserItem.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="txtbxHotkey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnUserItemAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 337</value>
+  <data name="txtbxHotkey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 21</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Any Foler List(&amp;F)</value>
+  <data name="txtbxHotkey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 19</value>
   </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtbxHotkey.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="btnUserItemDel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <metadata name="toolTipSetting.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="txtbxHotkey.ToolTip" xml:space="preserve">
+    <value>Input a key for Hotkey</value>
   </data>
-  <data name="&gt;&gt;tbSearchHistoryMax.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;txtbxHotkey.Name" xml:space="preserve">
+    <value>txtbxHotkey</value>
   </data>
-  <data name="&gt;&gt;btnUserItemDel.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tbStartWith.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tbDisplayItemMax.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnUserItemUp.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;tbExecHistoryMax.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;btnOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label9.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbShift.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 23</value>
-  </data>
-  <data name="tbExecHistoryMax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tbUpdateInterval.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tbAnyFolder.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
-    <value>244</value>
-  </data>
-  <data name="tbSkipMatching.MaxLength" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tbSearchHistoryMax.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;btnOk.Name" xml:space="preserve">
-    <value>btnOk</value>
-  </data>
-  <data name="&gt;&gt;cbShift.Name" xml:space="preserve">
-    <value>cbShift</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnUserItemDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 23</value>
-  </data>
-  <data name="tbSkipMatching.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tbUpdateInterval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 44</value>
-  </data>
-  <data name="tbSkipMatching.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="cbShift.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="cbShift.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;lsvUserItem.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 56</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 15</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 12</value>
-  </data>
-  <data name="&gt;&gt;cbAlt.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemDown.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnOk.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 12</value>
-  </data>
-  <data name="cbAlt.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tbStartWith.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;lsvUserItem.Name" xml:space="preserve">
-    <value>lsvUserItem</value>
-  </data>
-  <data name="tbUpdateInterval.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 35</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Display Item Max (0-100)</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;tbEqual.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtbxHotkey.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tbDisplayItemMax.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>min</value>
-  </data>
-  <data name="cbCtrl.Text" xml:space="preserve">
-    <value>Ctrl</value>
-  </data>
-  <data name="&gt;&gt;tbAnyFolder.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="btnUserItemUp.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="tbEndWith.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Setting Dialog</value>
-  </data>
-  <data name="tbEqual.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;cbShift.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label12.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="tbSkipMatching.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="tbSearchHistoryMax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;cbCtrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="tbExecHistoryMax.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnUserItemUpdate.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="tbEndWith.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox2.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tbUpdateInterval.Name" xml:space="preserve">
-    <value>tbUpdateInterval</value>
-  </data>
-  <data name="label10.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtbxHotkey.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtbxHotkey.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="tbAnyFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 128</value>
+  </data>
+  <data name="tbAnyFolder.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tbAnyFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 91</value>
+  </data>
+  <data name="tbAnyFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="tbAnyFolder.ToolTip" xml:space="preserve">
     <value>Add any folders.
@@ -386,479 +170,935 @@ example:
 c:\Windows
 c:\Program Files;.exe;.lnk</value>
   </data>
-  <data name="tbEndWith.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="&gt;&gt;tbAnyFolder.Name" xml:space="preserve">
+    <value>tbAnyFolder</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbDisplayItemMax.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;tbEqual.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lsvUserItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 89</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemAdd.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tbEndWith.Type" xml:space="preserve">
+  <data name="&gt;&gt;tbAnyFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbSkipMatching.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tbSearchHistoryMax.Name" xml:space="preserve">
-    <value>tbSearchHistoryMax</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 12</value>
-  </data>
-  <data name="cbWin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 16</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label12.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;tbDisplayItemMax.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;tbExecHistoryMax.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
-  </data>
-  <data name="btnOk.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label12.ToolTip" xml:space="preserve">
-    <value>Not Implimented</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tbEndWith.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 12</value>
-  </data>
-  <data name="&gt;&gt;tbUpdateInterval.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tbDisplayItemMax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 180</value>
-  </data>
-  <data name="&gt;&gt;toolTipSetting.Name" xml:space="preserve">
-    <value>toolTipSetting</value>
-  </data>
-  <data name="btnUserItemAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cbAlt.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tbEqual.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 32</value>
-  </data>
-  <data name="cbWin.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;tbAnyFolder.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 50</value>
+  <data name="&gt;&gt;tbAnyFolder.ZOrder" xml:space="preserve">
+    <value>17</value>
   </data>
-  <data name="txtbxHotkey.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="tbAnyFolder.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemDel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 12</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnUserItemDel.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnUserItemUp.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tbSearchHistoryMax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 19</value>
-  </data>
-  <data name="btnUserItemAdd.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 12</value>
-  </data>
-  <data name="cbAlt.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbCtrl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="tbAnyFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 73</value>
-  </data>
-  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
-    <value>btnCancel</value>
-  </data>
-  <data name="&gt;&gt;tbStartWith.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnOk.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="cbAlt.Text" xml:space="preserve">
-    <value>Alt</value>
-  </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>User Item</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="label6.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tbStartWith.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 19</value>
-  </data>
-  <data name="label8.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label7.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="cbCtrl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 23</value>
   </data>
   <data name="cbCtrl.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 16</value>
   </data>
-  <data name="cbAlt.Error" xml:space="preserve">
-    <value />
+  <data name="cbCtrl.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="label9.ToolTip" xml:space="preserve">
-    <value>Not Implimented</value>
+  <data name="cbCtrl.Text" xml:space="preserve">
+    <value>Ctrl</value>
   </data>
-  <data name="cbCtrl.Error" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;cbCtrl.Name" xml:space="preserve">
+    <value>cbCtrl</value>
   </data>
-  <data name="tbSkipMatching.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 32</value>
+  <data name="&gt;&gt;cbCtrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
+  <data name="&gt;&gt;cbCtrl.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cbCtrl.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="cbWin.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbWin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 23</value>
+  </data>
+  <data name="cbWin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 16</value>
+  </data>
+  <data name="cbWin.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="cbWin.Text" xml:space="preserve">
+    <value>Win</value>
+  </data>
+  <data name="&gt;&gt;cbWin.Name" xml:space="preserve">
+    <value>cbWin</value>
+  </data>
+  <data name="&gt;&gt;cbWin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbWin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbWin.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="cbAlt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbAlt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 23</value>
+  </data>
+  <data name="cbAlt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 16</value>
+  </data>
+  <data name="cbAlt.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cbAlt.Text" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="&gt;&gt;cbAlt.Name" xml:space="preserve">
+    <value>cbAlt</value>
+  </data>
+  <data name="&gt;&gt;cbAlt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAlt.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;cbAlt.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>EndWith</value>
+  <data name="cbShift.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbShift.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 23</value>
+  </data>
+  <data name="cbShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="cbShift.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cbShift.Text" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="&gt;&gt;cbShift.Name" xml:space="preserve">
+    <value>cbShift</value>
+  </data>
+  <data name="&gt;&gt;cbShift.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbShift.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbShift.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="btnUserItemDel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 337</value>
+  </data>
+  <data name="btnUserItemDel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnUserItemDel.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="btnUserItemDel.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnUserItemDel.ToolTip" xml:space="preserve">
+    <value>Not Implimented</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemDel.Name" xml:space="preserve">
+    <value>btnUserItemDel</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemDel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemDel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemDel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="btnUserItemUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>148, 337</value>
+  </data>
+  <data name="btnUserItemUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnUserItemUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="btnUserItemUpdate.Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="btnUserItemUpdate.ToolTip" xml:space="preserve">
+    <value>Not Implimented</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemUpdate.Name" xml:space="preserve">
+    <value>btnUserItemUpdate</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemUpdate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemUpdate.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnUserItemAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 337</value>
+  </data>
+  <data name="btnUserItemAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnUserItemAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnUserItemAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnUserItemAdd.ToolTip" xml:space="preserve">
+    <value>Not Implimented</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemAdd.Name" xml:space="preserve">
+    <value>btnUserItemAdd</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemAdd.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemAdd.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnUserItemUp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 266</value>
+  </data>
+  <data name="btnUserItemUp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 23</value>
+  </data>
+  <data name="btnUserItemUp.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnUserItemUp.ToolTip" xml:space="preserve">
+    <value>Not Implimented</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemUp.Name" xml:space="preserve">
+    <value>btnUserItemUp</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemUp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemUp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemUp.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnUserItemDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>305, 295</value>
+  </data>
+  <data name="btnUserItemDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="btnUserItemDown.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnUserItemDown.ToolTip" xml:space="preserve">
+    <value>Not Implimented</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemDown.Name" xml:space="preserve">
+    <value>btnUserItemDown</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemDown.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnUserItemDown.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 227</value>
   </data>
-  <data name="tbAnyFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 91</value>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 12</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 12</value>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 165</value>
+  <data name="label12.Text" xml:space="preserve">
+    <value>User Item List(&amp;U)</value>
   </data>
-  <data name="tbDisplayItemMax.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbCtrl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnUserItemUpdate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;cbWin.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox1.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbWin.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tbDisplayItemMax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 19</value>
-  </data>
-  <data name="btnOk.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnUserItemUpdate.ToolTip" xml:space="preserve">
+  <data name="label12.ToolTip" xml:space="preserve">
     <value>Not Implimented</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 12</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="cbAlt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 23</value>
-  </data>
-  <data name="label6.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;tbSkipMatching.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tbSearchHistoryMax.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tbEndWith.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbWin.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="tbStartWith.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tbEqual.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnUserItemDown.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tbEndWith.MaxLength" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="cbAlt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 16</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="btnUserItemAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="tbExecHistoryMax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 19</value>
-  </data>
-  <data name="&gt;&gt;tbEqual.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
   </data>
   <data name="&gt;&gt;label12.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label10.Error" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="tbEqual.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 19</value>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="tbEndWith.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 19</value>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="btnUserItemUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 73</value>
   </data>
-  <data name="label11.Error" xml:space="preserve">
-    <value />
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 12</value>
   </data>
-  <data name="tbEndWith.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+  <data name="label9.Text" xml:space="preserve">
+    <value>Search History Max (0-100)</value>
+  </data>
+  <data name="label9.ToolTip" xml:space="preserve">
+    <value>Not Implimented</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 24</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 12</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>HotKey(&amp;H)</value>
   </data>
-  <data name="label4.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
-  <data name="&gt;&gt;cbWin.Name" xml:space="preserve">
-    <value>cbWin</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 12</value>
-  </data>
-  <data name="btnUserItemAdd.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnUserItemDel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 48</value>
-  </data>
-  <data name="tbSearchHistoryMax.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lsvUserItem.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnUserItemUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 337</value>
-  </data>
-  <data name="tbUpdateInterval.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;tbDisplayItemMax.Name" xml:space="preserve">
-    <value>tbDisplayItemMax</value>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 113</value>
   </data>
-  <data name="&gt;&gt;btnUserItemAdd.Name" xml:space="preserve">
-    <value>btnUserItemAdd</value>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 12</value>
   </data>
-  <data name="tbExecHistoryMax.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Any Foler List(&amp;F)</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>SkipMatching</value>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
   </data>
-  <data name="&gt;&gt;tbExecHistoryMax.Name" xml:space="preserve">
-    <value>tbExecHistoryMax</value>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;cbCtrl.ZOrder" xml:space="preserve">
-    <value>16</value>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
-  <data name="label4.ToolTip" xml:space="preserve">
-    <value />
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>User Item</value>
   </data>
-  <data name="btnCancel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>244</value>
   </data>
-  <data name="tbUpdateInterval.MaxLength" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="lsvUserItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 242</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 12</value>
+  <data name="lsvUserItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 89</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 35</value>
+  <data name="lsvUserItem.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lsvUserItem.Name" xml:space="preserve">
+    <value>lsvUserItem</value>
+  </data>
+  <data name="&gt;&gt;lsvUserItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lsvUserItem.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lsvUserItem.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="btnOk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>337, 373</value>
+  </data>
+  <data name="btnOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnOk.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="btnOk.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;btnOk.Name" xml:space="preserve">
+    <value>btnOk</value>
+  </data>
+  <data name="&gt;&gt;btnOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOk.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnOk.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;txtbxHotkey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>418, 373</value>
   </data>
-  <data name="&gt;&gt;toolTipSetting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="cbShift.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tbEndWith.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="cbCtrl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 23</value>
-  </data>
-  <data name="label4.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;tbExecHistoryMax.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;cbAlt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbShift.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;cbAlt.Name" xml:space="preserve">
-    <value>cbAlt</value>
-  </data>
-  <data name="tbAnyFolder.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbShift.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="cbCtrl.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="label10.IconPadding" type="System.Int32, mscorlib">
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tbEqual.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="tbEqual.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 32</value>
+  </data>
+  <data name="tbEqual.MaxLength" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tbEqual.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 19</value>
+  </data>
+  <data name="tbEqual.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;tbEqual.Name" xml:space="preserve">
+    <value>tbEqual</value>
+  </data>
+  <data name="&gt;&gt;tbEqual.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbEqual.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;tbEqual.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tbSkipMatching.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="tbSkipMatching.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 32</value>
+  </data>
+  <data name="tbSkipMatching.MaxLength" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tbSkipMatching.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 19</value>
+  </data>
+  <data name="tbSkipMatching.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tbSkipMatching.Name" xml:space="preserve">
+    <value>tbSkipMatching</value>
+  </data>
+  <data name="&gt;&gt;tbSkipMatching.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbSkipMatching.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;tbSkipMatching.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tbEndWith.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="tbEndWith.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 12</value>
+  </data>
+  <data name="tbEndWith.MaxLength" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tbEndWith.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 19</value>
+  </data>
+  <data name="tbEndWith.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tbEndWith.Name" xml:space="preserve">
+    <value>tbEndWith</value>
+  </data>
+  <data name="&gt;&gt;tbEndWith.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbEndWith.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;tbEndWith.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tbStartWith.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="tbStartWith.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 12</value>
+  </data>
+  <data name="tbStartWith.MaxLength" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tbStartWith.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 19</value>
+  </data>
+  <data name="tbStartWith.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tbStartWith.Name" xml:space="preserve">
+    <value>tbStartWith</value>
+  </data>
+  <data name="&gt;&gt;tbStartWith.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbStartWith.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;tbStartWith.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 35</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 12</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Equal</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 35</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 12</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>SkipMatching</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 15</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 12</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>EndWith</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 15</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 12</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>StartWith</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 48</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 56</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Search Type Char(&amp;S)</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 50</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 12</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>min</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbDisplayItemMax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="tbDisplayItemMax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 180</value>
+  </data>
+  <data name="tbDisplayItemMax.MaxLength" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tbDisplayItemMax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 19</value>
+  </data>
+  <data name="tbDisplayItemMax.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;tbDisplayItemMax.Name" xml:space="preserve">
+    <value>tbDisplayItemMax</value>
+  </data>
+  <data name="&gt;&gt;tbDisplayItemMax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbDisplayItemMax.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;tbDisplayItemMax.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tbExecHistoryMax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="tbExecHistoryMax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 133</value>
+  </data>
+  <data name="tbExecHistoryMax.MaxLength" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tbExecHistoryMax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 19</value>
+  </data>
+  <data name="tbExecHistoryMax.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tbExecHistoryMax.Name" xml:space="preserve">
+    <value>tbExecHistoryMax</value>
+  </data>
+  <data name="&gt;&gt;tbExecHistoryMax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbExecHistoryMax.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;tbExecHistoryMax.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tbSearchHistoryMax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="tbSearchHistoryMax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 88</value>
+  </data>
+  <data name="tbSearchHistoryMax.MaxLength" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tbSearchHistoryMax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 19</value>
+  </data>
+  <data name="tbSearchHistoryMax.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tbSearchHistoryMax.Name" xml:space="preserve">
+    <value>tbSearchHistoryMax</value>
+  </data>
+  <data name="&gt;&gt;tbSearchHistoryMax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbSearchHistoryMax.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;tbSearchHistoryMax.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbUpdateInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Disable</value>
+  </data>
+  <data name="tbUpdateInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 44</value>
+  </data>
+  <data name="tbUpdateInterval.MaxLength" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tbUpdateInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 19</value>
+  </data>
+  <data name="tbUpdateInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tbUpdateInterval.Name" xml:space="preserve">
+    <value>tbUpdateInterval</value>
+  </data>
+  <data name="&gt;&gt;tbUpdateInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbUpdateInterval.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;tbUpdateInterval.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 165</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 12</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Display Item Max (0-100)</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="lsvUserItem.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 118</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 12</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Exec History Max (0-100)</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 27</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 12</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Update Interval (10-9999)</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>339, 48</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 312</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Details(&amp;D)</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>145, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>505, 408</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -882,682 +1122,31 @@ c:\Program Files;.exe;.lnk</value>
         IQDgAP//8GDAMMABojDAAbAwwAE6ecAB2zDAAcgwwAH8MMABJgCAASkAwAEAAMABgVDAAQAA//+zAA==
 </value>
   </data>
-  <data name="label11.ToolTip" xml:space="preserve">
-    <value />
+  <data name="$this.Text" xml:space="preserve">
+    <value>Setting Dialog</value>
   </data>
-  <data name="&gt;&gt;tbEndWith.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;toolTipSetting.Name" xml:space="preserve">
+    <value>toolTipSetting</value>
   </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label11.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tbStartWith.MaxLength" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tbSearchHistoryMax.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="tbSearchHistoryMax.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtbxHotkey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 21</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tbEqual.Name" xml:space="preserve">
-    <value>tbEqual</value>
-  </data>
-  <data name="tbAnyFolder.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label12.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tbEqual.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tbUpdateInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 19</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Update Interval (10-9999)</value>
-  </data>
-  <data name="cbWin.Text" xml:space="preserve">
-    <value>Win</value>
-  </data>
-  <data name="btnUserItemUp.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="tbEqual.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemDel.Name" xml:space="preserve">
-    <value>btnUserItemDel</value>
-  </data>
-  <data name="tbSearchHistoryMax.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="txtbxHotkey.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnUserItemUp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 23</value>
-  </data>
-  <data name="btnUserItemUp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 266</value>
-  </data>
-  <data name="cbShift.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lsvUserItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 242</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemUpdate.Name" xml:space="preserve">
-    <value>btnUserItemUpdate</value>
-  </data>
-  <data name="label7.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 12</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbWin.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="groupBox1.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tbSearchHistoryMax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 88</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbSkipMatching.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tbAnyFolder.Name" xml:space="preserve">
-    <value>tbAnyFolder</value>
-  </data>
-  <data name="lsvUserItem.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;tbStartWith.Name" xml:space="preserve">
-    <value>tbStartWith</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 24</value>
-  </data>
-  <data name="txtbxHotkey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="txtbxHotkey.ToolTip" xml:space="preserve">
-    <value>Input a key for Hotkey</value>
-  </data>
-  <data name="label3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tbEqual.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="tbDisplayItemMax.MaxLength" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnUserItemUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemUp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnUserItemDel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 12</value>
-  </data>
-  <data name="&gt;&gt;cbShift.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnUserItemAdd.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="&gt;&gt;tbAnyFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbDisplayItemMax.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label9.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label8.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label7.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;tbUpdateInterval.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tbEndWith.Name" xml:space="preserve">
-    <value>tbEndWith</value>
-  </data>
-  <data name="btnUserItemDel.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnUserItemUpdate.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lsvUserItem.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnCancel.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label5.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Search Type Char(&amp;S)</value>
-  </data>
-  <data name="cbShift.Text" xml:space="preserve">
-    <value>Shift</value>
-  </data>
-  <data name="btnOk.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="txtbxHotkey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 19</value>
-  </data>
-  <data name="label2.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnUserItemUp.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>418, 373</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbWin.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>339, 48</value>
-  </data>
-  <data name="tbSkipMatching.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 19</value>
-  </data>
-  <data name="label3.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 12</value>
-  </data>
-  <data name="&gt;&gt;lsvUserItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Details(&amp;D)</value>
-  </data>
-  <data name="label5.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemUp.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label8.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;tbStartWith.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>337, 373</value>
-  </data>
-  <data name="tbSearchHistoryMax.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="tbEqual.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="tbUpdateInterval.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="tbUpdateInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="cbCtrl.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="cbWin.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnCancel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label11.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnUserItemDown.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnOk.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnUserItemAdd.ToolTip" xml:space="preserve">
-    <value>Not Implimented</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Equal</value>
-  </data>
-  <data name="&gt;&gt;txtbxHotkey.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="btnOk.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="btnUserItemDel.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SettingForm</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="btnUserItemDown.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
-    <value>errorProvider1</value>
-  </data>
-  <data name="groupBox2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox2.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;tbStartWith.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnUserItemDel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 337</value>
-  </data>
-  <data name="label1.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="btnUserItemAdd.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="tbUpdateInterval.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;tbSearchHistoryMax.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tbSkipMatching.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="label2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>StartWith</value>
-  </data>
-  <data name="&gt;&gt;tbSkipMatching.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="cbCtrl.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label8.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbDisplayItemMax.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;tbDisplayItemMax.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnUserItemDel.ToolTip" xml:space="preserve">
-    <value>Not Implimented</value>
-  </data>
-  <data name="label5.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Exec History Max (0-100)</value>
-  </data>
-  <data name="txtbxHotkey.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label1.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnUserItemDown.ToolTip" xml:space="preserve">
-    <value>Not Implimented</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tbDisplayItemMax.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Disable</value>
-  </data>
-  <data name="tbSearchHistoryMax.MaxLength" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tbExecHistoryMax.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cbCtrl.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tbExecHistoryMax.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;cbShift.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="tbStartWith.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnUserItemUpdate.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 118</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="label4.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;txtbxHotkey.Name" xml:space="preserve">
-    <value>txtbxHotkey</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemDown.Name" xml:space="preserve">
-    <value>btnUserItemDown</value>
-  </data>
-  <data name="tbAnyFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 128</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnUserItemDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 295</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>505, 408</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Search History Max (0-100)</value>
-  </data>
-  <data name="cbAlt.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnUserItemDel.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 27</value>
-  </data>
-  <data name="tbExecHistoryMax.MaxLength" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnOk.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="cbAlt.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label5.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tbExecHistoryMax.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemUp.Name" xml:space="preserve">
-    <value>btnUserItemUp</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="tbEndWith.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label10.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="cbShift.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 16</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemDown.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cbWin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tbExecHistoryMax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 133</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="tbStartWith.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label6.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="label7.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;txtbxHotkey.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 15</value>
-  </data>
-  <data name="&gt;&gt;btnUserItemUpdate.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnUserItemDown.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tbSkipMatching.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tbEqual.MaxLength" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tbUpdateInterval.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>User Item List(&amp;U)</value>
-  </data>
-  <data name="cbWin.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;cbCtrl.Name" xml:space="preserve">
-    <value>cbCtrl</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbSkipMatching.Name" xml:space="preserve">
-    <value>tbSkipMatching</value>
+  <data name="&gt;&gt;toolTipSetting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
     <value>columnHeader1</value>
   </data>
-  <data name="label3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 312</value>
+  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
+    <value>errorProvider1</value>
   </data>
-  <data name="tbStartWith.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 113</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SettingForm</value>
   </data>
-  <data name="&gt;&gt;btnUserItemAdd.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtbxHotkey.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="cbCtrl.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnUserItemUp.ToolTip" xml:space="preserve">
-    <value>Not Implimented</value>
-  </data>
-  <data name="cbWin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 23</value>
-  </data>
-  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label6.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="lsvUserItem.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tbStartWith.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 12</value>
-  </data>
-  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>145, 17</value>
-  </metadata>
-  <metadata name="toolTipSetting.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

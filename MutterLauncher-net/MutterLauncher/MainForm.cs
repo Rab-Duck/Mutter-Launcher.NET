@@ -86,6 +86,7 @@ namespace MutterLauncher
                 this.CenterToScreen();
             }
 
+            cmbbxSearcText.Items.AddRange(envmngr.getSearchHistory());
 
             // prepare LSV
             // lsvFileList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -111,6 +112,15 @@ namespace MutterLauncher
         private void EnvFinished(bool bReCollect)
         {
             updateView(null, true);
+
+            if (cmbbxSearcText.Items.Count > Properties.Settings.Default.SearchHistoryMax)
+            {
+                // cut off over max
+                for (int i = cmbbxSearcText.Items.Count - 1; i >= Properties.Settings.Default.SearchHistoryMax; i--)
+                {
+                    cmbbxSearcText.Items.RemoveAt(i);
+                }
+            }
         }
 
         private SearchCmd prevSearchCmd;
@@ -232,6 +242,7 @@ namespace MutterLauncher
 
                     if(item.execute(cmbbxSearcText.Text, modifiers))
                     {
+                        SetSearchTextHistory();
                         mc.setExecHistory(item);
                         this.Close();
                     }
@@ -244,12 +255,49 @@ namespace MutterLauncher
             }
         }
 
+        private void SetSearchTextHistory()
+        {
+            int index;
+
+            if (string.IsNullOrEmpty(cmbbxSearcText.Text))
+            {
+                return;
+            }
+
+            string searchText = cmbbxSearcText.Text;
+            if ((index=cmbbxSearcText.FindStringExact(searchText)) >= 0)
+            {
+                // remove same item
+                cmbbxSearcText.Items.RemoveAt(index);
+            }
+
+            // add new item
+            cmbbxSearcText.Items.Insert(0, searchText);
+
+            if (cmbbxSearcText.Items.Count > Properties.Settings.Default.SearchHistoryMax)
+            {
+                // cut off over max
+                for (int i = cmbbxSearcText.Items.Count-1; i >= Properties.Settings.Default.SearchHistoryMax; i--)
+                {
+                    cmbbxSearcText.Items.RemoveAt(i);
+                }
+            }
+
+            string[] history = new string[cmbbxSearcText.Items.Count];
+            
+            for (int i = 0; i < cmbbxSearcText.Items.Count; i++)
+            {
+                history[i] = cmbbxSearcText.Items[i].ToString();
+            }
+            
+            envmngr.setSearchHistory(history);
+        }
+
         private void cmbbxSearcText_TextUpdate(object sender, EventArgs e)
         {
-            // timerInput.Enabled = false;
-            // timerInput.Enabled = true;
-            timerInput.Stop();
-            timerInput.Start();
+            // move to TextChanged
+            // timerInput.Stop();
+            // timerInput.Start();
 
         }
 
@@ -266,10 +314,12 @@ namespace MutterLauncher
                 case Keys.Down:
                 case Keys.PageUp:
                 case Keys.PageDown:
-                    NativeMethods.SendMessage(lsvFileList.Handle, 0x0100, (IntPtr)e.KeyCode, IntPtr.Zero);
-                    e.Handled = true;
+                    if (e.Modifiers == Keys.None && !cmbbxSearcText.DroppedDown)
+                    {
+                        NativeMethods.SendMessage(lsvFileList.Handle, 0x0100, (IntPtr)e.KeyCode, IntPtr.Zero);
+                        e.Handled = true;
+                    }
                     break;
-
                 default:
                     break;
             }
@@ -390,6 +440,13 @@ namespace MutterLauncher
         {
             SettingForm.ShowSettingForm();
         }
+
+        private void cmbbxSearcText_TextChanged(object sender, EventArgs e)
+        {
+            timerInput.Stop();
+            timerInput.Start();
+        }
+
     }
   
 }

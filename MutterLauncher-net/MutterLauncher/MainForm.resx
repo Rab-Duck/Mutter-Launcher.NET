@@ -180,15 +180,6 @@
   <data name="cmbbxSearcText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="cmbbxSearcText.Items" xml:space="preserve">
-    <value>test</value>
-  </data>
-  <data name="cmbbxSearcText.Items1" xml:space="preserve">
-    <value>google</value>
-  </data>
-  <data name="cmbbxSearcText.Items2" xml:space="preserve">
-    <value>hoge</value>
-  </data>
   <data name="cmbbxSearcText.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 13</value>
   </data>
