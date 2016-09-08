@@ -72,14 +72,13 @@
             // cmbbxSearcText
             // 
             resources.ApplyResources(this.cmbbxSearcText, "cmbbxSearcText");
+            this.cmbbxSearcText.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbbxSearcText.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbbxSearcText.FormattingEnabled = true;
-            this.cmbbxSearcText.Items.AddRange(new object[] {
-            resources.GetString("cmbbxSearcText.Items"),
-            resources.GetString("cmbbxSearcText.Items1"),
-            resources.GetString("cmbbxSearcText.Items2")});
             this.cmbbxSearcText.Name = "cmbbxSearcText";
             this.toolTip.SetToolTip(this.cmbbxSearcText, resources.GetString("cmbbxSearcText.ToolTip"));
             this.cmbbxSearcText.TextUpdate += new System.EventHandler(this.cmbbxSearcText_TextUpdate);
+            this.cmbbxSearcText.TextChanged += new System.EventHandler(this.cmbbxSearcText_TextChanged);
             this.cmbbxSearcText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbbxSearcText_KeyDown);
             // 
             // btnClose

@@ -17,6 +17,7 @@ namespace MutterLauncher
         private string itemListFilename = "ItemList.bin";
         private string anyFolderListFilename = "AnyFolderList.txt";
         private string userItemListFilename = "UserItemList.bin";
+        private string searchHistoryFilename = "SearchHistory.bin";
         private string envDir;
         private bool bNeedUpdateList = false;
         private Object lockItemList = new Object();
@@ -44,6 +45,7 @@ namespace MutterLauncher
             historyFilename = envDir + "\\" + historyFilename;
             anyFolderListFilename = envDir + "\\" + anyFolderListFilename;
             userItemListFilename = envDir + "\\" + userItemListFilename;
+            searchHistoryFilename = envDir + "\\" + searchHistoryFilename;
         }
 
         public void setItemList(List<Item> itemList)
@@ -79,9 +81,9 @@ namespace MutterLauncher
             }
         }
 
-        private void SaveList(List<Item> itemList, string fname)
+        private void SaveList(object itemList, string fname)
         {
-            IFormatter formatter = new BinaryFormatter();
+          IFormatter formatter = new BinaryFormatter();
             Stream stream = null;
             try
             {
@@ -208,6 +210,48 @@ namespace MutterLauncher
         public void setUerItemlist(List<Item> itemList)
         {
             SaveList(itemList, userItemListFilename);
+        }
+
+        public void setSearchHistory(string [] items)
+        {
+            SaveList(items, searchHistoryFilename);
+        }
+
+        public string[] getSearchHistory()
+        {
+            string[] itemList = new string[0];
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = null;
+            try
+            {
+                stream = new FileStream(searchHistoryFilename, FileMode.Open, FileAccess.Read, FileShare.Read);
+                itemList = (string [])formatter.Deserialize(stream);
+            }
+            catch (FileNotFoundException)
+            {
+
+            }
+            catch (SerializationException)
+            {
+                // the file may be broken...
+                stream.Close();
+                stream = null;
+                File.Delete(searchHistoryFilename);
+                itemList = new string[0];
+            }
+            catch (Exception e)
+            {
+                Trace.WriteLine(e.Message + "\n" + e.StackTrace);
+                throw e;
+            }
+            finally
+            {
+                if (stream != null)
+                {
+                    stream.Close();
+                }
+            }
+            return itemList;
         }
 
         public void setNotifier(MultiNotifier notifier)
