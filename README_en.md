@@ -23,7 +23,7 @@ When you want to uninstall it, delete these data.
 
 ## How to build the project.
 
-This project develped by Visual Studio 2015.  
+This project developed by Visual Studio 2015.  
 Open the sln file under MutterLauncher-net folder by VS.
 
 
