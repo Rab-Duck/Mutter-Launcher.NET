@@ -10,4 +10,4 @@ Search and run whithin StartMenu, Desktop, ControlPanel,PATH...etc.
 
 # Usage
 - English(not yet)
-- Japanese(not yet)
+- [Japanese](USAGE_ja.md) (now, while working)
