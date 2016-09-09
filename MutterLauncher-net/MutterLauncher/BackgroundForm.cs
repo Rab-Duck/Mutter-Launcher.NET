@@ -90,6 +90,10 @@ namespace MutterLauncher
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
             Trace.WriteLine("Background Timer Ticked!");
+            if (this.IsDisposed)
+            {
+                return;
+            }
             mc.setEvent();
         }
 
@@ -147,7 +151,8 @@ namespace MutterLauncher
         {
             Debug.WriteLine(this + " closing!");
             mc.removeInvoker(collectStateHandler);
-
+            timerUpdate.Stop();
+            timerUpdate.Tick -= new EventHandler(this.timerUpdate_Tick);
         }
 
         private void miExit_Click(object sender, EventArgs e)

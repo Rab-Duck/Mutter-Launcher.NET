@@ -249,7 +249,7 @@ namespace MutterLauncher
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message + "\n" + e.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Trace.WriteLine(e.Message + "\n" + e.StackTrace);
                 }
             }
@@ -347,6 +347,8 @@ namespace MutterLauncher
             SavePos();
             mc.removeInvoker(collectStateHandler);
             envmngr.removeNotifyFinished(EnvFinished);
+            timerInput.Stop();
+            timerInput.Tick -= new EventHandler(this.timerInput_Tick);
 
             // reference: http://stackoverflow.com/questions/2021681/hide-form-instead-of-closing-when-close-button-clicked
             /*
@@ -427,6 +429,11 @@ namespace MutterLauncher
 
         private void timerInput_Tick(object sender, EventArgs e)
         {
+            if (this.IsDisposed)
+            {
+                return;
+            }
+
             // timerInput.Enabled = false;
             timerInput.Stop();
 
@@ -447,6 +454,39 @@ namespace MutterLauncher
             timerInput.Start();
         }
 
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ControlKey)
+            {
+                // reference: http://dobon.net/vb/dotnet/system/displayshieldicon.html
+                btnExec.FlatStyle = System.Windows.Forms.FlatStyle.System;
+                NativeMethods.SendMessage((IntPtr)btnExec.Handle,
+                    0x160C, // BCM_SETSHIELD
+                    IntPtr.Zero,
+                    (IntPtr)1);
+            }
+            if (e.KeyCode == Keys.Enter && e.Control)
+            {
+                NativeMethods.SendMessage((IntPtr)btnExec.Handle,
+                    0x160C, // BCM_SETSHIELD
+                    IntPtr.Zero,
+                    (IntPtr)0);
+                btnExec.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+                btnExec.PerformClick();
+            }
+        }
+
+        private void MainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ControlKey)
+            {
+                NativeMethods.SendMessage((IntPtr)btnExec.Handle,
+                    0x160C, // BCM_SETSHIELD
+                    IntPtr.Zero,
+                    (IntPtr)0);
+                btnExec.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            }
+        }
     }
   
 }

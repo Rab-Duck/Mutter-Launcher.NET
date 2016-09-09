@@ -44,6 +44,7 @@ namespace MutterLauncher
 		public const int SHGFI_OVERLAYINDEX     = 0x00000040;
 		public const int SHGFI_ICON             = 0x00000100;
         public const int SHGFI_DISPLAYNAME      = 0x00000200;
+        public const int SHGFI_EXETYPE          = 0x00002000;
         public const int SHGFI_SYSICONINDEX     = 0x00004000;
 
         public const int LVSIL_NORMAL = 0;

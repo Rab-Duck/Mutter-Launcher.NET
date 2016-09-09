@@ -182,4 +182,10 @@
   <data name="ErrWrite" xml:space="preserve">
     <value>書き込み不可：</value>
   </data>
+  <data name="ErrNotSupportOpenDir" xml:space="preserve">
+    <value>これはディレクトリを開くことはできません。</value>
+  </data>
+  <data name="ErrNotSupportRunAsAdmin" xml:space="preserve">
+    <value>これは管理者としての実行をサポートしていません。</value>
+  </data>
 </root>

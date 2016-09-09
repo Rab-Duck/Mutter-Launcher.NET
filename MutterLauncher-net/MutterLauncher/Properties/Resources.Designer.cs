@@ -138,6 +138,24 @@ namespace MutterLauncher.Properties {
         }
         
         /// <summary>
+        ///   This is not support to open dir. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrNotSupportOpenDir {
+            get {
+                return ResourceManager.GetString("ErrNotSupportOpenDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   This is not support to run as administrator. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ErrNotSupportRunAsAdmin {
+            get {
+                return ResourceManager.GetString("ErrNotSupportRunAsAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Please set a valid value. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string ErrNumericRange {
