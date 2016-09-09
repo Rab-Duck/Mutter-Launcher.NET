@@ -181,4 +181,10 @@
   <data name="ErrWrite" xml:space="preserve">
     <value>Cannot write:</value>
   </data>
+  <data name="ErrNotSupportOpenDir" xml:space="preserve">
+    <value>This is not support to open dir.</value>
+  </data>
+  <data name="ErrNotSupportRunAsAdmin" xml:space="preserve">
+    <value>This is not support to run as administrator.</value>
+  </data>
 </root>

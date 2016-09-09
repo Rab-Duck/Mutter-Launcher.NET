@@ -59,6 +59,11 @@ namespace MutterLauncher
         {
             string execCmd;
 
+            if ((modifiers & Keys.Shift) == Keys.Shift)
+            {
+                throw new ArgumentException(Properties.Resources.ErrNotSupportOpenDir);
+            }
+
             // fix exec cmd string
             if (itemType == ItemType.TYPE_FIX)
             {
@@ -88,6 +93,22 @@ namespace MutterLauncher
             else
             {
                 args = new string[]{ execCmd };
+            }
+
+            if ((modifiers & Keys.Control) == Keys.Control)
+            {
+                // run as admin
+                //reference: http://dobon.net/vb/dotnet/system/runelevated.html
+                System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo();
+                psi.UseShellExecute = true;
+                psi.FileName = args[0];
+                psi.Verb = "runas"; // as Admin
+                SearchCmd sc = Util.analyzeSearchCmd(strExec);
+                psi.Arguments = args.Length > 1 ? args[1] : null;
+                psi.ErrorDialog = false;
+                System.Diagnostics.Process.Start(psi);
+
+                 return true;
             }
 
             // exec

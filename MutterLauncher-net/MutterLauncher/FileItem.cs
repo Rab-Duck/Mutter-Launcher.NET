@@ -58,13 +58,37 @@ namespace MutterLauncher
 
             try
             {
+                SearchCmd sc = Util.analyzeSearchCmd(strExec);
                 if ((modifiers & Keys.Shift) == Keys.Shift)
                 {
                     System.Diagnostics.Process.Start("explorer", "/select,\"" + path + "\"");
                 }
+                else if ((modifiers & Keys.Control) == Keys.Control)
+                {
+                    // run as admin
+                    SHFILEINFO shFileInfo = new SHFILEINFO();
+                    if (fileType == FileType.NORMAL &&
+                        NativeMethods.SHGetFileInfo(path, 0, out shFileInfo, (uint)Marshal.SizeOf(shFileInfo),
+                            NativeMethods.SHGFI_EXETYPE) != (IntPtr)0)
+                    {
+                        //reference: http://dobon.net/vb/dotnet/system/runelevated.html
+                        System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo();
+                        psi.UseShellExecute = true;
+                        psi.FileName = path;
+                        psi.Verb = "runas"; // as Admin
+                        psi.Arguments = sc.strOption;
+                        psi.ErrorDialog = false;
+                        System.Diagnostics.Process.Start(psi);
+                    }
+                    else
+                    {
+                        throw new ArgumentException(Properties.Resources.ErrNotSupportRunAsAdmin);
+                    }
+
+                }
                 else
                 {
-                    SearchCmd sc = Util.analyzeSearchCmd(strExec);
+                    // run
                     if (string.IsNullOrEmpty(sc.strOption))
                         System.Diagnostics.Process.Start(path);
                     else
