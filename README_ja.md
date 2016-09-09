@@ -1,6 +1,6 @@
 # Mutter Launcher .NET
 
-Mutter Launcher by C#.NET
+Mutter Launcher by C#.NET  
 Yet, yet another application lancher for Windows by C#.NET
 
 ## これは何？
