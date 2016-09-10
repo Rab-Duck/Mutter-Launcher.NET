@@ -11,14 +11,11 @@ Ported to C#.NET and improved some functions.
 
 ## How to run it?
 
-- Download MutterLaunchr.exe under "dist" folder and run it.  
+- Download zip under "dist" folder and setup it.  
 (requirements .Net Framework 4.5.2 or over) 
 
 - <kbd>Shift</kbd>+<kbd>Space</kbd> to open main form.  
 From the icon in system-tray, you can open the menu by right-click.
-
-- User data stored to %userprofile%\AppData\Local\Rab-Duck.  
-When you want to uninstall it, delete these data.
 
 
 ## How to build the project.
