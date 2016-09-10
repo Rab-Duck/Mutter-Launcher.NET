@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -432,6 +433,37 @@ namespace MutterLauncher
             if (this.IsDisposed)
             {
                 return;
+            }
+
+            if (Properties.Settings.Default.bAutoCompleteSourceChange)
+            {
+                string str = cmbbxSearcText.Text;
+
+                if ((str.StartsWith(@"\\") ||
+                    Regex.IsMatch(str, @"^[a-zA-Z]:.*")))
+                {
+                    if (cmbbxSearcText.AutoCompleteSource != AutoCompleteSource.FileSystem)
+                    {
+                        cmbbxSearcText.AutoCompleteSource = AutoCompleteSource.FileSystem;
+                        cmbbxSearcText.Select(cmbbxSearcText.Text.Length, 0);
+                    }
+                }
+                else if (Regex.IsMatch(str, @"^[a-z]+:.*"))
+                {
+                    if (cmbbxSearcText.AutoCompleteSource != AutoCompleteSource.AllUrl)
+                    {
+                        cmbbxSearcText.AutoCompleteSource = AutoCompleteSource.AllUrl;
+                        cmbbxSearcText.Select(cmbbxSearcText.Text.Length, 0);
+                    }
+                }
+                else
+                {
+                    if (cmbbxSearcText.AutoCompleteSource != AutoCompleteSource.ListItems)
+                    {
+                        cmbbxSearcText.AutoCompleteSource = AutoCompleteSource.ListItems;
+                        cmbbxSearcText.Select(cmbbxSearcText.Text.Length, 0);
+                    }
+                }
             }
 
             // timerInput.Enabled = false;

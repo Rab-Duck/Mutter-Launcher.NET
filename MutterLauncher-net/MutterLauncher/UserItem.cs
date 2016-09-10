@@ -34,7 +34,7 @@ namespace MutterLauncher
         {
             this.name = name;
             // set convName
-            convName = Strings.StrConv(name, VbStrConv.Uppercase | VbStrConv.Wide | VbStrConv.Hiragana);
+            convName = Util.SafeStrConv(name);
 
             this.cmd = cmd;
             if (bFix)
