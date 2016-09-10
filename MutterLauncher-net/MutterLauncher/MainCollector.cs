@@ -225,7 +225,8 @@ namespace MutterLauncher
                 return null;
             }
 
-            grepStr = Strings.StrConv(sc.strSearch, VbStrConv.Uppercase | VbStrConv.Wide | VbStrConv.Hiragana);
+            grepStr = Util.SafeStrConv(sc.strSearch);
+            grepStr = Regex.Replace(grepStr, @"([\.\$\^\{\[\(\|\)\*\+\?\\])", @"\$1");
 
             switch (sc.matchingType)
             {
@@ -253,7 +254,7 @@ namespace MutterLauncher
                     return null;
             }
 
-            return new Regex(grepStr);
+            return new Regex(grepStr, RegexOptions.None);
 
         }
 

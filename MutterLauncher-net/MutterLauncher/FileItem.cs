@@ -167,7 +167,7 @@ namespace MutterLauncher
             if (convName == null)
             {
                 // set convName
-                convName = Strings.StrConv(name, VbStrConv.Uppercase | VbStrConv.Wide | VbStrConv.Hiragana);
+                convName = Util.SafeStrConv(name);
             }
         }
 
