@@ -19,16 +19,15 @@
 
 - MIT License で GitHub でソースを公開
 
-※備考※
-Mutter Launcher http://www.vector.co.jp/soft/win95/util/se149792.html を C# .NET に移植して、
+※備考※   
+Mutter Launcher http://hp.vector.co.jp/authors/VA022068/soft/bin/mlnch/ を C# .NET に移植して、
 機能強化を図ったものです。
 
 
 ## インストールと動作環境
 
-dist 配下にある zip をダウンロード＋展開して、setup.exe を実行するとインストールができます。
-setup.exe を使わなくて、
-Application Files 配下にあるファイル一式を任意のフォルダに置くだけでもインストール可能です。
+dist 配下にある zip をダウンロード＋展開して、setup.exe を実行するとインストールができます。  
+setup.exe を使わなくて、Application Files 配下にあるファイル一式を任意のフォルダに置くだけでもインストール可能です。
 
 環境的には .NET Framework 4.5 以上で動作可能（と思います。出来たら 4.5.2 以上推奨）。  
 OS 的には Windows VISTA 以降を対象としています。
@@ -40,7 +39,7 @@ MutterLauncher.exe を起動するとタスクトレイにアイコンが表示�
 （このホットキー設定は設定画面から変更可能です）
 
 上部のテキストボックスに文字を入力すると、
-部分的に一致するプログラム等を検索することが出来ます。
+部分的に一致するプログラム等を検索することが出来ます。  
 （初期状態での検索対象は、スタートメニュー、デスクトップ、コントロールパネル、PATH に設定されたフォルダ、IE のお気に入りになります）  
 
 起動したいものが抽出できたら、上下キーを使ってそれを選択して Enter で起動です。
