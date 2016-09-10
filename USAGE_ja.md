@@ -23,6 +23,12 @@
 Mutter Launcher http://hp.vector.co.jp/authors/VA022068/soft/bin/mlnch/ を C# .NET に移植して、
 機能強化を図ったものです。
 
+## 画面
+
+![メイン画面](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/MainForm.png)
+![設定画面](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/SettingForm.png)
+
+
 
 ## インストールと動作環境
 
