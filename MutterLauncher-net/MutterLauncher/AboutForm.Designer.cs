@@ -55,7 +55,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 36);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Mutter Launcher .NET\r\nVersion 0.7\r\nCopyright (c) 2016, Rab-Duck\r\n";
+            this.label1.Text = "Mutter Launcher .NET\r\nVersion 1.0\r\nCopyright (c) 2016, Rab-Duck\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
