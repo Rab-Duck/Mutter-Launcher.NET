@@ -122,7 +122,7 @@
     <value>68, 39</value>
   </data>
   <data name="txtCmd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 19</value>
+    <value>301, 19</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtCmd.TabIndex" type="System.Int32, mscorlib">
@@ -163,7 +163,7 @@ netstat -rn %1</value>
     <value>68, 13</value>
   </data>
   <data name="cbName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 20</value>
+    <value>301, 20</value>
   </data>
   <data name="cbName.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -363,7 +363,7 @@ netstat
     <value>1</value>
   </data>
   <data name="chkUseCmdOption.Text" xml:space="preserve">
-    <value>First SPACE(" ") in "Cmd" is
+    <value>First SPACE(" ") in "Cmd" is 
 the separator of command option</value>
   </data>
   <data name="&gt;&gt;chkUseCmdOption.Name" xml:space="preserve">
@@ -382,7 +382,7 @@ the separator of command option</value>
     <value>14, 64</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 122</value>
+    <value>355, 122</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -403,7 +403,7 @@ the separator of command option</value>
     <value>6</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 192</value>
+    <value>294, 192</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -427,7 +427,7 @@ the separator of command option</value>
     <value>1</value>
   </data>
   <data name="btnOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 192</value>
+    <value>213, 192</value>
   </data>
   <data name="btnOk.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -460,7 +460,7 @@ the separator of command option</value>
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>309, 223</value>
+    <value>381, 223</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
