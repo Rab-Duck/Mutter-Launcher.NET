@@ -27,7 +27,7 @@
     <ProductName>Mutter Launcher .NET</ProductName>
     <PublisherName>Rab-Duck</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <ApplicationVersion>1.0.1.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -74,6 +74,7 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup />
