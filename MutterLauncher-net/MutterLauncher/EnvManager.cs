@@ -40,7 +40,15 @@ namespace MutterLauncher
 
         private EnvManager()
         {
-            envDir = Path.GetFullPath(Application.LocalUserAppDataPath + "\\..");
+            // reference: https://msdn.microsoft.com/en-us/library/ms134265(v=vs.110).aspx
+            System.Configuration.Configuration config =
+                System.Configuration.ConfigurationManager.OpenExeConfiguration(
+                System.Configuration.ConfigurationUserLevel.PerUserRoamingAndLocal);
+
+            // change to the same (but non-version) dir of user.config
+            // envDir = Path.GetFullPath(Application.LocalUserAppDataPath + "\\..");
+            envDir = Path.GetFullPath(Path.GetDirectoryName(config.FilePath) + "\\..");
+
             itemListFilename = envDir + "\\" + itemListFilename;
             historyFilename = envDir + "\\" + historyFilename;
             anyFolderListFilename = envDir + "\\" + anyFolderListFilename;
