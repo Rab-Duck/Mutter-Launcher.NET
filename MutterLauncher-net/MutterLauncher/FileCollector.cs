@@ -30,7 +30,9 @@ namespace MutterLauncher
 
         private void init(string dirPath, bool recursive, string pathExt)
         {
-            Debug.WriteLine("Search Dir:" + dirPath);
+            // Support such as %hoge%\bin
+            dirPath = Environment.ExpandEnvironmentVariables(dirPath);
+            Trace.WriteLine("Search Dir:" + dirPath);
             if (!Directory.Exists(dirPath))
             {
                 throw new IOException();
