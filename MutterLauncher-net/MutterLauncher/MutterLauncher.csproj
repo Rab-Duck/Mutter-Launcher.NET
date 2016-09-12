@@ -79,6 +79,7 @@
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -268,8 +269,11 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /B /Y $(TargetFileName) $(SolutionDir)..\dist\
+copy /B /Y MutterLauncherNet.exe.config $(SolutionDir)..\dist\
+copy /B /Y MutterLauncherNet.exe.manifest $(SolutionDir)..\dist\
 xcopy /S /Y /I ja $(SolutionDir)..\dist\ja
-</PostBuildEvent>
+cd $(SolutionDir)..\dist
+cscript zip.vbs MutterLauncherNet.zip MutterLauncherNet.exe MutterLauncherNet.exe.config MutterLauncherNet.exe.manifest ja</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
