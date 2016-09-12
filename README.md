@@ -12,5 +12,5 @@ Search and run whithin StartMenu, Desktop, ControlPanel,PATH,My Favorites...etc.
 - [Japanese](README_ja.md)
 
 # Usage
-- English(not yet)
+- [English](USAGE_en.md) (now, while working)
 - [Japanese](USAGE_ja.md) (now, while working)
