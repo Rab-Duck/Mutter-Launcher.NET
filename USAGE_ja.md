@@ -32,8 +32,7 @@ Mutter Launcher http://hp.vector.co.jp/authors/VA022068/soft/bin/mlnch/ を C# .
 
 ## インストールと動作環境
 
-dist 配下にある zip をダウンロード＋展開して、setup.exe を実行するとインストールができます。  
-setup.exe を使わなくて、Application Files 配下にあるファイル一式を任意のフォルダに置くだけでもインストール可能です。
+dist 配下にある zip をダウンロード＋展開したファイル一式を任意のフォルダに置くだけでインストール可能です。
 
 環境的には .NET Framework 4.5 以上で動作可能（と思います。出来たら 4.5.2 以上推奨）。  
 OS 的には Windows VISTA 以降を対象としています。
@@ -99,12 +98,8 @@ MutterLauncher.exe を起動するとタスクトレイにアイコンが表示�
 
 ## アンインストール
 
-setup.exe を使ってインストールした場合は、
-コントロールパネルの「プログラムと機能」からアンインストールして下さい。
-
-手動で配置した場合には
 - 配置したファイル
-- %userprofile%\AppData\Local\Rab-Duck に保存されたユーザ毎の設定
+- %userprofile%\AppData\Local\Rab-Duck\MutterLauncherNet～ に保存されたユーザ毎の設定
 
 を削除して下さい。
 
