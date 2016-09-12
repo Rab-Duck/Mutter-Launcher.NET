@@ -35,7 +35,7 @@ for i = 1 to WScript.Arguments.Count - 1
 
     WScript.Echo("... " & InputFile)
 
-    If objFSO.FolderExists(InputFile) Or objFSO.FolderExists(InputFile) Then
+    If objFSO.FileExists(InputFile) Or objFSO.FolderExists(InputFile) Then
         objFile.CopyHere(objFSO.GetAbsolutePathName(InputFile))
 
         ' ’Ç‰ÁŠ®—¹‘Ò‚¿
