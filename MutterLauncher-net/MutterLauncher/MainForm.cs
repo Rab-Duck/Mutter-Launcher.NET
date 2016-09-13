@@ -67,17 +67,17 @@ namespace MutterLauncher
         {
             Trace.WriteLine("form loaded!");
 
-            int interval=0;
-            if(NativeMethods.SystemParametersInfo(22,  0, ref interval, 0)) // 22=SPI_GETKEYBOARDDELAY
+            int interval = 0;
+            if (NativeMethods.SystemParametersInfo(22, 0, ref interval, 0)) // 22=SPI_GETKEYBOARDDELAY
             {
-                timerInput.Interval = (interval+1) * 250; // /* 1unit = approximately 250 */
+                timerInput.Interval = (interval + 1) * 250; // /* 1unit = approximately 250 */
             }
             timerInput.Enabled = true;
             timerInput.Stop();
 
             // initial position
             int MainWinHeight = Properties.Settings.Default.MainWinHeight;
-            if(MainWinHeight > 0)
+            if (MainWinHeight > 0)
             {
                 this.Size = new Size(Properties.Settings.Default.MainWinWidth, MainWinHeight);
                 this.Location = new Point(Properties.Settings.Default.MainWinPosX, Properties.Settings.Default.MainWinPosY);
@@ -89,16 +89,7 @@ namespace MutterLauncher
 
             cmbbxSearcText.Items.AddRange(envmngr.getSearchHistory());
 
-            // Font & Color
-            cmbbxSearcText.Font = Properties.Settings.Default.Font;
-            cmbbxSearcText.ForeColor = Properties.Settings.Default.FontColor;
-            cmbbxSearcText.BackColor = Properties.Settings.Default.BackColor;
-
-            lsvFileList.Font = Properties.Settings.Default.Font;
-            lsvFileList.ForeColor = Properties.Settings.Default.FontColor;
-            lsvFileList.BackColor = Properties.Settings.Default.BackColor;
-
-            txtViewPath.Font = Properties.Settings.Default.Font;
+            SetFontAndColor();
 
             // prepare LSV
             // lsvFileList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -121,8 +112,15 @@ namespace MutterLauncher
             envmngr.setNotifyFinished(EnvFinished);
         }
 
-        private void EnvFinished(bool bReCollect)
+        private void SetFontAndColor()
         {
+            // default value
+            int cmbbxHeight = cmbbxSearcText.Size.Height;
+            int txtHeight = txtViewPath.Height;
+            int lsvY = lsvFileList.Location.Y;
+            int lsvHeight = lsvFileList.Size.Height;
+            int txtY = txtViewPath.Location.Y;
+
             // Font & Color
             cmbbxSearcText.Font = Properties.Settings.Default.Font;
             cmbbxSearcText.ForeColor = Properties.Settings.Default.FontColor;
@@ -133,6 +131,19 @@ namespace MutterLauncher
             lsvFileList.BackColor = Properties.Settings.Default.BackColor;
 
             txtViewPath.Font = Properties.Settings.Default.Font;
+
+            // Adjust component's location and size
+            int top = cmbbxSearcText.Size.Height - cmbbxHeight;
+            int bottom = txtViewPath.Size.Height - txtHeight;
+
+            lsvFileList.Location = new Point(lsvFileList.Location.X, lsvY + top);
+            lsvFileList.Size = new Size(lsvFileList.Width, lsvHeight - top - bottom);
+            txtViewPath.Location = new Point(txtViewPath.Location.X, txtY - bottom);
+        }
+
+        private void EnvFinished(bool bReCollect)
+        {
+            SetFontAndColor();
 
             updateView(null, true);
 
