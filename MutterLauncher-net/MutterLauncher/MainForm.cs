@@ -89,6 +89,17 @@ namespace MutterLauncher
 
             cmbbxSearcText.Items.AddRange(envmngr.getSearchHistory());
 
+            // Font & Color
+            cmbbxSearcText.Font = Properties.Settings.Default.Font;
+            cmbbxSearcText.ForeColor = Properties.Settings.Default.FontColor;
+            cmbbxSearcText.BackColor = Properties.Settings.Default.BackColor;
+
+            lsvFileList.Font = Properties.Settings.Default.Font;
+            lsvFileList.ForeColor = Properties.Settings.Default.FontColor;
+            lsvFileList.BackColor = Properties.Settings.Default.BackColor;
+
+            txtViewPath.Font = Properties.Settings.Default.Font;
+
             // prepare LSV
             // lsvFileList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
@@ -112,6 +123,17 @@ namespace MutterLauncher
 
         private void EnvFinished(bool bReCollect)
         {
+            // Font & Color
+            cmbbxSearcText.Font = Properties.Settings.Default.Font;
+            cmbbxSearcText.ForeColor = Properties.Settings.Default.FontColor;
+            cmbbxSearcText.BackColor = Properties.Settings.Default.BackColor;
+
+            lsvFileList.Font = Properties.Settings.Default.Font;
+            lsvFileList.ForeColor = Properties.Settings.Default.FontColor;
+            lsvFileList.BackColor = Properties.Settings.Default.BackColor;
+
+            txtViewPath.Font = Properties.Settings.Default.Font;
+
             updateView(null, true);
 
             if (cmbbxSearcText.Items.Count > Properties.Settings.Default.SearchHistoryMax)

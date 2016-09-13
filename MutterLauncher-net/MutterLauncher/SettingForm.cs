@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -108,6 +109,9 @@ namespace MutterLauncher
             tbExecHistoryMax.Text = Properties.Settings.Default.ExecHistoryMax.ToString();
             tbDisplayItemMax.Text = Properties.Settings.Default.DisplayItemMax.ToString();
 
+            fontDialog.Font = Properties.Settings.Default.Font;
+            fontDialog.Color = Properties.Settings.Default.FontColor;
+            colorDialog.Color = Properties.Settings.Default.BackColor;
 
         }
 
@@ -302,6 +306,11 @@ namespace MutterLauncher
                 Properties.Settings.Default.SearchHistoryMax = int.Parse(tbSearchHistoryMax.Text);
                 Properties.Settings.Default.ExecHistoryMax = int.Parse(tbExecHistoryMax.Text);
                 Properties.Settings.Default.DisplayItemMax = int.Parse(tbDisplayItemMax.Text);
+
+                Properties.Settings.Default.Font = fontDialog.Font;
+                Properties.Settings.Default.FontColor = fontDialog.Color;
+                Properties.Settings.Default.BackColor = colorDialog.Color;
+
                 Properties.Settings.Default.Save();
 
                 em.notifyAll();
@@ -449,6 +458,18 @@ namespace MutterLauncher
             }
             frmUserItem = null;
 
+        }
+
+        private void btnFontChange_Click(object sender, EventArgs e)
+        {
+            fontDialog.ShowDialog(this);
+            Debug.WriteLine(fontDialog.Font);
+        }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            colorDialog.ShowDialog(this);
+            Debug.WriteLine(colorDialog.Color);
         }
     }
 }
