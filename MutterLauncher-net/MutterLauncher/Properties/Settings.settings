@@ -65,11 +65,17 @@
     <Setting Name="Font" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">MS UI Gothic, 9pt</Value>
     </Setting>
-    <Setting Name="BackColor" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="BackColorText" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Window</Value>
     </Setting>
     <Setting Name="FontColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">WindowText</Value>
+    </Setting>
+    <Setting Name="BackColorForm" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Control</Value>
+    </Setting>
+    <Setting Name="OpacityForm" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
     </Setting>
   </Settings>
 </SettingsFile>

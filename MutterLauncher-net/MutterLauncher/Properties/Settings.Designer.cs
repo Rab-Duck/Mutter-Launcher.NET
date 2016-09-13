@@ -278,12 +278,12 @@ namespace MutterLauncher.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Window")]
-        public global::System.Drawing.Color BackColor {
+        public global::System.Drawing.Color BackColorText {
             get {
-                return ((global::System.Drawing.Color)(this["BackColor"]));
+                return ((global::System.Drawing.Color)(this["BackColorText"]));
             }
             set {
-                this["BackColor"] = value;
+                this["BackColorText"] = value;
             }
         }
         
@@ -296,6 +296,30 @@ namespace MutterLauncher.Properties {
             }
             set {
                 this["FontColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Control")]
+        public global::System.Drawing.Color BackColorForm {
+            get {
+                return ((global::System.Drawing.Color)(this["BackColorForm"]));
+            }
+            set {
+                this["BackColorForm"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
+        public int OpacityForm {
+            get {
+                return ((int)(this["OpacityForm"]));
+            }
+            set {
+                this["OpacityForm"] = value;
             }
         }
     }

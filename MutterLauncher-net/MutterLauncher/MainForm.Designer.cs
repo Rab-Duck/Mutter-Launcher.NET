@@ -119,6 +119,7 @@
             // txtViewPath
             // 
             resources.ApplyResources(this.txtViewPath, "txtViewPath");
+            this.txtViewPath.BackColor = System.Drawing.SystemColors.Window;
             this.txtViewPath.Name = "txtViewPath";
             this.txtViewPath.ReadOnly = true;
             this.toolTip.SetToolTip(this.txtViewPath, resources.GetString("txtViewPath.ToolTip"));

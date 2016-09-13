@@ -124,13 +124,23 @@ namespace MutterLauncher
             // Font & Color
             cmbbxSearcText.Font = Properties.Settings.Default.Font;
             cmbbxSearcText.ForeColor = Properties.Settings.Default.FontColor;
-            cmbbxSearcText.BackColor = Properties.Settings.Default.BackColor;
+            cmbbxSearcText.BackColor = Properties.Settings.Default.BackColorText;
 
             lsvFileList.Font = Properties.Settings.Default.Font;
             lsvFileList.ForeColor = Properties.Settings.Default.FontColor;
-            lsvFileList.BackColor = Properties.Settings.Default.BackColor;
+            lsvFileList.BackColor = Properties.Settings.Default.BackColorText;
 
             txtViewPath.Font = Properties.Settings.Default.Font;
+            txtViewPath.ForeColor = Properties.Settings.Default.FontColor;
+            txtViewPath.BackColor = Properties.Settings.Default.BackColorText;
+
+            BackColor = Properties.Settings.Default.BackColorForm;
+            btnExec.BackColor = Properties.Settings.Default.BackColorForm;
+            btnClose.BackColor = Properties.Settings.Default.BackColorForm;
+            btnSetenv.BackColor = Properties.Settings.Default.BackColorForm;
+            btnUpdate.BackColor = Properties.Settings.Default.BackColorForm;
+
+            Opacity = Properties.Settings.Default.OpacityForm * 0.01;
 
             // Adjust component's location and size
             int top = cmbbxSearcText.Size.Height - cmbbxHeight;

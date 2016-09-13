@@ -123,10 +123,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lsvFileList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 38</value>
+    <value>0, 21</value>
+  </data>
+  <data name="lsvFileList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="lsvFileList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 266</value>
+    <value>304, 299</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lsvFileList.TabIndex" type="System.Int32, mscorlib">
@@ -154,7 +157,10 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnExec.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 335</value>
+    <value>154, 339</value>
+  </data>
+  <data name="btnExec.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="btnExec.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -181,10 +187,13 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="cmbbxSearcText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 12</value>
+    <value>21, 1</value>
+  </data>
+  <data name="cmbbxSearcText.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="cmbbxSearcText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 20</value>
+    <value>283, 20</value>
   </data>
   <data name="cmbbxSearcText.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -208,7 +217,10 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>224, 335</value>
+    <value>229, 339</value>
+  </data>
+  <data name="btnClose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -235,7 +247,10 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnSetenv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 335</value>
+    <value>0, 339</value>
+  </data>
+  <data name="btnSetenv.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="btnSetenv.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 23</value>
@@ -262,7 +277,10 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 335</value>
+    <value>34, 339</value>
+  </data>
+  <data name="btnUpdate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="btnUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 23</value>
@@ -289,7 +307,10 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 335</value>
+    <value>67, 339</value>
+  </data>
+  <data name="btnExit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 23</value>
@@ -319,10 +340,13 @@
     <value>Bottom, Left, Right</value>
   </data>
   <data name="txtViewPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 310</value>
+    <value>0, 320</value>
+  </data>
+  <data name="txtViewPath.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="txtViewPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 19</value>
+    <value>304, 19</value>
   </data>
   <data name="txtViewPath.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -349,7 +373,7 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 15</value>
+    <value>6, 4</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>12, 12</value>

@@ -111,7 +111,9 @@ namespace MutterLauncher
 
             fontDialog.Font = Properties.Settings.Default.Font;
             fontDialog.Color = Properties.Settings.Default.FontColor;
-            colorDialog.Color = Properties.Settings.Default.BackColor;
+            colorDialogBCText.Color = Properties.Settings.Default.BackColorText;
+            colorDialogBCForm.Color = Properties.Settings.Default.BackColorForm;
+            tbFormOpacity.Text = Properties.Settings.Default.OpacityForm.ToString();
 
         }
 
@@ -309,7 +311,9 @@ namespace MutterLauncher
 
                 Properties.Settings.Default.Font = fontDialog.Font;
                 Properties.Settings.Default.FontColor = fontDialog.Color;
-                Properties.Settings.Default.BackColor = colorDialog.Color;
+                Properties.Settings.Default.BackColorText = colorDialogBCText.Color;
+                Properties.Settings.Default.BackColorForm = colorDialogBCForm.Color;
+                Properties.Settings.Default.OpacityForm = int.Parse(tbFormOpacity.Text);
 
                 Properties.Settings.Default.Save();
 
@@ -468,8 +472,35 @@ namespace MutterLauncher
 
         private void btnColor_Click(object sender, EventArgs e)
         {
-            colorDialog.ShowDialog(this);
-            Debug.WriteLine(colorDialog.Color);
+            colorDialogBCText.ShowDialog(this);
+            Debug.WriteLine(colorDialogBCText.Color);
+        }
+
+        private void btnColorForm_Click(object sender, EventArgs e)
+        {
+            colorDialogBCForm.ShowDialog(this);
+            Debug.WriteLine(colorDialogBCForm.Color);
+        }
+
+        private void tbFormOpacity_Validating(object sender, CancelEventArgs e)
+        {
+            CheckMinMaxNum(tbFormOpacity, 0, 100, e);
+        }
+
+        private void tbFormOpacity_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(tbFormOpacity, "");
+        }
+
+        private void btnResetColor_Click(object sender, EventArgs e)
+        {
+            fontDialog.Font = SystemFonts.DefaultFont;
+            fontDialog.Color = SystemColors.WindowText;
+
+            colorDialogBCText.Color = SystemColors.Window;
+            colorDialogBCForm.Color = SystemColors.Control;
+
+            tbFormOpacity.Text = "100";
         }
     }
 }

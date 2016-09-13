@@ -60,8 +60,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnColor = new System.Windows.Forms.Button();
-            this.btnFontChange = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tbDisplayItemMax = new System.Windows.Forms.TextBox();
             this.tbExecHistoryMax = new System.Windows.Forms.TextBox();
@@ -70,11 +68,20 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.tbFormOpacity = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnColorForm = new System.Windows.Forms.Button();
+            this.btnColorText = new System.Windows.Forms.Button();
+            this.btnFontChange = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnResetColor = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.fontDialog = new System.Windows.Forms.FontDialog();
-            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.colorDialogBCText = new System.Windows.Forms.ColorDialog();
+            this.colorDialogBCForm = new System.Windows.Forms.ColorDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,8 +287,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnColor);
-            this.groupBox2.Controls.Add(this.btnFontChange);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.tbDisplayItemMax);
             this.groupBox2.Controls.Add(this.tbExecHistoryMax);
@@ -294,20 +299,6 @@
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
-            // 
-            // btnColor
-            // 
-            resources.ApplyResources(this.btnColor, "btnColor");
-            this.btnColor.Name = "btnColor";
-            this.btnColor.UseVisualStyleBackColor = true;
-            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
-            // 
-            // btnFontChange
-            // 
-            resources.ApplyResources(this.btnFontChange, "btnFontChange");
-            this.btnFontChange.Name = "btnFontChange";
-            this.btnFontChange.UseVisualStyleBackColor = true;
-            this.btnFontChange.Click += new System.EventHandler(this.btnFontChange_Click);
             // 
             // label2
             // 
@@ -357,6 +348,58 @@
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
             // 
+            // tbFormOpacity
+            // 
+            resources.ApplyResources(this.tbFormOpacity, "tbFormOpacity");
+            this.tbFormOpacity.Name = "tbFormOpacity";
+            this.tbFormOpacity.Validating += new System.ComponentModel.CancelEventHandler(this.tbFormOpacity_Validating);
+            this.tbFormOpacity.Validated += new System.EventHandler(this.tbFormOpacity_Validated);
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            // 
+            // btnColorForm
+            // 
+            resources.ApplyResources(this.btnColorForm, "btnColorForm");
+            this.btnColorForm.Name = "btnColorForm";
+            this.btnColorForm.UseVisualStyleBackColor = true;
+            this.btnColorForm.Click += new System.EventHandler(this.btnColorForm_Click);
+            // 
+            // btnColorText
+            // 
+            resources.ApplyResources(this.btnColorText, "btnColorText");
+            this.btnColorText.Name = "btnColorText";
+            this.btnColorText.UseVisualStyleBackColor = true;
+            this.btnColorText.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnFontChange
+            // 
+            resources.ApplyResources(this.btnFontChange, "btnFontChange");
+            this.btnFontChange.Name = "btnFontChange";
+            this.btnFontChange.UseVisualStyleBackColor = true;
+            this.btnFontChange.Click += new System.EventHandler(this.btnFontChange_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnResetColor);
+            this.groupBox3.Controls.Add(this.tbFormOpacity);
+            this.groupBox3.Controls.Add(this.btnFontChange);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.btnColorText);
+            this.groupBox3.Controls.Add(this.btnColorForm);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
+            // btnResetColor
+            // 
+            resources.ApplyResources(this.btnResetColor, "btnResetColor");
+            this.btnResetColor.Name = "btnResetColor";
+            this.btnResetColor.UseVisualStyleBackColor = true;
+            this.btnResetColor.Click += new System.EventHandler(this.btnResetColor_Click);
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -366,9 +409,14 @@
             this.fontDialog.AllowVerticalFonts = false;
             this.fontDialog.ShowColor = true;
             // 
-            // colorDialog
+            // colorDialogBCText
             // 
-            this.colorDialog.AnyColor = true;
+            this.colorDialogBCText.AnyColor = true;
+            this.colorDialogBCText.Color = System.Drawing.SystemColors.Control;
+            // 
+            // colorDialogBCForm
+            // 
+            this.colorDialogBCForm.AnyColor = true;
             // 
             // SettingForm
             // 
@@ -376,6 +424,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label12);
@@ -404,6 +453,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -453,7 +504,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnFontChange;
         private System.Windows.Forms.FontDialog fontDialog;
-        private System.Windows.Forms.Button btnColor;
-        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.Button btnColorText;
+        private System.Windows.Forms.ColorDialog colorDialogBCText;
+        private System.Windows.Forms.Button btnColorForm;
+        private System.Windows.Forms.ColorDialog colorDialogBCForm;
+        private System.Windows.Forms.TextBox tbFormOpacity;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnResetColor;
     }
 }
