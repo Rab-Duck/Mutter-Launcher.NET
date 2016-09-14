@@ -75,7 +75,7 @@
       <Value Profile="(Default)">Control</Value>
     </Setting>
     <Setting Name="OpacityForm" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">50</Value>
+      <Value Profile="(Default)">100</Value>
     </Setting>
   </Settings>
 </SettingsFile>
