@@ -16,7 +16,7 @@ this software is suitable for people who come up with words at first, at the tim
 
 ## Install and requirements
 
-Download and unzip a zip file under "dist" folder.
+Download and unzip a MutterLauncherNet_x_x_x.zip file from [release page](https://github.com/Rab-Duck/Mutter-Launcher.NET/releases).    
 Set files to any folder.
 
 It require .NET Framework 4.5(over 4.5.2 is better).
