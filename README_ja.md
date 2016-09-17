@@ -12,7 +12,7 @@ Mutter Launcher <http://hp.vector.co.jp/authors/VA022068/soft/bin/mlnch/>
 
 ## とりあえずアプリを動かしてみるには？
 
-- dist 配下にその時点でのリリース版を置いてあります。  
+- [release ページ](https://github.com/Rab-Duck/Mutter-Launcher.NET/releases)にリリース版のバイナリ（MutterLauncerNet_x_x_x.zip）を置いてあります。  
 .NET Framework 4.5 以上の環境なら動作可能（と思います。出来たら 4.5.2 以上推奨）。
 
 - 起動後に <kbd>Shift</kbd>+<kbd>Space</kbd> でメイン画面が開きます。  
