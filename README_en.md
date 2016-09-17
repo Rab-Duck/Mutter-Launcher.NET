@@ -11,7 +11,7 @@ Ported to C#.NET and improved some functions.
 
 ## How to run it?
 
-- Download zip under "dist" folder and setup it.  
+- Download MutterLauncherNet_x_x_x.zip from [release page](https://github.com/Rab-Duck/Mutter-Launcher.NET/releases) and setup it.  
 (requirements .Net Framework 4.5.2 or over) 
 
 - <kbd>Shift</kbd>+<kbd>Space</kbd> to open main form.  
