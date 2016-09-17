@@ -32,7 +32,8 @@ Mutter Launcher http://hp.vector.co.jp/authors/VA022068/soft/bin/mlnch/ を C# .
 
 ## インストールと動作環境
 
-dist 配下にある zip をダウンロード＋展開したファイル一式を任意のフォルダに置くだけでインストール可能です。
+[release ページ](https://github.com/Rab-Duck/Mutter-Launcher.NET/releases)にリリース版の zip ファイル（MutterLauncerNet_x_x_x.zip） をダウンロードして、  
+展開したファイル一式を任意のフォルダに置くだけでインストール可能です。
 
 環境的には .NET Framework 4.5 以上で動作可能（と思います。出来たら 4.5.2 以上推奨）。  
 OS 的には Windows VISTA 以降を対象としています。
