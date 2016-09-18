@@ -25,14 +25,12 @@ Mutter Launcher http://hp.vector.co.jp/authors/VA022068/soft/bin/mlnch/ を C# .
 
 ## 画面
 
-![メイン画面](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/MainForm.png)
-![設定画面](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/SettingForm.png)
-
+![メイン画面](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/MainForm_ja.png)
 
 
 ## インストールと動作環境
 
-[release ページ](https://github.com/Rab-Duck/Mutter-Launcher.NET/releases)にリリース版の zip ファイル（MutterLauncerNet_x_x_x.zip） をダウンロードして、  
+[release ページ](https://github.com/Rab-Duck/Mutter-Launcher.NET/releases)からリリース版の zip ファイル（MutterLauncerNet_x_x_x.zip） をダウンロードして、  
 展開したファイル一式を任意のフォルダに置くだけでインストール可能です。
 
 環境的には .NET Framework 4.5 以上で動作可能（と思います。出来たら 4.5.2 以上推奨）。  
@@ -40,15 +38,13 @@ OS 的には Windows VISTA 以降を対象としています。
 
 ## 最初の一歩
 
-MutterLauncher.exe を起動するとタスクトレイにアイコンが表示されます。  
-起動後に <kbd>Shift</kbd>+<kbd>Space</kbd> でメイン画面が開きます。  
+1. MutterLauncher.exe を起動するとタスクトレイにアイコンが表示されます。  
+2. 起動後に <kbd>Shift</kbd>+<kbd>Space</kbd> でメイン画面が開きます。  
 （このホットキー設定は設定画面から変更可能です）
-
-上部のテキストボックスに文字を入力すると、
+3. 上部のテキストボックスに文字を入力すると、
 部分的に一致するプログラム等を検索することが出来ます。  
 （初期状態での検索対象は、スタートメニュー、デスクトップ、コントロールパネル、PATH に設定されたフォルダ、IE のお気に入りになります）  
-
-起動したいものが抽出できたら、上下キーを使ってそれを選択して Enter で起動です。
+4. 起動したいものが抽出できたら、上下キーを使ってそれを選択して Enter で起動です。
 
 ## 検索について
 
@@ -71,9 +67,6 @@ MutterLauncher.exe を起動するとタスクトレイにアイコンが表示�
 - Shift + Enter → フォルダを開く
 - Ctrl + Enter → 管理者として実行
 
-検索についてで書いたように、
-最初の空白（上記の検索方法指定文字を除く）以降は、プログラムを起動する際のオプション指定として扱われます。
-
 Enter は、リストビューでのダブルクリックでも同じ扱いになります。
 
 ## 起動時のオプション指示について
@@ -90,10 +83,16 @@ Enter は、リストビューでのダブルクリックでも同じ扱いに�
 
 設定画面から任意のコマンドを登録したユーザ項目が追加できます。  
 
-- サンプルとして「Run」「Google Search」「netstat」がありますので、設定方法の参考にして下さい。
+![ユーザ設定項目](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/UserItem_ja.png)
+
+サンプルとして「Run」「Google Search」「netstat」がありますので、設定方法の参考にして下さい。
+
+- 「名前」は表示や検索に使われる文字列、「コマンド」には実行したいコマンドや URL 等を指定
 - ユーザ項目は固定表示とそうでないものが選択可能  
-- %1 は固定項目では指定した文字列全体、そうでない場合は最初の空白以降の文字列を展開
+- 「コマンド」には可変文字列として %1 を指定可能  
+%1 は固定項目では指定した文字列全体、そうでない場合は最初の空白以降の文字列を展開
 - %1 は Web アクセス時の URL での使用を想定して、URLエンコードでの展開指定も可能
+
 
 ## 設定について
 
@@ -101,10 +100,13 @@ Enter は、リストビューでのダブルクリックでも同じ扱いに�
 - メイン画面のボタン
 - タスクトレイのアイコンから右クリックで開くメニュー
 
+![設定画面](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/SettingForm_ja.png)
+
+
 ## リストの更新について
 
 - 起動時に必ず最新に更新
-- 指定した時間毎に定期的に更新
+- 指定した時間毎に定期的に更新（「動作設定」→「リストの更新間隔」）
 - ボタン、メニュー等から強制的に更新も可能
 
 更新作業中も、検索や起動操作は可能（但し、一世代古い内容）。
