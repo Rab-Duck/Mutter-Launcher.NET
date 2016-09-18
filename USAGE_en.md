@@ -4,7 +4,7 @@
 
 This is an application launcher, which is the mixing of command input and button selection.
 
-You can grep from Miscellaneous list, picked up from the Start menu or the like.
+You can grep from Miscellaneous list, picked up from the Start menu or the like.  
 Next, you can execute an item.
 
 this software is suitable for people who come up with words at first, at the time starting the application, 
@@ -18,7 +18,7 @@ this software is suitable for people who come up with words at first, at the tim
 Download and unzip a MutterLauncherNet_x_x_x.zip file from [release page](https://github.com/Rab-Duck/Mutter-Launcher.NET/releases).    
 Set files to any folder.
 
-It require .NET Framework 4.5(over 4.5.2 is better).
+It require .NET Framework 4.5(over 4.5.2 is better).  
 Windows Vista or later are supported.
 
 ## First step
@@ -30,6 +30,9 @@ Windows Vista or later are supported.
 4. When you grep what you want to start, it is to select it using the up and down keys and to started by Enter.
 
 ## How to search
+
+Default is partial match search(not case sensitive).  
+Using regulation charactor, you can use skip-matching, forward/backward/exact match.
 
 example:
 - "hoge" -> partial match search of "hoge" (equal to ".*hoge.*" Regex search)
@@ -44,10 +47,12 @@ example:
 - Shift + Enter -> open folder
 - ctrl + Enter -> Run as Admin
 
-## How to setting
-![Setting Form](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/SettingForm.png)
+Double click in the List View is the same action of Enter.
 
 ## About User Item
+
+## How to setting
+![Setting Form](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/SettingForm.png)
 
 ## About Update List
 
