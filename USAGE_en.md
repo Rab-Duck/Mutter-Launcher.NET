@@ -12,7 +12,6 @@ this software is suitable for people who come up with words at first, at the tim
 ## Forms
 
 ![Main Form](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/MainForm.png)
-![Setting Form](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/SettingForm.png)
 
 ## Install and requirements
 
@@ -24,14 +23,20 @@ Windows Vista or later are supported.
 
 ## First step
 
+1. When you start the MutterLauncherNet.exe, the icon appears in the task tray.
+2. <kbd>Shift</kbd>+<kbd>Space</kbd> to open main form.  
+3. If you enter the character at the text box of the top of the form, You can search items by partial match search.
+(Searched from Start menu, Desktop, Control panel, PATH, my favorites)
+4. When you grep what you want to start, it is to select it using the up and down keys and to started by Enter.
+
 ## How to search
 
 example:
-- "hoge" -> contains "hoge" (equal to ".*hoge.*" Regex search)
-- " hoge" → skipmatching of "hoge" (equal to ".\*h.\*o.\*g.\*e.\*" Regex search)
-- "^hoge" → start with "hoge" (equal to "^hoge.\*" Regex search)
-- "hoge$" → end with "hoge" (equal to ".\*hoge$" Regex search)
-- "\hoge" → equal to "hoge" (equal to "^hoge$" Regex search)
+- "hoge" -> partial match search of "hoge" (equal to ".*hoge.*" Regex search)
+- " hoge" → skip-matching of "hoge" (equal to ".\*h.\*o.\*g.\*e.\*" Regex search)
+- "^hoge" → forward match search of "hoge" (equal to "^hoge.\*" Regex search)
+- "hoge$" → backward match search of "hoge" (equal to ".\*hoge$" Regex search)
+- "\hoge" → exact match search of "hoge" (equal to "^hoge$" Regex search)
 
 ## How to exec
 
@@ -40,6 +45,7 @@ example:
 - ctrl + Enter -> Run as Admin
 
 ## How to setting
+![Setting Form](https://raw.githubusercontent.com/Rab-Duck/Mutter-Launcher.NET/master/doc/SettingForm.png)
 
 ## About User Item
 
