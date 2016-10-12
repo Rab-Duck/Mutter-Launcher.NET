@@ -36,7 +36,7 @@ namespace MutterLauncher
 
         public FileItem(string clsidpath, string name)
         {
-            fileType = FileType.CLSID;
+            this.fileType = FileType.CLSID;
             this.name = name;
             setItemPath(clsidpath);
         }
@@ -67,23 +67,15 @@ namespace MutterLauncher
                 {
                     // run as admin
                     SHFILEINFO shFileInfo = new SHFILEINFO();
-                    if (fileType == FileType.NORMAL &&
-                        NativeMethods.SHGetFileInfo(path, 0, out shFileInfo, (uint)Marshal.SizeOf(shFileInfo),
-                            NativeMethods.SHGFI_EXETYPE) != (IntPtr)0)
-                    {
-                        //reference: http://dobon.net/vb/dotnet/system/runelevated.html
-                        System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo();
-                        psi.UseShellExecute = true;
-                        psi.FileName = path;
-                        psi.Verb = "runas"; // as Admin
-                        psi.Arguments = sc.strOption;
-                        psi.ErrorDialog = false;
-                        System.Diagnostics.Process.Start(psi);
-                    }
-                    else
-                    {
-                        throw new ArgumentException(Properties.Resources.ErrNotSupportRunAsAdmin);
-                    }
+
+                    //reference: http://dobon.net/vb/dotnet/system/runelevated.html
+                    System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo();
+                    psi.UseShellExecute = true;
+                    psi.FileName = path;
+                    psi.Verb = "runas"; // as Admin
+                    psi.Arguments = sc.strOption;
+                    psi.ErrorDialog = false;
+                    System.Diagnostics.Process.Start(psi);
 
                 }
                 else

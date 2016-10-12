@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MutterLauncher
 {
-    class FileCollector : AppCollector
+    public class FileCollector : AppCollector
     {
         private List<Item> items = new List<Item>();
         private string dirPath = null;

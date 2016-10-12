@@ -5,22 +5,22 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("Mutter Launcher .NET")]
-[assembly: AssemblyDescription("Application Launcher for Windows")]
+[assembly: AssemblyTitle("MutterLauncherTests")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Rab-Duck")]
-[assembly: AssemblyProduct("Mutter Launcher .NET")]
-[assembly: AssemblyCopyright("Copyright (C) 2016, Rab-Duck")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("MutterLauncherTests")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // ComVisible を false に設定すると、その型はこのアセンブリ内で COM コンポーネントから 
-// 参照不可能になります。COM からこのアセンブリ内の型にアクセスする場合は、
+// 参照できなくなります。このアセンブリ内で COM から型にアクセスする必要がある場合は、 
 // その型の ComVisible 属性を true に設定してください。
 [assembly: ComVisible(false)]
 
 // このプロジェクトが COM に公開される場合、次の GUID が typelib の ID になります
-[assembly: Guid("f70057d7-93c6-4d2e-a39c-05e1e737889e")]
+[assembly: Guid("fc8c8bf5-5587-4a13-88d4-704a2dde59a5")]
 
 // アセンブリのバージョン情報は次の 4 つの値で構成されています:
 //
@@ -29,8 +29,8 @@ using System.Runtime.InteropServices;
 //      ビルド番号
 //      Revision
 //
-// すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
+// すべての値を指定するか、以下のように '*' を使用してビルド番号とリビジョン番号を 
 // 既定値にすることができます:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.0.0")]
-[assembly: AssemblyFileVersion("1.2.0.0")]
+//[アセンブリ: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
