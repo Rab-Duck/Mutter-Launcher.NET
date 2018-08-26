@@ -17,6 +17,7 @@ namespace MutterLauncher
         private MainCollector mc;
         private Hotkey hk;
         private EnvManager em = EnvManager.getInstance();
+        private String tooltipText = "";
 
         public BackgroundForm()
         {
@@ -35,6 +36,7 @@ namespace MutterLauncher
             mc.setInvoker(collectStateHandler);
 
             em.setNotifier(EnvUpdated);
+            tooltipText = notifyIconMain.Text;
 
         }
 
@@ -124,6 +126,7 @@ namespace MutterLauncher
             hk.Alt = Properties.Settings.Default.HotKeyAlt;
             hk.Control = Properties.Settings.Default.HotKeyCtrl;
             hk.Shift = Properties.Settings.Default.HotKeyShift;
+            notifyIconMain.Text = tooltipText + " | " + hk.ToString();
 
             hk.Pressed += (objSender, ea) => { this.InitMainForm(true); };
 

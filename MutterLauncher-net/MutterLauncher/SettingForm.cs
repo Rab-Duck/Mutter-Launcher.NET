@@ -50,6 +50,12 @@ namespace MutterLauncher
                 Keys.NoName
             };
 
+            if(Array.IndexOf(ignorekeys, e.KeyCode) < 0)
+            {
+                txtbxHotkey.Text = "";
+                return;
+            }
+            /*
             foreach (Keys ignorekey in ignorekeys)
             {
                 if (e.KeyCode == ignorekey)
@@ -58,6 +64,7 @@ namespace MutterLauncher
                     return;
                 }
             }
+            */
 
             txtbxHotkey.Text = e.KeyCode.ToString() + "(code=" + (int)e.KeyCode + ")";
             txtbxHotkey.Tag = e.KeyCode;
