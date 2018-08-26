@@ -88,7 +88,35 @@ namespace MutterLauncher
             string[] args;
             if (bCmdOption)
             {
-                args = execCmd.Split(new char[] { ' ' }, 2);
+                // reference: https://www.pinvoke.net/default.aspx/shell32.commandlinetoargvw
+                int numberOfArgs;
+                IntPtr ptrToSplitArgs;
+                string[] splitArgs;
+
+                ptrToSplitArgs = NativeMethods.CommandLineToArgvW(execCmd, out numberOfArgs);
+
+                // CommandLineToArgvW returns NULL upon failure.
+                if (ptrToSplitArgs == IntPtr.Zero)
+                    return false;
+
+                // Make sure the memory ptrToSplitArgs to is freed, even upon failure.
+                try
+                {
+                    splitArgs = new string[numberOfArgs];
+
+                    // ptrToSplitArgs is an array of pointers to null terminated Unicode strings.
+                    // Copy each of these strings into our split argument array.
+                    for (int i = 0; i < numberOfArgs; i++)
+                    {
+                        splitArgs[i] = Marshal.PtrToStringUni(Marshal.ReadIntPtr(ptrToSplitArgs, i * IntPtr.Size));
+                    }
+                }
+                finally
+                {
+                    // Free memory obtained by CommandLineToArgW.
+                    NativeMethods.LocalFree(ptrToSplitArgs);
+                }
+                args = new string[] { splitArgs[0], splitArgs.Length > 1 ? string.Join(" ", splitArgs.ToList().GetRange(1, splitArgs.Length-1).ToArray()) : null };
             }
             else
             {
