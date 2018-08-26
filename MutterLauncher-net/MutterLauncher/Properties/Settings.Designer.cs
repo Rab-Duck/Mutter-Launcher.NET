@@ -322,5 +322,17 @@ namespace MutterLauncher.Properties {
                 this["OpacityForm"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool KeepAliveWindow {
+            get {
+                return ((bool)(this["KeepAliveWindow"]));
+            }
+            set {
+                this["KeepAliveWindow"] = value;
+            }
+        }
     }
 }

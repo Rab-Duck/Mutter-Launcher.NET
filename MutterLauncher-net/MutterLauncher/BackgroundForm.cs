@@ -32,7 +32,10 @@ namespace MutterLauncher
             }
 
             mc = new MainCollector(this);
-            // InitMainForm(false);
+            if (Properties.Settings.Default.KeepAliveWindow)
+            {
+                InitMainForm(false);
+            }
             mc.setInvoker(collectStateHandler);
 
             em.setNotifier(EnvUpdated);
@@ -55,7 +58,10 @@ namespace MutterLauncher
         private void CloseMainForm()
         {
             frmMainForm.Close();
-            frmMainForm = null;
+            if (!Properties.Settings.Default.KeepAliveWindow)
+            {
+                frmMainForm = null;
+            }
         }
 
         protected override void OnLoad(EventArgs e)

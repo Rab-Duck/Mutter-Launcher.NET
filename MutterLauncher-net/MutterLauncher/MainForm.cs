@@ -386,6 +386,21 @@ namespace MutterLauncher
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (Properties.Settings.Default.KeepAliveWindow)
+            {
+                Trace.WriteLine("form Hide");
+                if(e.CloseReason == CloseReason.UserClosing)
+                {
+                    // Window常駐型の場合は close じゃなくて hide にすり替える
+                    // reference: http://stackoverflow.com/questions/2021681/hide-form-instead-of-closing-when-close-button-clicked
+                    e.Cancel = true;
+                }
+                cmbbxSearcText.Text = "";
+                cmbbxSearcText.Focus();
+                this.Hide();
+                return;
+            }
+
             Trace.WriteLine("form Closing!");
 
             SavePos();
@@ -393,15 +408,6 @@ namespace MutterLauncher
             envmngr.removeNotifyFinished(EnvFinished);
             timerInput.Stop();
             timerInput.Tick -= new EventHandler(this.timerInput_Tick);
-
-            // reference: http://stackoverflow.com/questions/2021681/hide-form-instead-of-closing-when-close-button-clicked
-            /*
-             * if (e.CloseReason == CloseReason.UserClosing)
-            {
-                e.Cancel = true;
-                this.Hide();
-            }
-            */
         }
 
         private void btnExit_Click(object sender, EventArgs e)
