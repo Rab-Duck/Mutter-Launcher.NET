@@ -66,7 +66,7 @@ namespace MutterLauncher
                 else if ((modifiers & Keys.Control) == Keys.Control)
                 {
                     // run as admin
-                    SHFILEINFO shFileInfo = new SHFILEINFO();
+                    // SHFILEINFO shFileInfo = new SHFILEINFO();
 
                     //reference: http://dobon.net/vb/dotnet/system/runelevated.html
                     System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo();

@@ -276,7 +276,7 @@ copy /B /Y MutterLauncherNet.exe.config $(SolutionDir)..\dist\
 copy /B /Y MutterLauncherNet.exe.manifest $(SolutionDir)..\dist\
 xcopy /S /Y /I ja $(SolutionDir)..\dist\ja
 cd $(SolutionDir)..\dist
-cscript zip.vbs $(TargetName)_1_2_0.zip $(TargetFileName) $(TargetFileName).config $(TargetFileName).manifest ja</PostBuildEvent>
+cscript zip.vbs $(TargetName)_1_3_0.zip $(TargetFileName) $(TargetFileName).config $(TargetFileName).manifest ja</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

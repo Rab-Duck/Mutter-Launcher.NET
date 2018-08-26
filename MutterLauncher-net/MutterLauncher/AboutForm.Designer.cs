@@ -52,9 +52,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(92, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 36);
+            this.label1.Size = new System.Drawing.Size(188, 36);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Mutter Launcher .NET\r\nVersion 1.2.0\r\nCopyright (c) 2016, Rab-Duck";
+            this.label1.Text = "Mutter Launcher .NET\r\nVersion 1.3.0\r\nCopyright (c) 2016-2018, Rab-Duck";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
