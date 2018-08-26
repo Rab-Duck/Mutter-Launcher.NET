@@ -118,7 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lsvFileList.ToolTip" xml:space="preserve">
-    <value>実行するアプリを指定して Enter／ダブルクリック</value>
+    <value>実行するアプリを指定して Enter／ダブルクリック
+Ctrl キーを押しながらの場合、管理者権限で実行</value>
   </data>
   <data name="btnExec.Text" xml:space="preserve">
     <value>実行</value>

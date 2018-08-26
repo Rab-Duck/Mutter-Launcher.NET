@@ -568,6 +568,11 @@ namespace MutterLauncher
                 btnExec.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             }
         }
+
+        private void txtViewPath_TextChanged(object sender, EventArgs e)
+        {
+            toolTip.SetToolTip(txtViewPath, txtViewPath.Text);
+        }
     }
   
 }
