@@ -50,7 +50,7 @@ namespace MutterLauncher
                 Keys.NoName
             };
 
-            if(Array.IndexOf(ignorekeys, e.KeyCode) < 0)
+            if(Array.IndexOf(ignorekeys, e.KeyCode) >= 0)
             {
                 txtbxHotkey.Text = "";
                 return;
