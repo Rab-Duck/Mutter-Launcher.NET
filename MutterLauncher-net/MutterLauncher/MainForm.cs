@@ -398,6 +398,7 @@ namespace MutterLauncher
                 cmbbxSearcText.Text = "";
                 cmbbxSearcText.Focus();
                 this.Hide();
+                updateView("", true);
                 return;
             }
 
