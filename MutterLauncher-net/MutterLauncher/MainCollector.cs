@@ -203,13 +203,27 @@ namespace MutterLauncher
                 select item;
             grepList.AddRange(grepQuery);
 
+            if(grepList.Count >= Properties.Settings.Default.DisplayItemMax)
+            {
+                // ここまでで表示最大数になったら検索打ち切り（itemList 探すのは重いので）
+                return grepList;
+            }
+
+
+            var sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+
             lock (syncItem)
             {
                 grepQuery =
-                    from item in itemList
-                    where nameMatching(item, regex)
-                    select item;
+                    (from item in itemList
+                     where nameMatching(item, regex)
+                     select item); // Take した方が遅くなるので止め → .Take(Properties.Settings.Default.DisplayItemMax);
             }
+
+            sw.Stop();
+            var ts = sw.Elapsed;
+            System.Diagnostics.Debug.WriteLine($"--- itemList Search Time: {ts.TotalMilliseconds} ms");
 
             grepList.AddRange(grepQuery);
 
