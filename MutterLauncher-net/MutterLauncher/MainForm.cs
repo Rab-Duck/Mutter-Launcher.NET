@@ -395,8 +395,8 @@ namespace MutterLauncher
                     // reference: http://stackoverflow.com/questions/2021681/hide-form-instead-of-closing-when-close-button-clicked
                     e.Cancel = true;
                 }
-                cmbbxSearcText.Text = "";
                 cmbbxSearcText.Focus();
+                cmbbxSearcText.ResetText();
                 this.Hide();
                 updateView("", true);
                 return;
