@@ -293,9 +293,9 @@ namespace MutterLauncher
             // for waiting search / too fast-input to exec
             updateView(null, false);
 
-            if (lsvFileList.SelectedItems.Count > 0)
+            if (lsvFileList.SelectedIndices.Count > 0)
             {
-                ListViewItem lvi = (ListViewItem)lsvFileList.Items[lsvFileList.SelectedItems[0].Index];
+                ListViewItem lvi = (ListViewItem)lsvFileList.Items[lsvFileList.SelectedIndices[0]];
                 Item item = (Item)lvi.Tag;
                 try
                 {
