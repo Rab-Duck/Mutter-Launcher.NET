@@ -57,7 +57,9 @@
             this.toolTip.SetToolTip(this.lsvFileList, resources.GetString("lsvFileList.ToolTip"));
             this.lsvFileList.UseCompatibleStateImageBehavior = false;
             this.lsvFileList.View = System.Windows.Forms.View.Details;
+            this.lsvFileList.VirtualMode = true;
             this.lsvFileList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lsvFileList_ItemSelectionChanged);
+            this.lsvFileList.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.lsvFileList_RetrieveVirtualItem);
             this.lsvFileList.DoubleClick += new System.EventHandler(this.lsvFileList_DoubleClick);
             this.lsvFileList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lsvFileList_KeyDown);
             this.lsvFileList.Resize += new System.EventHandler(this.lsvFileList_Resize);

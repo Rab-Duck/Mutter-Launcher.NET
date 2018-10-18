@@ -182,7 +182,36 @@ namespace MutterLauncher
                     !(string.IsNullOrEmpty(sc.strSearch) && string.IsNullOrEmpty(prevSearchCmd.strSearch)) &&
                     (sc.matchingType != prevSearchCmd.matchingType || sc.strSearch != prevSearchCmd.strSearch))
                 {
-                    putFileListView(mc.grep(searchStr));
+                    if (lsvFileList.VirtualListSize > 0)
+                    {
+                        // hack code: スクロールしていると表示がおかしくなるので、必ず一度、先頭に戻す
+                        lsvFileList.Items[0].EnsureVisible();
+                    }
+                    // 検索リストを取得＋保存
+                    itemList = mc.grep(searchStr);
+                    // Virtual mode 用のサイズとして設定（実体描画は RetrieveVirtualItem で行われる）
+                    lsvFileList.VirtualListSize = 0;
+                    lsvFileList.VirtualListSize = itemList.Count() > Properties.Settings.Default.DisplayItemMax ? Properties.Settings.Default.DisplayItemMax : itemList.Count();
+
+                    // hack code: stop to display a horizontal scrollbar
+                    lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width - 1;
+                    lsvFileList.Columns[0].Width = lsvFileList.ClientSize.Width;
+
+                    // 必要なら所定の位置に選択状態を移動
+                    txtViewPath.Text = "";
+                    if (lsvFileList.VirtualListSize > 0)
+                    {
+                        lsvFileList.Items[0].Selected = true;
+                        for (int i = 0; i < lsvFileList.VirtualListSize; i++)
+                        {
+                            if (itemList[i].getItemType() != ItemType.TYPE_FIX)
+                            {
+                                lsvFileList.Items[i].Selected = true;
+                                lsvFileList.FocusedItem = lsvFileList.Items[i];
+                                break;
+                            }
+                        }
+                    }
                 }
                 prevSearchCmd = sc;
             }
@@ -465,9 +494,9 @@ namespace MutterLauncher
 
         private void lsvFileList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            if (lsvFileList.SelectedItems.Count > 0)
+            if (lsvFileList.SelectedIndices.Count > 0)
             {
-                ListViewItem lvi = (ListViewItem)lsvFileList.Items[lsvFileList.SelectedItems[0].Index];
+                ListViewItem lvi = (ListViewItem)lsvFileList.Items[lsvFileList.SelectedIndices[0]];
                 Item item = (Item)lvi.Tag;
                 txtViewPath.Text = item.getItemPath();
             }
@@ -573,6 +602,28 @@ namespace MutterLauncher
         private void txtViewPath_TextChanged(object sender, EventArgs e)
         {
             toolTip.SetToolTip(txtViewPath, txtViewPath.Text);
+        }
+
+        private bool bNeedSelect = false;
+        private void lsvFileList_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
+        {
+            e.Item = GetListViewItem(e.ItemIndex);
+        }
+
+        private ListViewItem GetListViewItem(int itemIndex)
+        {
+            Item item = itemList[itemIndex];
+            ListViewItem lvi = new ListViewItem(item.getItemName());
+
+            // a ListViewItem have a Item-object
+            lvi.Tag = item;
+
+            // reference: http://acha-ya.cocolog-nifty.com/blog/2010/11/2-f06c.html
+            // 最上位8ビットを除いた値をアイコンインデックス値とする
+            int iconIndex = (item.getIconIndex() & 0xFFFFFF);
+            lvi.ImageIndex = iconIndex;
+
+            return lvi;
         }
     }
   
