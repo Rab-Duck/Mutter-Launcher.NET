@@ -46,6 +46,7 @@ namespace MutterLauncher
             chkUseCmdOption.Checked = _userItem.bCmdOption;
             chkUseUrlEncode.Checked = _userItem.bUrlEncode;
             txtEncoding.Text = _userItem.encoding;
+            chkUseEnvironmentVariable.Checked = _userItem.bUseEnvironmentVariable;
 
             _userItem = null;
 
@@ -58,7 +59,8 @@ namespace MutterLauncher
                 txtCmd.Text,
                 chkFixedItem.Checked,
                 chkUseCmdOption.Checked,
-                chkUseUrlEncode.Checked, txtEncoding.Text
+                chkUseUrlEncode.Checked, txtEncoding.Text,
+                chkUseEnvironmentVariable.Checked
                 );
             this.Close();
         }
@@ -121,13 +123,13 @@ namespace MutterLauncher
             switch (cbName.SelectedIndex)
             {
                 case 0:
-                    _userItem = new UserItem("Run", "%1", true, true, false, null);
+                    _userItem = new UserItem("Run", "%1", true, true, false, null, true);
                     break;
                 case 1:
-                    _userItem = new UserItem("Google Search", "http://www.google.com/search?ie=UTF-8&q=%1", true, false, true, "UTF-8");
+                    _userItem = new UserItem("Google Search", "http://www.google.com/search?ie=UTF-8&q=%1", true, false, true, "UTF-8", false);
                     break;
                 case 2:
-                    _userItem = new UserItem("netstat", "netstat -rn %1", false, true, false, null);
+                    _userItem = new UserItem("netstat", "netstat -rn %1", false, true, false, null, false);
                     break;
                 default:
                     return;
@@ -168,5 +170,6 @@ namespace MutterLauncher
         {
             errorProvider.SetError(txtEncoding, "");
         }
+
     }
 }

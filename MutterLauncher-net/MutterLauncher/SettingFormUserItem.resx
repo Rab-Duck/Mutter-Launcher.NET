@@ -242,6 +242,30 @@ netstat
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="chkUseEnvironmentVariable.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 115</value>
+  </data>
+  <data name="chkUseEnvironmentVariable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 24</value>
+  </data>
+  <data name="chkUseEnvironmentVariable.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="chkUseEnvironmentVariable.Text" xml:space="preserve">
+    <value>Use Environment Variables by %-%</value>
+  </data>
+  <data name="&gt;&gt;chkUseEnvironmentVariable.Name" xml:space="preserve">
+    <value>chkUseEnvironmentVariable</value>
+  </data>
+  <data name="&gt;&gt;chkUseEnvironmentVariable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkUseEnvironmentVariable.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;chkUseEnvironmentVariable.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="chkFixedItem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -267,7 +291,7 @@ netstat
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;chkFixedItem.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -294,7 +318,7 @@ netstat
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtEncoding.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -321,7 +345,7 @@ netstat
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;txtEncoding.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="chkUseUrlEncode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -348,7 +372,7 @@ netstat
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;chkUseUrlEncode.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="chkUseCmdOption.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -376,13 +400,13 @@ the separator of command option</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;chkUseCmdOption.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 64</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>355, 122</value>
+    <value>355, 151</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -403,7 +427,7 @@ the separator of command option</value>
     <value>6</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 192</value>
+    <value>294, 221</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -427,7 +451,7 @@ the separator of command option</value>
     <value>1</value>
   </data>
   <data name="btnOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 192</value>
+    <value>213, 221</value>
   </data>
   <data name="btnOk.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -460,7 +484,7 @@ the separator of command option</value>
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>381, 223</value>
+    <value>381, 253</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

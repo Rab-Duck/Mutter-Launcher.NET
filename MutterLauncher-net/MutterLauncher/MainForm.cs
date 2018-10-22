@@ -604,7 +604,6 @@ namespace MutterLauncher
             toolTip.SetToolTip(txtViewPath, txtViewPath.Text);
         }
 
-        private bool bNeedSelect = false;
         private void lsvFileList_RetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
         {
             e.Item = GetListViewItem(e.ItemIndex);

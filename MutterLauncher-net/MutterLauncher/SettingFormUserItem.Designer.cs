@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkUseEnvironmentVariable = new System.Windows.Forms.CheckBox();
             this.chkFixedItem = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEncoding = new System.Windows.Forms.TextBox();
@@ -82,6 +83,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkUseEnvironmentVariable);
             this.groupBox1.Controls.Add(this.chkFixedItem);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtEncoding);
@@ -90,6 +92,12 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // chkUseEnvironmentVariable
+            // 
+            resources.ApplyResources(this.chkUseEnvironmentVariable, "chkUseEnvironmentVariable");
+            this.chkUseEnvironmentVariable.Name = "chkUseEnvironmentVariable";
+            this.chkUseEnvironmentVariable.UseVisualStyleBackColor = true;
             // 
             // chkFixedItem
             // 
@@ -182,5 +190,6 @@
         private System.Windows.Forms.CheckBox chkFixedItem;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.CheckBox chkUseEnvironmentVariable;
     }
 }

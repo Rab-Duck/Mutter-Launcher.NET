@@ -22,6 +22,7 @@ namespace MutterLauncher
         public bool bCmdOption { get;  }
         public bool bUrlEncode { get;  }
         public string encoding { get;  }
+        public bool bUseEnvironmentVariable { get; }
 
         /*
          * 
@@ -30,7 +31,7 @@ namespace MutterLauncher
          * bFix: 
          * 
          */
-        public UserItem(string name, string cmd, bool bFix, bool bCmdOption, bool bUrlEncode, string encoding)
+        public UserItem(string name, string cmd, bool bFix, bool bCmdOption, bool bUrlEncode, string encoding, bool bUseEnvironmentVariable)
         {
             this.name = name;
             // set convName
@@ -48,6 +49,7 @@ namespace MutterLauncher
             this.bCmdOption = bCmdOption;
             this.bUrlEncode = bUrlEncode;
             this.encoding = encoding;
+            this.bUseEnvironmentVariable = bUseEnvironmentVariable;
         }
 
         public Item cloneItem()
@@ -121,6 +123,11 @@ namespace MutterLauncher
             else
             {
                 args = new string[]{ execCmd };
+            }
+
+            if (bUseEnvironmentVariable)
+            {
+                args[0] = Environment.ExpandEnvironmentVariables(args[0]); // support the exec-way of %userprofile%
             }
 
             if ((modifiers & Keys.Control) == Keys.Control)
