@@ -117,15 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnOk.Error" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnOk.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnOk.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnOk.Location" type="System.Drawing.Point, System.Drawing">
     <value>213, 225</value>
   </data>
+  <data name="btnOk.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCancel.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnCancel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnCancel.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>294, 225</value>
   </data>
+  <data name="btnCancel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>381, 256</value>
+  </data>
+  <data name="label2.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="label2.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 12</value>
@@ -133,11 +168,35 @@
   <data name="label2.Text" xml:space="preserve">
     <value>コマンド(&amp;C)</value>
   </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="label1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 12</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>名前(&amp;N)</value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbName.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="cbName.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="cbName.ToolTip" xml:space="preserve">
     <value>表示項目名を指定
@@ -147,11 +206,18 @@ Google
 netstat
 </value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="chkUseEnvironmentVariable.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chkUseEnvironmentVariable.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkUseEnvironmentVariable.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="chkUseEnvironmentVariable.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="chkUseEnvironmentVariable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -161,17 +227,77 @@ netstat
   <data name="chkUseEnvironmentVariable.Text" xml:space="preserve">
     <value>%～%で指定された環境変数を展開する</value>
   </data>
+  <data name="chkUseEnvironmentVariable.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFixedItem.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkFixedItem.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="chkFixedItem.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="chkFixedItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 16</value>
   </data>
   <data name="chkFixedItem.Text" xml:space="preserve">
     <value>リスト中で固定表示する</value>
   </data>
+  <data name="chkFixedItem.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label3.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="label3.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEncoding.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtEncoding.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtEncoding.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txtEncoding.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkUseUrlEncode.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkUseUrlEncode.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="chkUseUrlEncode.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="chkUseUrlEncode.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 16</value>
   </data>
   <data name="chkUseUrlEncode.Text" xml:space="preserve">
     <value>%1 の展開時に URLエンコードを行う</value>
+  </data>
+  <data name="chkUseUrlEncode.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkUseCmdOption.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkUseCmdOption.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="chkUseCmdOption.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="chkUseCmdOption.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 28</value>
@@ -180,11 +306,26 @@ netstat
     <value>コマンドで指定した最初の空白以降を
 コマンドの引数として扱う</value>
   </data>
+  <data name="chkUseCmdOption.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox1.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="groupBox1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>355, 155</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>詳細(&amp;D)</value>
+  </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -210,6 +351,18 @@ netstat
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ユーザ項目設定</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCmd.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtCmd.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="txtCmd.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="txtCmd.ToolTip" xml:space="preserve">
     <value>実行するコマンドを指定

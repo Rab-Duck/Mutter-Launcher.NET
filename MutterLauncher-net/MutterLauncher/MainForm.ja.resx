@@ -125,7 +125,11 @@ Ctrl キーを押しながらの場合、管理者権限で実行</value>
     <value>実行</value>
   </data>
   <data name="cmbbxSearcText.ToolTip" xml:space="preserve">
-    <value>リストを絞り込むための文字列を指定</value>
+    <value>リストを絞り込むための文字列を指定
+- Enter → 通常起動
+- Shift + Enter → フォルダを開く
+- Ctrl + Enter → 管理者として実行
+- 上下キー → 下のリストで選択位置を上下移動</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>閉じる</value>
