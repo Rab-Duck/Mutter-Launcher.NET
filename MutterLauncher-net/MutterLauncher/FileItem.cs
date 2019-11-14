@@ -61,7 +61,15 @@ namespace MutterLauncher
                 SearchCmd sc = Util.analyzeSearchCmd(strExec);
                 if ((modifiers & Keys.Shift) == Keys.Shift)
                 {
-                    System.Diagnostics.Process.Start("explorer", "/select,\"" + path + "\"");
+                    try
+                    {
+                        System.Diagnostics.Process.Start("explorer", "/select,\"" + path + "\"");
+                    }
+                    catch (Exception ex)
+                    {
+                        Trace.WriteLine("Exception when explorer start");
+                        Trace.WriteLine(ex.Message + "\n" + ex.StackTrace);
+                    }
                 }
                 else if ((modifiers & Keys.Control) == Keys.Control)
                 {
@@ -219,6 +227,13 @@ namespace MutterLauncher
         public string getConvItemName()
         {
             return convName;
+        }
+
+        public bool exists()
+        {
+            bool result = File.Exists(path);
+            Trace.WriteLine($"{path} exists: {result}");
+            return result;
         }
     }
 }

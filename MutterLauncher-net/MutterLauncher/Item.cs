@@ -27,7 +27,7 @@ namespace MutterLauncher
         ItemType getItemType();
         bool historyEquals(Item item);
         int getIconIndex();
-
+        bool exists();
         bool execute(string strExec, System.Windows.Forms.Keys modifiers);
     }
 }

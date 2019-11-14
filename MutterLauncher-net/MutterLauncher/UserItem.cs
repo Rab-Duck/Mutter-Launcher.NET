@@ -235,5 +235,11 @@ namespace MutterLauncher
         {
             this.itemType = type;
         }
+
+        public bool exists()
+        {
+            // 常に true
+            return true;
+        }
     }
 }

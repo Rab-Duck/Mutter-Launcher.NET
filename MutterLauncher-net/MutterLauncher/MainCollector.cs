@@ -141,6 +141,14 @@ namespace MutterLauncher
 
             lock (syncItem)
             {
+                // history の整理（いないのは削除）
+                historyItemList = 
+                    (from item in historyItemList
+                    where item.exists()
+                    select item).ToList();
+                envmngr.setExecHistory(historyItemList);
+
+                // その他を生成
                 itemList = null;
                 itemList = new List<Item>();
                 foreach (AppCollector app in listApp)
@@ -197,12 +205,15 @@ namespace MutterLauncher
                 select item;
             grepList.AddRange(grepQuery);
 
-            grepQuery =
+            lock (syncItem)
+            {
+                grepQuery =
                 from item in historyItemList
                 where nameMatching(item, regex)
                 select item;
-            grepList.AddRange(grepQuery);
-
+                grepList.AddRange(grepQuery);
+            }
+    
             if(grepList.Count >= Properties.Settings.Default.DisplayItemMax)
             {
                 // ここまでで表示最大数になったら検索打ち切り（itemList 探すのは重いので）
