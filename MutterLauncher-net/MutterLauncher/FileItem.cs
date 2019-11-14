@@ -231,9 +231,19 @@ namespace MutterLauncher
 
         public bool exists()
         {
-            bool result = File.Exists(path);
-            Trace.WriteLine($"{path} exists: {result}");
-            return result;
+            if (path.StartsWith(@"\\") || path.Substring(1,2) == @":\" )
+            {
+                // \\～ か ?:\ のパス表現だったら、ファイルの実際の有無をチェック
+                bool result = File.Exists(path);
+                Trace.WriteLine($"{path} exists: {result}");
+                return result;
+            }
+            else
+            {
+                // それ以外（shell:AppsFolder とか）は true で固定
+                return true;
+            }
+
         }
     }
 }
